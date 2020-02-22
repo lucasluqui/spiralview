@@ -25,12 +25,12 @@ public class ViewApp implements Runnable {
 		
 		String[] command = new String[] { JVM_PATH, "-Djava.library.path=native", "-cp", classPath, targetClass, "rsrc" + File.separator + "character" + File.separator + "pc" + File.separator + "model.dat" };
 	    
-	    try {
+		try {
 			ProcessBuilder builder = new ProcessBuilder(command);
 			builder.start();
-	    } catch (Exception e) {
-	    	e.printStackTrace();
-	    }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	private static void verifyRunningDirectory() {
