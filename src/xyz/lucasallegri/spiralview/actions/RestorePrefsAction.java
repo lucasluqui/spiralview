@@ -2,7 +2,7 @@ package xyz.lucasallegri.spiralview.actions;
 
 /*
  * 		Original author: onyxbits (spiral.onyxbits.de)
- * 		Origin: spiralspy-1.5.jar/de/onyxbits/spiralspy/SnapShotAction.java
+ * 		Origin: spiralspy-1.5.jar/de/onyxbits/spiralspy/RestorePrefsAction.java
  */
 
 import com.threerings.ClydeLog;
