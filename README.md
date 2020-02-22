@@ -2,6 +2,6 @@
 Model Viewer, Scene Editor, Interface Tester and much more for Spiral Knights.
 
 ## Special thanks to
-**rrrrrex**: Providing local repositories to build Clyde.
+**rrrrex (Discord: rrrrex#7286)**: Providing local repositories to build Clyde.
 
-**onyxbytes**: Spiralspy original author.
+**onyxbits (spiral.onyxbits.de)**: Author of spiralspy; predecessor of spiralview.
