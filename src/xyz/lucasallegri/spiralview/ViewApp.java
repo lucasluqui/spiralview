@@ -9,6 +9,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import com.threerings.util.ResourceUtil;
 
+import xyz.lucasallegri.util.FileUtil;
 import xyz.lucasallegri.util.SystemUtil;
 
 public class ViewApp implements Runnable {
@@ -24,7 +25,8 @@ public class ViewApp implements Runnable {
 	}
 	
 	public void run() {
-		verifyRunningDirectory();
+		if(!isRunningInRootFolder()) pushError("You need to place this .jar inside your Spiral Knights main directory.");
+		if(!hasCleanConfigs()) pushError("There are .xml files in your rsrc/config directory, spiralview can not proceed.");
 		
 		try {
 			EventQueue.invokeAndWait(new Runnable() {
@@ -64,11 +66,23 @@ public class ViewApp implements Runnable {
 		}
 	}
 	
-	private static void verifyRunningDirectory() {
-		if (!new File("getdown.txt").exists()) {
-			JOptionPane.showMessageDialog(null, "You need to place this .jar inside your Spiral Knights main directory.");
-			System.exit(1);
+	private static boolean isRunningInRootFolder() {
+		if (new File("getdown.txt").exists()) {
+			return true;
 		}
+		return false;
+	}
+	
+	private static boolean hasCleanConfigs() {
+		if(FileUtil.fileNamesInDirectory("rsrc" + File.separator + "config", ".xml").size() > 0) {
+			return false;
+		}
+		return true;
+	}
+	
+	private static void pushError(String message) {
+		JOptionPane.showMessageDialog(null, message);
+		System.exit(1);
 	}
 	
 	private static int chooseEditorDialog() {
