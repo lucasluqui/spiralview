@@ -9,12 +9,15 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import com.threerings.util.ResourceUtil;
 
+import xyz.lucasallegri.util.SystemUtil;
+
 public class ViewApp implements Runnable {
 	
 	private static final String VERSION = "1.0";
-	private static final String JVM_PATH = "java_vm" + File.separator + "bin" + File.separator + "java";
-	public int chosen = 0;
+	private static final String JVM_PATH = System.getProperty("user.dir") + File.separator + 
+			"java_vm" + File.separator + "bin" + File.separator + "java";
 	private static String targetClass = "xyz.lucasallegri.spiralview.ModelViewerHook";
+	public int chosen = 0;
 	
 	public static void main(String[] args) throws Exception {
 		new Thread(new ViewApp()).start();
@@ -43,7 +46,7 @@ public class ViewApp implements Runnable {
 		
 		resolveTargetedClass(chosen);
 		List<String> commandList = new ArrayList<String>();
-		commandList.add(JVM_PATH);
+		commandList.add(SystemUtil.isWindows() ? JVM_PATH + ".exe" : JVM_PATH);
 		commandList.add("-Djava.library.path=native");
 		commandList.add("-cp");
 		commandList.add(classPath);
