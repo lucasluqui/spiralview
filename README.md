@@ -1,4 +1,7 @@
 # spiralview
+<p align="left">
+    <a href="https://GitHub.com/lucas-allegri/spiralview/releases/"><img alt="Total downloads"               src="https://img.shields.io/github/downloads/lucas-allegri/spiralview/total.svg"></a>
+</p>
 Model Viewer, Scene Editor, Interface Tester and much more for Spiral Knights.
 
 ## Special thanks to
