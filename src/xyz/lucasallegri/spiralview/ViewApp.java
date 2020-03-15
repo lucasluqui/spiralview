@@ -14,7 +14,7 @@ import xyz.lucasallegri.util.SystemUtil;
 
 public class ViewApp implements Runnable {
 	
-	private static final String VERSION = "1.1";
+	private static final String VERSION = "1.2";
 	private static final String JVM_PATH = System.getProperty("user.dir") + File.separator + 
 			FileUtil.getJVMDirectoryName() + File.separator + "bin" + File.separator + "java";
 	private static String targetClass = "xyz.lucasallegri.spiralview.ModelViewerHook";
