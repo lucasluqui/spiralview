@@ -14,10 +14,12 @@ import javax.swing.AbstractAction;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
+@SuppressWarnings("serial")
 public final class RestorePrefsAction
   extends AbstractAction
 {
-  private Preferences cfg = Preferences.userNodeForPackage(ClydeLog.class);
+  @SuppressWarnings("unused")
+private Preferences cfg = Preferences.userNodeForPackage(ClydeLog.class);
   
   public RestorePrefsAction()
   {
@@ -35,7 +37,7 @@ public final class RestorePrefsAction
     try
     {
       Preferences.importPreferences(new FileInputStream(selected));
-      JOptionPane.showMessageDialog(null, "Preferences loaded, you need to restart SpiralSpy.");
+      JOptionPane.showMessageDialog(null, "Preferences loaded, you need to restart spiralview.");
     }
     catch (Exception exp)
     {

@@ -14,6 +14,7 @@ import javax.swing.AbstractAction;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
+@SuppressWarnings("serial")
 public final class SavePrefsAction
   extends AbstractAction
 {

@@ -15,6 +15,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 
+@SuppressWarnings("serial")
 public final class SnapshotAction
   extends AbstractAction
 {

@@ -11,6 +11,7 @@ import java.util.prefs.Preferences;
 import javax.swing.AbstractAction;
 import javax.swing.JOptionPane;
 
+@SuppressWarnings("serial")
 public final class ClearPrefsAction
   extends AbstractAction
 {
@@ -27,7 +28,7 @@ public final class ClearPrefsAction
     try
     {
       this.cfg.removeNode();
-      JOptionPane.showMessageDialog(null, "Preferences cleared, you need to restart SpiralSpy.");
+      JOptionPane.showMessageDialog(null, "Preferences cleared, you need to restart spiralview.");
     }
     catch (Exception exp)
     {
