@@ -53,6 +53,57 @@
     </implementation>
   </entry>
   <entry>
+    <name>000_Connectors/4 Entrance</name>
+    <implementation class="com.threerings.tudey.config.TileConfig$Original">
+      <width>6</width>
+      <model>
+        <name>editor/marker/tiles/connector_6wide.dat</name>
+        <arguments>
+          <key class="java.lang.String">Color</key>
+          <value class="java.lang.Integer">268</value>
+        </arguments>
+      </model>
+      <collisionFlags>
+        <entry>0</entry>
+      </collisionFlags>
+      <floorFlags>0</floorFlags>
+    </implementation>
+  </entry>
+  <entry>
+    <name>000_Connectors/4 Exit</name>
+    <implementation class="com.threerings.tudey.config.TileConfig$Original">
+      <width>6</width>
+      <model>
+        <name>editor/marker/tiles/connector_6wide.dat</name>
+        <arguments>
+          <key class="java.lang.String">Color</key>
+          <value class="java.lang.Integer">260</value>
+        </arguments>
+      </model>
+      <collisionFlags>
+        <entry>0</entry>
+      </collisionFlags>
+      <floorFlags>0</floorFlags>
+    </implementation>
+  </entry>
+  <entry>
+    <name>000_Connectors/4 Link</name>
+    <implementation class="com.threerings.tudey.config.TileConfig$Original">
+      <width>6</width>
+      <model>
+        <name>editor/marker/tiles/connector_6wide.dat</name>
+        <arguments>
+          <key class="java.lang.String">Color</key>
+          <value class="java.lang.Integer">275</value>
+        </arguments>
+      </model>
+      <collisionFlags>
+        <entry>0</entry>
+      </collisionFlags>
+      <floorFlags>0</floorFlags>
+    </implementation>
+  </entry>
+  <entry>
     <name>000_Connectors/5 Entrance</name>
     <implementation class="com.threerings.tudey.config.TileConfig$Original">
       <width>7</width>
@@ -95,6 +146,244 @@
         <arguments>
           <key class="java.lang.String">Color</key>
           <value class="java.lang.Integer">275</value>
+        </arguments>
+      </model>
+      <collisionFlags>
+        <entry>0</entry>
+      </collisionFlags>
+      <floorFlags>0</floorFlags>
+    </implementation>
+  </entry>
+  <entry>
+    <name>000_Connectors/A Entrance</name>
+    <implementation class="com.threerings.tudey.config.TileConfig$Derived">
+      <tile>
+        <name>000_Connectors/Parts/Base (letters)</name>
+        <arguments>
+          <key class="java.lang.String">Color</key>
+          <value class="java.lang.Integer">268</value>
+          <key class="java.lang.String">Text</key>
+          <value class="java.lang.String">A</value>
+        </arguments>
+      </tile>
+    </implementation>
+  </entry>
+  <entry>
+    <name>000_Connectors/A Exit</name>
+    <implementation class="com.threerings.tudey.config.TileConfig$Derived">
+      <tile>
+        <name>000_Connectors/Parts/Base (letters)</name>
+        <arguments>
+          <key class="java.lang.String">Color</key>
+          <value class="java.lang.Integer">260</value>
+          <key class="java.lang.String">Text</key>
+          <value class="java.lang.String">A</value>
+        </arguments>
+      </tile>
+    </implementation>
+  </entry>
+  <entry>
+    <name>000_Connectors/A Link</name>
+    <implementation class="com.threerings.tudey.config.TileConfig$Derived">
+      <tile>
+        <name>000_Connectors/Parts/Base (letters)</name>
+        <arguments>
+          <key class="java.lang.String">Color</key>
+          <value class="java.lang.Integer">275</value>
+          <key class="java.lang.String">Text</key>
+          <value class="java.lang.String">A</value>
+        </arguments>
+      </tile>
+    </implementation>
+  </entry>
+  <entry>
+    <name>000_Connectors/B Entrance</name>
+    <implementation class="com.threerings.tudey.config.TileConfig$Derived">
+      <tile>
+        <name>000_Connectors/Parts/Base (letters)</name>
+        <arguments>
+          <key class="java.lang.String">Color</key>
+          <value class="java.lang.Integer">268</value>
+          <key class="java.lang.String">Text</key>
+          <value class="java.lang.String">B</value>
+        </arguments>
+      </tile>
+    </implementation>
+  </entry>
+  <entry>
+    <name>000_Connectors/B Exit</name>
+    <implementation class="com.threerings.tudey.config.TileConfig$Derived">
+      <tile>
+        <name>000_Connectors/Parts/Base (letters)</name>
+        <arguments>
+          <key class="java.lang.String">Color</key>
+          <value class="java.lang.Integer">260</value>
+          <key class="java.lang.String">Text</key>
+          <value class="java.lang.String">B</value>
+        </arguments>
+      </tile>
+    </implementation>
+  </entry>
+  <entry>
+    <name>000_Connectors/B Link</name>
+    <implementation class="com.threerings.tudey.config.TileConfig$Derived">
+      <tile>
+        <name>000_Connectors/Parts/Base (letters)</name>
+        <arguments>
+          <key class="java.lang.String">Color</key>
+          <value class="java.lang.Integer">275</value>
+          <key class="java.lang.String">Text</key>
+          <value class="java.lang.String">B</value>
+        </arguments>
+      </tile>
+    </implementation>
+  </entry>
+  <entry>
+    <name>000_Connectors/C Entrance</name>
+    <implementation class="com.threerings.tudey.config.TileConfig$Derived">
+      <tile>
+        <name>000_Connectors/Parts/Base (letters)</name>
+        <arguments>
+          <key class="java.lang.String">Color</key>
+          <value class="java.lang.Integer">268</value>
+          <key class="java.lang.String">Text</key>
+          <value class="java.lang.String">C</value>
+        </arguments>
+      </tile>
+    </implementation>
+  </entry>
+  <entry>
+    <name>000_Connectors/C Exit</name>
+    <implementation class="com.threerings.tudey.config.TileConfig$Derived">
+      <tile>
+        <name>000_Connectors/Parts/Base (letters)</name>
+        <arguments>
+          <key class="java.lang.String">Color</key>
+          <value class="java.lang.Integer">260</value>
+          <key class="java.lang.String">Text</key>
+          <value class="java.lang.String">C</value>
+        </arguments>
+      </tile>
+    </implementation>
+  </entry>
+  <entry>
+    <name>000_Connectors/C Link</name>
+    <implementation class="com.threerings.tudey.config.TileConfig$Derived">
+      <tile>
+        <name>000_Connectors/Parts/Base (letters)</name>
+        <arguments>
+          <key class="java.lang.String">Color</key>
+          <value class="java.lang.Integer">275</value>
+          <key class="java.lang.String">Text</key>
+          <value class="java.lang.String">C</value>
+        </arguments>
+      </tile>
+    </implementation>
+  </entry>
+  <entry>
+    <name>000_Connectors/D Branch</name>
+    <implementation class="com.threerings.tudey.config.TileConfig$Derived">
+      <tile>
+        <name>000_Connectors/Parts/Base (letters)</name>
+        <arguments>
+          <key class="java.lang.String">Color</key>
+          <value class="java.lang.Integer">280</value>
+          <key class="java.lang.String">Text</key>
+          <value class="java.lang.String">D</value>
+        </arguments>
+      </tile>
+    </implementation>
+  </entry>
+  <entry>
+    <name>000_Connectors/D Entrance</name>
+    <implementation class="com.threerings.tudey.config.TileConfig$Derived">
+      <tile>
+        <name>000_Connectors/Parts/Base (letters)</name>
+        <arguments>
+          <key class="java.lang.String">Color</key>
+          <value class="java.lang.Integer">268</value>
+          <key class="java.lang.String">Text</key>
+          <value class="java.lang.String">D</value>
+        </arguments>
+      </tile>
+    </implementation>
+  </entry>
+  <entry>
+    <name>000_Connectors/D Exit</name>
+    <implementation class="com.threerings.tudey.config.TileConfig$Derived">
+      <tile>
+        <name>000_Connectors/Parts/Base (letters)</name>
+        <arguments>
+          <key class="java.lang.String">Color</key>
+          <value class="java.lang.Integer">260</value>
+          <key class="java.lang.String">Text</key>
+          <value class="java.lang.String">D</value>
+        </arguments>
+      </tile>
+    </implementation>
+  </entry>
+  <entry>
+    <name>000_Connectors/D Link</name>
+    <implementation class="com.threerings.tudey.config.TileConfig$Derived">
+      <tile>
+        <name>000_Connectors/Parts/Base (letters)</name>
+        <arguments>
+          <key class="java.lang.String">Color</key>
+          <value class="java.lang.Integer">275</value>
+          <key class="java.lang.String">Text</key>
+          <value class="java.lang.String">D</value>
+        </arguments>
+      </tile>
+    </implementation>
+  </entry>
+  <entry>
+    <name>000_Connectors/Parts/Base (letters)</name>
+    <parameters>
+      <entry class="com.threerings.config.Parameter$Direct">
+        <name>Text</name>
+        <paths>implementation.model["Models"][0].model["Text"]</paths>
+      </entry>
+      <entry class="com.threerings.config.Parameter$Direct">
+        <name>Color</name>
+        <paths>implementation.model["Models"][1].model["Color"]</paths>
+      </entry>
+    </parameters>
+    <implementation class="com.threerings.tudey.config.TileConfig$Original">
+      <width>5</width>
+      <model>
+        <name>model/compound/model.dat</name>
+        <arguments>
+          <key class="java.lang.String">Influences</key>
+          <value class="com.threerings.opengl.model.config.InfluenceFlagConfig">
+            <fog>false</fog>
+            <lights>false</lights>
+            <projections>false</projections>
+            <definitions>false</definitions>
+          </value>
+          <key class="java.lang.String">Models</key>
+          <value class="[Lcom.threerings.opengl.model.config.CompoundConfig$ComponentModel;">
+            <entry>
+              <model>
+                <name>model/debug/label_prefab_indicator.dat</name>
+                <arguments>
+                  <key class="java.lang.String">Text</key>
+                  <value class="java.lang.String">B</value>
+                </arguments>
+              </model>
+              <transform>
+                <translation>2.5, 0.0, 0.0</translation>
+              </transform>
+            </entry>
+            <entry>
+              <model>
+                <name>editor/marker/tiles/connector_5wide.dat</name>
+                <arguments>
+                  <key class="java.lang.String">Color</key>
+                  <value class="java.lang.Integer">275</value>
+                </arguments>
+              </model>
+            </entry>
+          </value>
         </arguments>
       </model>
       <collisionFlags>
@@ -39432,113 +39721,6 @@
     </implementation>
   </entry>
   <entry>
-    <name>Prize Vault/Edge, busted/Edge 1unit - 01</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <width>2</width>
-      <model>
-        <name>world/tileset/prize_vault/edge_rail/edge_busted_set.dat</name>
-        <arguments>
-          <key class="java.lang.String">Model</key>
-          <value class="java.lang.String">edge_busted_01</value>
-        </arguments>
-      </model>
-      <collisionFlags>
-        <entry>2, 2</entry>
-      </collisionFlags>
-      <mergeable>false</mergeable>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prize Vault/Edge, busted/Edge 1unit - 02</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <width>2</width>
-      <model>
-        <name>world/tileset/prize_vault/edge_rail/edge_busted_set.dat</name>
-        <arguments>
-          <key class="java.lang.String">Model</key>
-          <value class="java.lang.String">edge_busted_02</value>
-        </arguments>
-      </model>
-      <collisionFlags>
-        <entry>2, 2</entry>
-      </collisionFlags>
-      <mergeable>false</mergeable>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prize Vault/Edge, busted/Edge 1unit - Outside Corner 1</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <model>
-        <name>world/tileset/prize_vault/edge_rail/edge_busted_set.dat</name>
-        <arguments>
-          <key class="java.lang.String">Model</key>
-          <value class="java.lang.String">edge_busted_out_01</value>
-        </arguments>
-      </model>
-      <collisionFlags>
-        <entry>2</entry>
-      </collisionFlags>
-      <mergeable>false</mergeable>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prize Vault/Edge, busted/Edge x2 - 01</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <width>2</width>
-      <height>2</height>
-      <model>
-        <name>world/tileset/prize_vault/edge_rail/edge_busted_set.dat</name>
-        <arguments>
-          <key class="java.lang.String">Model</key>
-          <value class="java.lang.String">edge_busted_x2_01</value>
-        </arguments>
-      </model>
-      <collisionFlags>
-        <entry>2, 2</entry>
-        <entry>2, 2</entry>
-      </collisionFlags>
-      <mergeable>false</mergeable>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prize Vault/Edge, busted/Edge x2 - 02</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <width>2</width>
-      <height>2</height>
-      <model>
-        <name>world/tileset/prize_vault/edge_rail/edge_busted_set.dat</name>
-        <arguments>
-          <key class="java.lang.String">Model</key>
-          <value class="java.lang.String">edge_busted_x2_02</value>
-        </arguments>
-      </model>
-      <collisionFlags>
-        <entry>2, 2</entry>
-        <entry>2, 2</entry>
-      </collisionFlags>
-      <mergeable>false</mergeable>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prize Vault/Edge, busted/Edge x2 - Inside Corner 1</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <width>2</width>
-      <height>2</height>
-      <model>
-        <name>world/tileset/prize_vault/edge_rail/edge_busted_set.dat</name>
-        <arguments>
-          <key class="java.lang.String">Model</key>
-          <value class="java.lang.String">edge_busted_x2_in</value>
-        </arguments>
-      </model>
-      <collisionFlags>
-        <entry>0, 2</entry>
-        <entry>2, 2</entry>
-      </collisionFlags>
-      <mergeable>false</mergeable>
-    </implementation>
-  </entry>
-  <entry>
     <name>Prize Vault/Edge, busted/Railing - Left 01</name>
     <implementation class="com.threerings.tudey.config.TileConfig$Original">
       <width>2</width>
@@ -40348,321 +40530,6 @@
     </implementation>
   </entry>
   <entry>
-    <name>Prize Vault/Floor, catwalk/Catwalk 01</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <model>
-        <name>world/tileset/prize_vault/floor/floor_base.dat</name>
-        <arguments>
-          <key class="java.lang.String">Model</key>
-          <value class="java.lang.String">catwalk_01</value>
-        </arguments>
-      </model>
-      <collisionFlags>
-        <entry>0</entry>
-      </collisionFlags>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prize Vault/Floor, catwalk/Catwalk 02</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <model>
-        <name>world/tileset/prize_vault/floor/floor_base.dat</name>
-        <arguments>
-          <key class="java.lang.String">Model</key>
-          <value class="java.lang.String">catwalk_02</value>
-        </arguments>
-      </model>
-      <collisionFlags>
-        <entry>0</entry>
-      </collisionFlags>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prize Vault/Floor, catwalk/Catwalk 03</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <model>
-        <name>world/tileset/prize_vault/floor/floor_base.dat</name>
-        <arguments>
-          <key class="java.lang.String">Model</key>
-          <value class="java.lang.String">catwalk_03</value>
-        </arguments>
-      </model>
-      <collisionFlags>
-        <entry>0</entry>
-      </collisionFlags>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prize Vault/Floor, catwalk/Catwalk 04</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <model>
-        <name>world/tileset/prize_vault/floor/floor_base.dat</name>
-        <arguments>
-          <key class="java.lang.String">Model</key>
-          <value class="java.lang.String">catwalk_04</value>
-        </arguments>
-      </model>
-      <collisionFlags>
-        <entry>0</entry>
-      </collisionFlags>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prize Vault/Floor, catwalk/Catwalk 05</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <model>
-        <name>world/tileset/prize_vault/floor/floor_base.dat</name>
-        <arguments>
-          <key class="java.lang.String">Model</key>
-          <value class="java.lang.String">catwalk_05</value>
-        </arguments>
-      </model>
-      <collisionFlags>
-        <entry>0</entry>
-      </collisionFlags>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prize Vault/Floor, catwalk/Catwalk 06</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <model>
-        <name>world/tileset/prize_vault/floor/floor_base.dat</name>
-        <arguments>
-          <key class="java.lang.String">Model</key>
-          <value class="java.lang.String">catwalk_06</value>
-        </arguments>
-      </model>
-      <collisionFlags>
-        <entry>0</entry>
-      </collisionFlags>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prize Vault/Floor, catwalk/Catwalk 07</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <model>
-        <name>world/tileset/prize_vault/floor/floor_base.dat</name>
-        <arguments>
-          <key class="java.lang.String">Model</key>
-          <value class="java.lang.String">catwalk_07</value>
-        </arguments>
-      </model>
-      <collisionFlags>
-        <entry>0</entry>
-      </collisionFlags>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prize Vault/Floor, catwalk/Catwalk 08</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <model>
-        <name>world/tileset/prize_vault/floor/floor_base.dat</name>
-        <arguments>
-          <key class="java.lang.String">Model</key>
-          <value class="java.lang.String">catwalk_08</value>
-        </arguments>
-      </model>
-      <collisionFlags>
-        <entry>0</entry>
-      </collisionFlags>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prize Vault/Floor, catwalk/Catwalk NE 01</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <model>
-        <name>world/tileset/prize_vault/floor/floor_base.dat</name>
-        <arguments>
-          <key class="java.lang.String">Model</key>
-          <value class="java.lang.String">catwalk_ne_01</value>
-        </arguments>
-      </model>
-      <collisionFlags>
-        <entry>0</entry>
-      </collisionFlags>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prize Vault/Floor, catwalk/Catwalk NE 02</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <model>
-        <name>world/tileset/prize_vault/floor/floor_base.dat</name>
-        <arguments>
-          <key class="java.lang.String">Model</key>
-          <value class="java.lang.String">catwalk_ne_02</value>
-        </arguments>
-      </model>
-      <collisionFlags>
-        <entry>0</entry>
-      </collisionFlags>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prize Vault/Floor, catwalk/Catwalk NE 03</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <model>
-        <name>world/tileset/prize_vault/floor/floor_base.dat</name>
-        <arguments>
-          <key class="java.lang.String">Model</key>
-          <value class="java.lang.String">catwalk_ne_03</value>
-        </arguments>
-      </model>
-      <collisionFlags>
-        <entry>0</entry>
-      </collisionFlags>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prize Vault/Floor, catwalk/Catwalk NE 04</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <model>
-        <name>world/tileset/prize_vault/floor/floor_base.dat</name>
-        <arguments>
-          <key class="java.lang.String">Model</key>
-          <value class="java.lang.String">catwalk_ne_04</value>
-        </arguments>
-      </model>
-      <collisionFlags>
-        <entry>0</entry>
-      </collisionFlags>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prize Vault/Floor, catwalk/Catwalk, solid</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <model>
-        <name>world/tileset/prize_vault/floor/floor_base.dat</name>
-        <arguments>
-          <key class="java.lang.String">Model</key>
-          <value class="java.lang.String">catwalk_09</value>
-        </arguments>
-      </model>
-      <collisionFlags>
-        <entry>0</entry>
-      </collisionFlags>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prize Vault/Floor, catwalk/Trim/Trim 01</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <model>
-        <name>world/tileset/prize_vault/floor/floor_base.dat</name>
-        <arguments>
-          <key class="java.lang.String">Model</key>
-          <value class="java.lang.String">trim2_01</value>
-        </arguments>
-      </model>
-      <collisionFlags>
-        <entry>0</entry>
-      </collisionFlags>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prize Vault/Floor, catwalk/Trim/Trim 02</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <model>
-        <name>world/tileset/prize_vault/floor/floor_base.dat</name>
-        <arguments>
-          <key class="java.lang.String">Model</key>
-          <value class="java.lang.String">trim2_02</value>
-        </arguments>
-      </model>
-      <collisionFlags>
-        <entry>0</entry>
-      </collisionFlags>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prize Vault/Floor, catwalk/Trim/Trim 03</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <model>
-        <name>world/tileset/prize_vault/floor/floor_base.dat</name>
-        <arguments>
-          <key class="java.lang.String">Model</key>
-          <value class="java.lang.String">trim2_03</value>
-        </arguments>
-      </model>
-      <collisionFlags>
-        <entry>0</entry>
-      </collisionFlags>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prize Vault/Floor, catwalk/Trim/Trim 04</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <model>
-        <name>world/tileset/prize_vault/floor/floor_base.dat</name>
-        <arguments>
-          <key class="java.lang.String">Model</key>
-          <value class="java.lang.String">trim2_04</value>
-        </arguments>
-      </model>
-      <collisionFlags>
-        <entry>0</entry>
-      </collisionFlags>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prize Vault/Floor, catwalk/Trim/Trim 05</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <model>
-        <name>world/tileset/prize_vault/floor/floor_base.dat</name>
-        <arguments>
-          <key class="java.lang.String">Model</key>
-          <value class="java.lang.String">trim2_05</value>
-        </arguments>
-      </model>
-      <collisionFlags>
-        <entry>0</entry>
-      </collisionFlags>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prize Vault/Floor, catwalk/Trim/Trim 06</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <model>
-        <name>world/tileset/prize_vault/floor/floor_base.dat</name>
-        <arguments>
-          <key class="java.lang.String">Model</key>
-          <value class="java.lang.String">trim2_06</value>
-        </arguments>
-      </model>
-      <collisionFlags>
-        <entry>0</entry>
-      </collisionFlags>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prize Vault/Floor, catwalk/Trim/Trim In 01</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <model>
-        <name>world/tileset/prize_vault/floor/floor_base.dat</name>
-        <arguments>
-          <key class="java.lang.String">Model</key>
-          <value class="java.lang.String">trim2_in_NE_01</value>
-        </arguments>
-      </model>
-      <collisionFlags>
-        <entry>0</entry>
-      </collisionFlags>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prize Vault/Floor, catwalk/Trim/Trim Out 01</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <model>
-        <name>world/tileset/prize_vault/floor/floor_base.dat</name>
-        <arguments>
-          <key class="java.lang.String">Model</key>
-          <value class="java.lang.String">trim2_out_NE_01</value>
-        </arguments>
-      </model>
-      <collisionFlags>
-        <entry>0</entry>
-      </collisionFlags>
-    </implementation>
-  </entry>
-  <entry>
     <name>Prize Vault/Ramp/Rail/Rail left 01</name>
     <implementation class="com.threerings.tudey.config.TileConfig$Original">
       <model>
@@ -40758,36 +40625,6 @@
         <entry>2</entry>
       </collisionFlags>
       <floorFlags>0</floorFlags>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prize Vault/Setpieces/Vault Door x4</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <width>4</width>
-      <model>
-        <name>world/tileset/prize_vault/wall/setpieces/model_compound_x4.dat</name>
-      </model>
-      <collisionFlags>
-        <entry>2, 2, 2, 2</entry>
-      </collisionFlags>
-      <directionFlags>
-        <entry>0, 0, 0, 0</entry>
-      </directionFlags>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prize Vault/Setpieces/Vault Door x5</name>
-    <implementation class="com.threerings.tudey.config.TileConfig$Original">
-      <width>5</width>
-      <model>
-        <name>world/tileset/prize_vault/wall/setpieces/model_compound_x5.dat</name>
-      </model>
-      <collisionFlags>
-        <entry>2, 2, 2, 2, 2</entry>
-      </collisionFlags>
-      <directionFlags>
-        <entry>0, 0, 0, 0, 0</entry>
-      </directionFlags>
     </implementation>
   </entry>
   <entry>
@@ -48723,7 +48560,27 @@
         <entry>0, 0</entry>
         <entry>0, 0</entry>
       </collisionFlags>
-    
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Fire</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">UP Animation</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/fire/animations/start_2x2.dat</name>
+                </value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">2x2</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -48748,7 +48605,27 @@
         <entry>0, 0, 0</entry>
         <entry>0, 0, 0</entry>
       </collisionFlags>
-    
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Fire</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">UP Animation</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/fire/animations/start_3x2.dat</name>
+                </value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">3x2</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -48774,7 +48651,27 @@
         <entry>0, 0, 0</entry>
         <entry>0, 0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Fire</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">UP Animation</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/fire/animations/start_3x3.dat</name>
+                </value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">3x3</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -48799,7 +48696,27 @@
         <entry>0, 0, 0, 0</entry>
         <entry>0, 0, 0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Fire</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">UP Animation</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/fire/animations/start_4x2.dat</name>
+                </value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">4x2</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -48826,7 +48743,27 @@
         <entry>0, 0, 0, 0</entry>
         <entry>0, 0, 0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Fire</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">UP Animation</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/fire/animations/start_4x4.dat</name>
+                </value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">4x4</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -48851,7 +48788,27 @@
         <entry>0, 0, 0, 0, 0</entry>
         <entry>0, 0, 0, 0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Fire</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">UP Animation</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/fire/animations/start_5x2.dat</name>
+                </value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">5x2</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -48879,7 +48836,27 @@
         <entry>0, 0, 0, 0, 0</entry>
         <entry>0, 0, 0, 0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Fire</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">UP Animation</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/fire/animations/start_5x5.dat</name>
+                </value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">5x5</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -48904,7 +48881,27 @@
         <entry>0, 0, 0, 0, 0, 0</entry>
         <entry>0, 0, 0, 0, 0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Fire</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">UP Animation</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/fire/animations/start_6x2.dat</name>
+                </value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">6x2</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -48931,7 +48928,27 @@
         <entry>0, 0, 0, 0, 0, 0</entry>
         <entry>0, 0, 0, 0, 0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Fire</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">UP Animation</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/fire/animations/start_6x4.dat</name>
+                </value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">6x4</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -48956,7 +48973,27 @@
         <entry>0, 0</entry>
         <entry>0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Freeze</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">UP Animation</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/freeze/animations/start_2x2.dat</name>
+                </value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">2x2</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -48981,7 +49018,27 @@
         <entry>0, 0, 0</entry>
         <entry>0, 0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Freeze</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">UP Animation</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/freeze/animations/start_3x2.dat</name>
+                </value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">3x2</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -49007,7 +49064,27 @@
         <entry>0, 0, 0</entry>
         <entry>0, 0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Freeze</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">UP Animation</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/freeze/animations/start_3x3.dat</name>
+                </value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">3x3</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -49032,7 +49109,27 @@
         <entry>0, 0, 0, 0, 0</entry>
         <entry>0, 0, 0, 0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Freeze</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">UP Animation</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/freeze/animations/start_5x2.dat</name>
+                </value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">5x2</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -49060,7 +49157,27 @@
         <entry>0, 0, 0, 0, 0</entry>
         <entry>0, 0, 0, 0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Freeze</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">UP Animation</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/freeze/animations/start_5x5.dat</name>
+                </value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">5x5</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -50107,7 +50224,27 @@
         <entry><!--empty--></entry>
         <entry><!--empty--></entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/PVP/Blast Arena/Spikes</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Model</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/spikes/spikes/spikes_1x1.dat</name>
+                </value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">1x1</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -50130,7 +50267,27 @@
       <collisionFlags>
         <entry>0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/PVP/Blast Arena/Spikes</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Model</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/spikes/spikes/spikes_2x1.dat</name>
+                </value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">2x1</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -50155,7 +50312,27 @@
         <entry>0, 0</entry>
         <entry>0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/PVP/Blast Arena/Spikes</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Model</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/spikes/spikes/spikes_2x2.dat</name>
+                </value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">2x2</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -50180,7 +50357,27 @@
         <entry>0, 0, 0</entry>
         <entry>0, 0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/PVP/Blast Arena/Spikes</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Model</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/spikes/spikes/spikes_3x2.dat</name>
+                </value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">3x2</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -50206,7 +50403,27 @@
         <entry>0, 0, 0</entry>
         <entry>0, 0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/PVP/Blast Arena/Spikes</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Model</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/spikes/spikes/spikes_3x3.dat</name>
+                </value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">3x3</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -50231,7 +50448,27 @@
         <entry>0, 0, 0, 0, 0</entry>
         <entry>0, 0, 0, 0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/PVP/Blast Arena/Spikes</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Model</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/spikes/spikes/spikes_5x2.dat</name>
+                </value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">5x2</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -50259,7 +50496,27 @@
         <entry>0, 0, 0, 0, 0</entry>
         <entry>0, 0, 0, 0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/PVP/Blast Arena/Spikes</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Model</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/spikes/spikes/spikes_5x5.dat</name>
+                </value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">5x5</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -50284,7 +50541,27 @@
         <entry>0, 0</entry>
         <entry>0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Poison</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">UP Animation</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/poison/animations/start_2x2.dat</name>
+                </value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">2x2</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -50309,7 +50586,27 @@
         <entry>0, 0, 0</entry>
         <entry>0, 0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Poison</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">UP Animation</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/poison/animations/start_3x2.dat</name>
+                </value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">3x2</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -50335,7 +50632,27 @@
         <entry>0, 0, 0</entry>
         <entry>0, 0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Poison</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">UP Animation</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/poison/animations/start_3x3.dat</name>
+                </value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">3x3</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -50360,7 +50677,27 @@
         <entry>0, 0, 0, 0, 0</entry>
         <entry>0, 0, 0, 0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Poison</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">UP Animation</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/poison/animations/start_5x2.dat</name>
+                </value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">5x2</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -50388,7 +50725,27 @@
         <entry>0, 0, 0, 0, 0</entry>
         <entry>0, 0, 0, 0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Poison</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">UP Animation</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/poison/animations/start_5x5.dat</name>
+                </value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">5x5</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -50413,7 +50770,27 @@
         <entry>0, 0</entry>
         <entry>0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Shock</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">UP Animation</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/shock/animations/start_2x2.dat</name>
+                </value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">2x2</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -50438,7 +50815,27 @@
         <entry>0, 0, 0</entry>
         <entry>0, 0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Shock</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">UP Animation</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/shock/animations/start_3x2.dat</name>
+                </value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">3x2</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -50464,7 +50861,27 @@
         <entry>0, 0, 0</entry>
         <entry>0, 0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Shock</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">UP Animation</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/shock/animations/start_3x3.dat</name>
+                </value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">3x3</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -50489,7 +50906,27 @@
         <entry>0, 0, 0, 0, 0</entry>
         <entry>0, 0, 0, 0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Shock</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">UP Animation</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/shock/animations/start_5x2.dat</name>
+                </value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">5x2</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -50517,7 +50954,27 @@
         <entry>0, 0, 0, 0, 0</entry>
         <entry>0, 0, 0, 0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Shock</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">UP Animation</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/shock/animations/start_5x5.dat</name>
+                </value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">5x5</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -50540,7 +50997,27 @@
         <entry><!--empty--></entry>
         <entry><!--empty--></entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Spikes</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Model</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/spikes/spikes/spikes_1x1.dat</name>
+                </value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">1x1</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -50563,7 +51040,27 @@
       <collisionFlags>
         <entry>0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Spikes</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Model</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/spikes/spikes/spikes_2x1.dat</name>
+                </value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">2x1</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -50588,7 +51085,27 @@
         <entry>0, 0</entry>
         <entry>0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Spikes</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Model</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/spikes/spikes/spikes_2x2.dat</name>
+                </value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">2x2</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -50613,7 +51130,27 @@
         <entry>0, 0, 0</entry>
         <entry>0, 0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Spikes</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Model</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/spikes/spikes/spikes_3x2.dat</name>
+                </value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">3x2</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -50639,7 +51176,27 @@
         <entry>0, 0, 0</entry>
         <entry>0, 0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Spikes</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Model</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/spikes/spikes/spikes_3x3.dat</name>
+                </value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">3x3</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -50664,7 +51221,27 @@
         <entry>0, 0, 0, 0, 0</entry>
         <entry>0, 0, 0, 0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Spikes</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Model</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/spikes/spikes/spikes_5x2.dat</name>
+                </value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">5x2</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -50692,7 +51269,27 @@
         <entry>0, 0, 0, 0, 0</entry>
         <entry>0, 0, 0, 0, 0</entry>
       </collisionFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Startup">
+          <action class="com.threerings.tudey.config.ActionConfig$SpawnActor">
+            <actor>
+              <name>Dynamic/Traps and Hazards/Floor/Spikes</name>
+              <arguments>
+                <key class="java.lang.String">Cycle</key>
+                <value class="com.threerings.projectx.dungeon.config.DungeonActorConfig$Trap$Cycle">A</value>
+                <key class="java.lang.String">Model</key>
+                <value class="com.threerings.config.ConfigReference">
+                  <name>world/dynamic/traps_n_hazards/floor/spikes/spikes/spikes_5x5.dat</name>
+                </value>
+                <key class="java.lang.String">Tag</key>
+                <value class="java.lang.String">(Signal Tag)</value>
+                <key class="java.lang.String">Warning and Damage Size</key>
+                <value class="java.lang.String">5x5</value>
+              </arguments>
+            </actor>
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>
@@ -50705,7 +51302,12 @@
         <entry>0</entry>
       </collisionFlags>
       <floorFlags>0</floorFlags>
-      
+      <handlers>
+        <entry class="com.threerings.tudey.config.HandlerConfig$Intersection">
+          <action class="com.threerings.projectx.dungeon.config.DungeonActionConfig$DamageRegion">
+          </action>
+        </entry>
+      </handlers>
     </implementation>
   </entry>
   <entry>

@@ -302,15 +302,7 @@
       <entry class="com.threerings.config.Parameter$Direct">
         <name>Color</name>
         <paths>implementation.color</paths>
-      </entry>
-      <entry class="com.threerings.config.Parameter$Direct">
-        <name>Trigger Condition</name>
-        <paths>implementation.handlers[0].action.condition.conditions[1].conditions</paths>
-      </entry>
-      <entry class="com.threerings.config.Parameter$Direct">
-        <name>Trigger Action</name>
-        <paths>implementation.handlers[0].action.action</paths>
-      </entry>
+      </entry>      
     </parameters>
     
   </entry>
@@ -407,10 +399,7 @@
   <entry>
     <name>Player Enter/Spawn Activate</name>
     <parameters>
-      <entry class="com.threerings.config.Parameter$Direct">
-        <name>Trigger Action</name>
-        <paths>implementation.area["Trigger Action"]</paths>
-      </entry>
+      
     </parameters>
     <implementation class="com.threerings.tudey.config.AreaConfig$Derived">
       <area>
