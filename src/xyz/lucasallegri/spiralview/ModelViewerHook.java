@@ -3,15 +3,9 @@ package xyz.lucasallegri.spiralview;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 
 import com.threerings.opengl.model.tools.ModelViewer;
 
-import mdlaf.MaterialLookAndFeel;
-import mdlaf.themes.JMarsDarkTheme;
-import mdlaf.themes.MaterialLiteTheme;
-import mdlaf.themes.MaterialOceanicTheme;
 import xyz.lucasallegri.spiralview.actions.ClearPrefsAction;
 import xyz.lucasallegri.spiralview.actions.RestorePrefsAction;
 import xyz.lucasallegri.spiralview.actions.SavePrefsAction;
@@ -20,7 +14,6 @@ import xyz.lucasallegri.spiralview.actions.SnapshotAction;
 public class ModelViewerHook extends ModelViewer {
 	
 	public ModelViewerHook(String model) {
-		
 		super(model);
 		JMenuBar mbar = this._frame.getJMenuBar();
 		JMenu file = mbar.getMenu(0);
@@ -33,14 +26,6 @@ public class ModelViewerHook extends ModelViewer {
 	}
 	
 	public static void main(String[] args) {
-		
-		try {
-			UIManager.setLookAndFeel(new MaterialLookAndFeel());
-			MaterialLookAndFeel.changeTheme(new MaterialLiteTheme());
-		} catch (UnsupportedLookAndFeelException e) {
-			e.printStackTrace ();
-		}
-		
 		new ModelViewerHook(args.length > 0 ? args[0] : null).startup();
 	}
 

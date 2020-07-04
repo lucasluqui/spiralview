@@ -1,21 +1,11 @@
 package xyz.lucasallegri.spiralview;
 
-import com.threerings.config.ConfigManager;
-import com.threerings.media.image.ColorPository;
-import com.threerings.projectx.dungeon.tools.SpawnTableTool;
-import com.threerings.projectx.tools.ProjectXConfigEditor;
-import com.threerings.resource.ResourceManager;
-import com.threerings.util.MessageManager;
-import com.threerings.util.O;
+import com.threerings.opengl.effect.tools.ParticleEditor;
 
 public class ParticleEditorHook {
 	
 	public static void main(String[] args) {
-		ResourceManager rsrcmgr = new ResourceManager("rsrc/");
-		MessageManager msgmgr = new MessageManager("rsrc.i18n");
-		O _msgmgr = new O("rsrc.i18n");
-		ConfigManager cfgmgr = new ConfigManager(rsrcmgr, msgmgr, "config/");
-		new ProjectXConfigEditor(_msgmgr, cfgmgr, new ColorPository());
+		new ParticleEditor(args.length > 0 ? args[0] : null).startup();
 	}
 
 }
