@@ -1,4 +1,4 @@
-package xyz.lucasallegri.spiralview;
+package net.lucasallegri.spiralview;
 
 import com.threerings.opengl.gui.tools.InterfaceTester;
 

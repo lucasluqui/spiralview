@@ -1,4 +1,4 @@
-package xyz.lucasallegri.spiralview.actions;
+package net.lucasallegri.spiralview.actions;
 
 /*
  * 		Original author: onyxbits (spiral.onyxbits.de)

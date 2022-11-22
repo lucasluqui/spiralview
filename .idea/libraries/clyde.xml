@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="clyde">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/code/clyde.jar!/" />
+      <root url="jar://$PROJECT_DIR$/code/narya-1.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/code/nenya-1.6.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/code/ooo-util-1.4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/code/rest-lib.jar!/" />
+      <root url="jar://$PROJECT_DIR$/code/vilya-1.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/code/commons-io-2.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/code/narya-1.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/code/rest-lib.jar!/" />
+    </SOURCES>
+  </library>
+</component>
