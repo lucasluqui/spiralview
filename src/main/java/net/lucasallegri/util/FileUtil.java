@@ -21,9 +21,5 @@ public class FileUtil {
 		
 		return fileNames;
 	}
-	
-	public static String getJVMDirectoryName() {
-		return SystemUtil.isWindows() ? "java_vm" : "java";
-	}
 
 }
