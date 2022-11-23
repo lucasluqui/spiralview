@@ -13,6 +13,9 @@ public class FileUtil {
     File[] fileList = folder.listFiles();
     List<String> fileNames = new ArrayList<String>();
 
+    // The file list is null and so we just return the empty list.
+    if(fileList == null) return fileNames;
+
     for(int i = 0; i < Objects.requireNonNull(fileList).length; i++) {
       if(!fileList[i].isDirectory() && fileList[i].toString().contains(ext)) {
         fileNames.add(fileList[i].getName());
