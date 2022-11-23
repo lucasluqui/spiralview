@@ -45,17 +45,11 @@ public class ViewApp implements Runnable {
 	}
 	
 	private static boolean isRunningInRootFolder() {
-		if (new File("getdown-pro.jar").exists()) {
-			return true;
-		}
-		return false;
+		return new File("getdown-pro.jar").exists();
 	}
 	
 	private static boolean hasCleanConfigs() {
-		if(FileUtil.fileNamesInDirectory(USER_DIR + "\\rsrc\\config", ".xml").size() > 0) {
-			return false;
-		}
-		return true;
+		return FileUtil.fileNamesInDirectory(USER_DIR + "\\rsrc\\config", ".xml").size() <= 0;
 	}
 	
 	private static void pushError(String message) {
