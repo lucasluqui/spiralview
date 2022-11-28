@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java class="com.threerings.export.XMLImporter" version="1.0">
 <object class="[Lcom.threerings.tudey.config.SceneGlobalConfig;">
+ 
   <entry>
     <name>Camera</name>
     <parameters>
@@ -24,24 +25,6 @@
     <implementation class="com.threerings.tudey.config.SceneGlobalConfig$Camera">
     </implementation>
   </entry>
-  <entry>
-    <name>Dungeon Modifiers/Party Monster Damage Max Boost</name>
-    <parameters>
-      <entry class="com.threerings.config.Parameter$Direct">
-        <name>Max Bonus</name>
-        <paths>implementation.max_bonus</paths>
-      </entry>
-    </parameters>
-      </entry>
-  <entry>
-    <name>Dungeon Modifiers/Party Monster HP Max Boost</name>
-    <parameters>
-      <entry class="com.threerings.config.Parameter$Direct">
-        <name>Max Bonus</name>
-        <paths>implementation.max_bonus</paths>
-      </entry>
-    </parameters>
-      </entry>
   <entry>
     <name>Environment/Ambient</name>
     <parameters>
@@ -8802,6 +8785,15 @@
     </implementation>
   </entry>
   <entry>
+    <name>Environment/Custom/Lockdown/ZoomOut</name>
+    <implementation class="com.threerings.tudey.config.SceneGlobalConfig$Camera">
+      <camera>
+        <zoom>1</zoom>
+        <coords>0.0, 0.9599311, 24.0</coords>
+      </camera>
+    </implementation>
+  </entry>
+  <entry>
     <name>Environment/Custom/Missions/Prestige/Ghosts in the Machine/Fog</name>
     <implementation class="com.threerings.tudey.config.SceneGlobalConfig$Derived">
       <sceneGlobal>
@@ -10589,6 +10581,177 @@
       </model>
     </implementation>
   </entry>
+  <entry>
+    <name>Environment/Custom/Town/Guild Hall/White/Background Color</name>
+    <implementation class="com.threerings.tudey.config.SceneGlobalConfig$Derived">
+      <sceneGlobal>
+        <name>Environment/Background Color</name>
+        <arguments>
+          <key class="java.lang.String">Color</key>
+          <value class="com.threerings.opengl.renderer.Color4f">0.078431375, 0.07058824, 0.07450981, 1.0</value>
+        </arguments>
+      </sceneGlobal>
+    </implementation>
+  </entry>
+  <entry>
+    <name>Environment/Custom/Town/Guild Hall/White/Fog</name>
+    <implementation class="com.threerings.tudey.config.SceneGlobalConfig$Derived">
+      <sceneGlobal>
+        <name>Environment/Fog</name>
+        <arguments>
+          <key class="java.lang.String">State</key>
+          <value class="com.threerings.opengl.renderer.config.FogStateConfig$Linear">
+            <color>0.1764706, 0.1764706, 0.23137255, 0.0</color>
+            <start>15.0</start>
+            <end>40.0</end>
+          </value>
+        </arguments>
+      </sceneGlobal>
+    </implementation>
+  </entry>
+  <entry depth="1">
+    <name>Environment/Custom/Town/Guild Hall/White/Light Set</name>
+    <parameters>
+      <entry class="com.threerings.config.Parameter$Choice" depth="3">
+        <outer rdepth="1"/>
+        <name>Variant</name>
+        <directs>
+          <entry>
+            <name>Ambient - Color</name>
+            <paths>implementation.scene_global["Models"][0].model["Color"]</paths>
+          </entry>
+          <entry>
+            <name>Directional 1 - Color</name>
+            <paths>implementation.scene_global["Models"][1].model["Light"].colors.diffuse</paths>
+          </entry>
+          <entry>
+            <name>Directional 2 - Color</name>
+            <paths>implementation.scene_global["Models"][2].model["Light"].colors.diffuse</paths>
+          </entry>
+        </directs>
+        <options>
+          <entry>
+            <outer rdepth="3"/>
+            <name>Clockworks Default</name>
+            <arguments>
+              <key class="java.lang.String">Ambient - Color</key>
+              <value class="com.threerings.opengl.renderer.Color4f">0.14117648, 0.24705882, 0.3882353, 1.0</value>
+              <key class="java.lang.String">Directional 1 - Color</key>
+              <value class="com.threerings.opengl.renderer.Color4f">0.34901962, 0.19215687, 0.03137255, 1.0</value>
+              <key class="java.lang.String">Directional 2 - Color</key>
+              <value class="com.threerings.opengl.renderer.Color4f">0.20784314, 0.24705882, 0.2901961, 1.0</value>
+            </arguments>
+          </entry>
+          <entry>
+            <outer rdepth="3"/>
+            <name>Clockworks Fire Adjust</name>
+            <arguments>
+              <key class="java.lang.String">Ambient - Color</key>
+              <value class="com.threerings.opengl.renderer.Color4f">0.18039216, 0.23529412, 0.3882353, 1.0</value>
+              <key class="java.lang.String">Directional 1 - Color</key>
+              <value class="com.threerings.opengl.renderer.Color4f">0.34901962, 0.20784314, 0.06666667, 1.0</value>
+              <key class="java.lang.String">Directional 2 - Color</key>
+              <value class="com.threerings.opengl.renderer.Color4f">0.28235295, 0.33333334, 0.3882353, 1.0</value>
+            </arguments>
+          </entry>
+          <entry>
+            <outer rdepth="3"/>
+            <name>Clockworks Freeze Adjust</name>
+            <arguments>
+              <key class="java.lang.String">Ambient - Color</key>
+              <value class="com.threerings.opengl.renderer.Color4f">0.14901961, 0.20784314, 0.2901961, 1.0</value>
+              <key class="java.lang.String">Directional 1 - Color</key>
+              <value class="com.threerings.opengl.renderer.Color4f">0.3019608, 0.16470589, 0.02745098, 1.0</value>
+              <key class="java.lang.String">Directional 2 - Color</key>
+              <value class="com.threerings.opengl.renderer.Color4f">0.23921569, 0.2627451, 0.2901961, 1.0</value>
+            </arguments>
+          </entry>
+          <entry>
+            <outer rdepth="3"/>
+            <name>Clockworks Poison Adjust</name>
+            <arguments>
+              <key class="java.lang.String">Ambient - Color</key>
+              <value class="com.threerings.opengl.renderer.Color4f">0.19215687, 0.25490198, 0.34117648, 1.0</value>
+              <key class="java.lang.String">Directional 1 - Color</key>
+              <value class="com.threerings.opengl.renderer.Color4f">0.3019608, 0.16470589, 0.02745098, 1.0</value>
+              <key class="java.lang.String">Directional 2 - Color</key>
+              <value class="com.threerings.opengl.renderer.Color4f">0.20784314, 0.2901961, 0.20784314, 1.0</value>
+            </arguments>
+          </entry>
+          <entry>
+            <outer rdepth="3"/>
+            <name>Clockworks Shock Adjust</name>
+            <arguments>
+              <key class="java.lang.String">Ambient - Color</key>
+              <value class="com.threerings.opengl.renderer.Color4f">0.19215687, 0.25490198, 0.34117648, 1.0</value>
+              <key class="java.lang.String">Directional 1 - Color</key>
+              <value class="com.threerings.opengl.renderer.Color4f">0.2509804, 0.16078432, 0.07058824, 1.0</value>
+              <key class="java.lang.String">Directional 2 - Color</key>
+              <value class="com.threerings.opengl.renderer.Color4f">0.21960784, 0.25490198, 0.2901961, 1.0</value>
+            </arguments>
+          </entry>
+        </options>
+        <choice>Clockworks Default</choice>
+      </entry>
+    </parameters>
+    <implementation class="com.threerings.tudey.config.SceneGlobalConfig$Derived">
+      <sceneGlobal>
+        <name>Environment/Light Set</name>
+        <arguments>
+          <key class="java.lang.String">Models</key>
+          <value class="[Lcom.threerings.opengl.model.config.CompoundConfig$ComponentModel;">
+            <entry>
+              <model>
+                <name>world/environment/global_ambient.dat</name>
+                <arguments>
+                  <key class="java.lang.String">Color</key>
+                  <value class="com.threerings.opengl.renderer.Color4f">0.24705882, 0.24705882, 0.24705882, 1.0</value>
+                </arguments>
+              </model>
+            </entry>
+            <entry>
+              <model>
+                <name>world/environment/global_light.dat</name>
+                <arguments>
+                  <key class="java.lang.String">Light</key>
+                  <value class="com.threerings.opengl.renderer.config.LightConfig$Directional">
+                    <colors>
+                      <diffuse>0.36078432, 0.32156864, 0.3019608, 1.0</diffuse>
+                      <specular>0.0, 0.0, 0.0, 1.0</specular>
+                    </colors>
+                    <direction>-0.892399, 0.23911794, 0.38268346</direction>
+                  </value>
+                </arguments>
+              </model>
+            </entry>
+            <entry>
+              <model>
+                <name>world/environment/global_light.dat</name>
+                <arguments>
+                  <key class="java.lang.String">Light</key>
+                  <value class="com.threerings.opengl.renderer.config.LightConfig$Directional">
+                    <colors>
+                      <diffuse>0.2901961, 0.20784314, 0.20784314, 1.0</diffuse>
+                      <specular>0.0, 0.0, 0.0, 1.0</specular>
+                    </colors>
+                    <direction>0.59851885, -0.7942601, 0.104528464</direction>
+                  </value>
+                </arguments>
+              </model>
+            </entry>
+          </value>
+        </arguments>
+      </sceneGlobal>
+    </implementation>
+  </entry>
+  <entry>
+    <name>Environment/Custom/Town/Guild Hall/White/Skybox - Clockworks, Tier1</name>
+    <implementation class="com.threerings.tudey.config.SceneGlobalConfig$EnvironmentModel">
+      <model>
+        <name>world/skybox/clockwork_tunnels/tier1/model_night.dat</name>
+      </model>
+    </implementation>
+  </entry>
   <entry depth="1">
     <name>Environment/Custom/Town/Haven/Default/Ambient</name>
     <parameters>
@@ -10751,7 +10914,7 @@
               <key class="java.lang.String">Elevation</key>
               <value class="java.lang.Float">0.6981317</value>
               <key class="java.lang.String">Far</key>
-              <value class="java.lang.Float">75.0</value>
+              <value class="java.lang.Float">1500.0</value>
               <key class="java.lang.String">Near</key>
               <value class="java.lang.Float">0.85</value>
             </arguments>
@@ -11499,6 +11662,22 @@
           <value class="java.lang.String">Haven, Winter</value>
         </arguments>
       </model>
+    </implementation>
+  </entry>
+  <entry>
+    <name>Environment/Custom/Town/Rescue Camp/Camera</name>
+    <implementation class="com.threerings.tudey.config.SceneGlobalConfig$Camera">
+      <camera>
+        <far>1000.0</far>
+        <coords>0.0, 0.7853982, 9.99</coords>
+      </camera>
+      <cameras>
+        <entry>
+          <zoom>1</zoom>
+          <far>1000.0</far>
+          <coords>0.0, 0.61086524, 6.5</coords>
+        </entry>
+      </cameras>
     </implementation>
   </entry>
   <entry>
@@ -13658,139 +13837,6 @@
       </sceneGlobal>
     </implementation>
   </entry>
-  <entry>
-    <name>Prefabs/ArenaData</name>
-    <parameters>
-      <entry class="com.threerings.config.Parameter$Direct">
-        <name>PowerUps</name>
-        <paths>implementation.power_ups</paths>
-      </entry>
-      <entry class="com.threerings.config.Parameter$Direct">
-        <name>PowerUp Frequency</name>
-        <paths>implementation.power_up_frequency</paths>
-      </entry>
-    </parameters>
-    <implementation class="com.threerings.projectx.dungeon.arena.config.ArenaSceneGlobalConfig$ArenaData">
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prefabs/ArenaNameOverride</name>
-    <parameters>
-      <entry class="com.threerings.config.Parameter$Direct">
-        <name>Name</name>
-        <paths>implementation.name</paths>
-      </entry>
-    </parameters>
-    <implementation class="com.threerings.projectx.dungeon.arena.config.ArenaSceneGlobalConfig$ArenaNameOverride">
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prefabs/ArenaPrefabData</name>
-    <parameters>
-      <entry class="com.threerings.config.Parameter$Direct">
-        <name>Team Only</name>
-        <paths>implementation.team_only</paths>
-      </entry>
-      <entry class="com.threerings.config.Parameter$Direct">
-        <name>Large Game Only</name>
-        <paths>implementation.large_game_only</paths>
-      </entry>
-    </parameters>
-    <implementation class="com.threerings.projectx.dungeon.arena.config.ArenaSceneGlobalConfig$ArenaPrefabData">
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prefabs/PrefabData</name>
-    <parameters>
-      <entry class="com.threerings.config.Parameter$Direct">
-        <name>Tags</name>
-        <paths>implementation.tags.derived</paths>
-      </entry>
-      <entry class="com.threerings.config.Parameter$Direct">
-        <name>ExclusiveTags</name>
-        <paths>implementation.exclusive_tags.derived</paths>
-      </entry>
-      <entry class="com.threerings.config.Parameter$Direct">
-        <name>Rarity</name>
-        <paths>implementation.rarity</paths>
-      </entry>
-      <entry class="com.threerings.config.Parameter$Direct">
-        <name>Trivial</name>
-        <paths>implementation.trivial</paths>
-      </entry>
-      <entry class="com.threerings.config.Parameter$Direct">
-        <name>NoTransition</name>
-        <paths>implementation.noTransition</paths>
-      </entry>
-      <entry class="com.threerings.config.Parameter$Direct">
-        <name>MinDepth</name>
-        <paths>implementation.minDepth</paths>
-      </entry>
-      <entry class="com.threerings.config.Parameter$Direct">
-        <name>MaxDepth</name>
-        <paths>implementation.maxDepth</paths>
-      </entry>
-      <entry class="com.threerings.config.Parameter$Direct">
-        <name>Servers</name>
-        <paths>implementation.servers</paths>
-      </entry>
-      <entry class="com.threerings.config.Parameter$Direct">
-        <name>MissionTag</name>
-        <paths>implementation.missionTag</paths>
-      </entry>
-    </parameters>
-    <implementation class="com.threerings.projectx.dungeon.config.DungeonSceneGlobalConfig$PrefabData">
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prefabs/PrefabLayerData</name>
-    <parameters>
-      <entry class="com.threerings.config.Parameter$Direct">
-        <name>Additional Tags</name>
-        <paths>implementation.tags.derived</paths>
-      </entry>
-      <entry class="com.threerings.config.Parameter$Direct">
-        <name>Rarity Override</name>
-        <paths>implementation.rarity</paths>
-      </entry>
-      <entry class="com.threerings.config.Parameter$Direct">
-        <name>MinDepth Override</name>
-        <paths>implementation.minDepth</paths>
-      </entry>
-      <entry class="com.threerings.config.Parameter$Direct">
-        <name>MaxDepth Override</name>
-        <paths>implementation.maxDepth</paths>
-      </entry>
-      <entry class="com.threerings.config.Parameter$Direct">
-        <name>Servers Override</name>
-        <paths>implementation.servers</paths>
-      </entry>
-      <entry class="com.threerings.config.Parameter$Direct">
-        <name>MissionTag Override</name>
-        <paths>implementation.missionTag</paths>
-      </entry>
-    </parameters>
-    <implementation class="com.threerings.projectx.dungeon.config.DungeonSceneGlobalConfig$PrefabLayerData">
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prefabs/PrefabLayerData-Tier1</name>
-    <implementation class="com.threerings.projectx.dungeon.config.DungeonSceneGlobalConfig$PrefabLayerData">
-      <maxDepth>7</maxDepth>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prefabs/PrefabLayerData-Tier2</name>
-    <implementation class="com.threerings.projectx.dungeon.config.DungeonSceneGlobalConfig$PrefabLayerData">
-      <minDepth>8</minDepth>
-      <maxDepth>17</maxDepth>
-    </implementation>
-  </entry>
-  <entry>
-    <name>Prefabs/PrefabLayerData-Tier3</name>
-    <implementation class="com.threerings.projectx.dungeon.config.DungeonSceneGlobalConfig$PrefabLayerData">
-      <minDepth>18</minDepth>
-    </implementation>
-  </entry>
+
 </object>
 </java>
