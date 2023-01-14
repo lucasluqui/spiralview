@@ -3,7 +3,6 @@ package net.lucasallegri.util;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class FileUtil {
 
@@ -13,12 +12,12 @@ public class FileUtil {
     File[] fileList = folder.listFiles();
     List<String> fileNames = new ArrayList<String>();
 
-    // The file list is null and so we just return the empty list.
+    // The file list is null, and so we just return the empty list.
     if(fileList == null) return fileNames;
 
-    for(int i = 0; i < Objects.requireNonNull(fileList).length; i++) {
-      if(!fileList[i].isDirectory() && fileList[i].toString().contains(ext)) {
-        fileNames.add(fileList[i].getName());
+    for (File file : fileList) {
+      if (!file.isDirectory() && file.toString().contains(ext)) {
+        fileNames.add(file.getName());
       }
     }
 

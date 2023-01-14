@@ -14,7 +14,7 @@ import net.lucasallegri.util.*;
 
 public class ViewApp implements Runnable {
 
-  private static final String VERSION = "1.8";
+  private static final String VERSION = "1.8b";
   private static final String USER_DIR = System.getProperty("user.dir");
   private static String _targetClass = "net.lucasallegri.spiralview.ModelViewerHook";
   private int _chosen = 0;
@@ -41,7 +41,9 @@ public class ViewApp implements Runnable {
     ResourceUtil.setPreferredResourceDir(rsrcDir.getAbsolutePath());
 
     resolveTargetedClass(_chosen);
-    run(createRuntimeCommand(_targetClass), true);
+    String[] output = runAndCapture(createRuntimeCommand(_targetClass));
+    System.out.println(output[0]);
+    System.out.println(output[1]);
   }
 
   private static boolean isRunningInRootFolder() {
@@ -62,7 +64,7 @@ public class ViewApp implements Runnable {
   }
 
   private static int chooseEditorDialog() {
-    Object[] editors = {"Model Viewer", "Level Editor", "Interface Tester", "Particle Editor"};
+    Object[] editors = { "Model Viewer", "Level Editor", "Interface Tester", "Particle Editor" };
 
     int n = JOptionPane.showOptionDialog(null,
         "Choose an editor to start",
@@ -93,7 +95,8 @@ public class ViewApp implements Runnable {
   }
 
   private String[] createRuntimeCommand(String targetClass) {
-    String javaVMPath = SystemUtil.isWindows() ? ".\\java_vm\\bin\\java.exe" : "./java/bin/java";
+    //String javaVMPath = SystemUtil.isWindows() ? ".\\java_vm\\bin\\java.exe" : "./java/bin/java";
+    String javaVMPath = SystemUtil.isWindows() ? "java" : "java";
     String libSeparator = SystemUtil.isWindows() ? ";" : ":";
 
     return new String[] {
