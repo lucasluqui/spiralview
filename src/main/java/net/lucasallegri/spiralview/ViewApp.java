@@ -1,16 +1,22 @@
 package net.lucasallegri.spiralview;
 
 import java.awt.EventQueue;
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.Charset;
+import java.nio.file.Files;
 
 import javax.swing.JOptionPane;
 import com.threerings.util.ResourceUtil;
 import org.apache.commons.io.IOUtils;
 
 import net.lucasallegri.util.*;
+import org.apache.commons.lang3.exception.ExceptionUtils;
+
+import static net.lucasallegri.spiralview.Log.log;
 
 public class ViewApp implements Runnable {
 
@@ -24,6 +30,9 @@ public class ViewApp implements Runnable {
   }
 
   public void run() {
+    setupFileLogging();
+    logVMInfo();
+
     if(!isRunningInRootFolder()) pushWarning("You need to place this .jar inside your Spiral Knights main directory.");
     if(!hasCleanConfigs()) pushError("There are .xml files in your rsrc/config directory, spiralview can not proceed.");
 
@@ -34,7 +43,7 @@ public class ViewApp implements Runnable {
         }
       });
     } catch (InvocationTargetException | InterruptedException e) {
-      e.printStackTrace();
+      log.error(ExceptionUtils.getStackTrace(e));
     }
 
     File rsrcDir = new File(new File(USER_DIR), "rsrc");
@@ -42,8 +51,8 @@ public class ViewApp implements Runnable {
 
     resolveTargetedClass(_chosen);
     String[] output = runAndCapture(createRuntimeCommand(_targetClass));
-    System.out.println(output[0]);
-    System.out.println(output[1]);
+    log.info(output[0]);
+    log.info(output[1]);
   }
 
   private static boolean isRunningInRootFolder() {
@@ -96,7 +105,7 @@ public class ViewApp implements Runnable {
 
   private String[] createRuntimeCommand(String targetClass) {
     //String javaVMPath = SystemUtil.isWindows() ? ".\\java_vm\\bin\\java.exe" : "./java/bin/java";
-    String javaVMPath = SystemUtil.isWindows() ? "java" : "java";
+    String javaVMPath = "java";
     String libSeparator = SystemUtil.isWindows() ? ";" : ":";
 
     return new String[] {
@@ -121,7 +130,7 @@ public class ViewApp implements Runnable {
     try {
       process = Runtime.getRuntime().exec(command);
     } catch (IOException e) {
-      e.printStackTrace();
+      log.error(ExceptionUtils.getStackTrace(e));
     } finally {
 
       // No need to keep the process alive.
@@ -140,13 +149,43 @@ public class ViewApp implements Runnable {
       String stderr = IOUtils.toString(process.getErrorStream(), Charset.defaultCharset());
       return new String[] {stdout, stderr};
     } catch (IOException e) {
-      e.printStackTrace();
+      log.error(ExceptionUtils.getStackTrace(e));
     } finally {
 
       // No need to keep the process active.
       if(process != null) process.destroy();
     }
     return new String[1];
+  }
+
+  private void setupFileLogging() {
+    File logFile = new File("spiralview.log");
+    File oldLogFile = new File("old-spiralview.log");
+
+    if (logFile.exists()) {
+      logFile.renameTo(oldLogFile);
+    }
+
+    try {
+      PrintStream printStream = new PrintStream(new BufferedOutputStream(Files.newOutputStream(logFile.toPath())), true);
+      System.setOut(printStream);
+      System.setErr(printStream);
+    } catch (IOException e) {
+      log.error(ExceptionUtils.getStackTrace(e));
+    }
+  }
+
+  private void logVMInfo() {
+    log.info("------------ VM Info ------------");
+    log.info("OS Name: " + System.getProperty("os.name"));
+    log.info("OS Arch: " + System.getProperty("os.arch"));
+    log.info("OS Vers: " + System.getProperty("os.version"));
+    log.info("Java Home: " + System.getProperty("java.home"));
+    log.info("Java Vers: " + System.getProperty("java.version"));
+    log.info("User Name: " + System.getProperty("user.name"));
+    log.info("User Home: " + System.getProperty("user.home"));
+    log.info("Current Directory: " + System.getProperty("user.dir"));
+    log.info("---------------------------------");
   }
 
 }
