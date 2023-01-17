@@ -110,7 +110,7 @@ public class ViewApp implements Runnable {
     return new String[] {
         javaVMPath,
         "-classpath",
-        USER_DIR + File.separator + "./spiralview-" + VERSION + ".jar" + libSeparator +
+        USER_DIR + File.separator + "./spiralview.jar" + libSeparator +
             USER_DIR + File.separator + "./code/projectx-config.jar" + libSeparator +
             USER_DIR + File.separator + "./code/projectx-pcode.jar" + libSeparator +
             USER_DIR + File.separator + "./code/lwjgl.jar",

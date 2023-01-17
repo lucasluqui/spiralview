@@ -13,6 +13,8 @@ import net.lucasallegri.spiralview.actions.SavePrefsAction;
 import net.lucasallegri.spiralview.actions.SnapshotAction;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 
+import java.io.File;
+import java.nio.file.Files;
 import java.util.prefs.Preferences;
 
 import static net.lucasallegri.spiralview.Log.log;
@@ -29,17 +31,11 @@ public class ModelViewerHook extends ModelViewer {
     environment.add(new JMenuItem(new ClearPrefsAction()));
     file.add(new JMenuItem(new SnapshotAction(this)), 0);
     file.add(environment, 0);
-    new ClearPrefsAction().actionPerformed(new java.awt.event.ActionEvent(null, 0, null));
-
-    try {
-      Preferences.userNodeForPackage(ClydeLog.class).removeNode();
-    } catch (Exception e) {
-      log.error(ExceptionUtils.getStackTrace(e));
-    }
   }
 
   public static void main(String[] args) {
     Log.setupFileLogging();
+    _prefs.remove("environment_models");
     new ModelViewerHook(args.length > 0 ? args[0] : null).startup();
   }
 
