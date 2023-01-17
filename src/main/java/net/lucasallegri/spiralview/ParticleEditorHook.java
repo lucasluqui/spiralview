@@ -5,7 +5,6 @@ import com.threerings.opengl.effect.tools.ParticleEditor;
 public class ParticleEditorHook {
 
   public static void main(String[] args) {
-    Log.setupFileLogging();
     new ParticleEditor(args.length > 0 ? args[0] : null).startup();
   }
 
