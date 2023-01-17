@@ -6,6 +6,8 @@ package net.lucasallegri.spiralview.actions;
  */
 
 import com.threerings.ClydeLog;
+import org.apache.commons.lang3.exception.ExceptionUtils;
+
 import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -14,33 +16,30 @@ import javax.swing.AbstractAction;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
+import static net.lucasallegri.spiralview.Log.log;
+
 @SuppressWarnings("serial")
-public final class SavePrefsAction
-  extends AbstractAction
-{
+public final class SavePrefsAction extends AbstractAction {
+
   private Preferences cfg = Preferences.userNodeForPackage(ClydeLog.class);
   
-  public SavePrefsAction()
-  {
+  public SavePrefsAction() {
     putValue("Name", "Save");
     putValue("ShortDescription", "Write the environment settings to a file");
   }
   
-  public void actionPerformed(ActionEvent e)
-  {
+  public void actionPerformed(ActionEvent e) {
     JFileChooser chooser = new JFileChooser();
     if (chooser.showSaveDialog(null) != 0) {
       return;
     }
     File selected = chooser.getSelectedFile();
-    try
-    {
+    try {
       this.cfg.exportSubtree(new FileOutputStream(selected));
-    }
-    catch (Exception exp)
-    {
-      exp.printStackTrace();
-      JOptionPane.showMessageDialog(null, exp.getMessage());
+    } catch (Exception ex) {
+      ex.printStackTrace();
+      JOptionPane.showMessageDialog(null, ex.getMessage());
+      log.error(ExceptionUtils.getStackTrace(ex));
     }
   }
 }

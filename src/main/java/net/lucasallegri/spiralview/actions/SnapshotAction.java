@@ -6,6 +6,8 @@ package net.lucasallegri.spiralview.actions;
  */
 
 import com.threerings.opengl.GlApp;
+import org.apache.commons.lang3.exception.ExceptionUtils;
+
 import java.awt.event.ActionEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -15,22 +17,21 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 
+import static net.lucasallegri.spiralview.Log.log;
+
 @SuppressWarnings("serial")
-public final class SnapshotAction
-  extends AbstractAction
-{
+public final class SnapshotAction extends AbstractAction {
+
   private GlApp app;
   
-  public SnapshotAction(GlApp app)
-  {
+  public SnapshotAction(GlApp app) {
     putValue("Name", "Snapshot");
     putValue("ShortDescription", "Dump the contents of the framebuffer to a file");
     putValue("AcceleratorKey", KeyStroke.getKeyStroke(154, 0));
     this.app = app;
   }
   
-  public void actionPerformed(ActionEvent e)
-  {
+  public void actionPerformed(ActionEvent e) {
     BufferedImage img = this.app.createSnapshot();
     JFileChooser chooser = new JFileChooser();
     chooser.setSelectedFile(new File("snapshot.png"));
@@ -38,14 +39,12 @@ public final class SnapshotAction
       return;
     }
     File selected = chooser.getSelectedFile();
-    try
-    {
+    try {
       ImageIO.write(img, "png", selected);
-    }
-    catch (Exception exp)
-    {
-      JOptionPane.showMessageDialog(null, exp.getMessage());
-      exp.printStackTrace();
+    } catch (Exception ex) {
+      JOptionPane.showMessageDialog(null, ex.getMessage());
+      ex.printStackTrace();
+      log.error(ExceptionUtils.getStackTrace(ex));
     }
   }
 }

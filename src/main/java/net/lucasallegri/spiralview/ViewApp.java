@@ -1,13 +1,10 @@
 package net.lucasallegri.spiralview;
 
 import java.awt.EventQueue;
-import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.Charset;
-import java.nio.file.Files;
 
 import javax.swing.JOptionPane;
 import com.threerings.util.ResourceUtil;
@@ -20,7 +17,7 @@ import static net.lucasallegri.spiralview.Log.log;
 
 public class ViewApp implements Runnable {
 
-  private static final String VERSION = "1.8b";
+  private static final String VERSION = "1.8c";
   private static final String USER_DIR = System.getProperty("user.dir");
   private static String _targetClass = "net.lucasallegri.spiralview.ModelViewerHook";
   private int _chosen = 0;
@@ -30,7 +27,7 @@ public class ViewApp implements Runnable {
   }
 
   public void run() {
-    setupFileLogging();
+    Log.setupFileLogging();
     logVMInfo();
 
     if(!isRunningInRootFolder()) pushWarning("You need to place this .jar inside your Spiral Knights main directory.");
@@ -65,11 +62,13 @@ public class ViewApp implements Runnable {
 
   private static void pushError(String message) {
     JOptionPane.showMessageDialog(null, message);
+    log.error(message);
     System.exit(1);
   }
 
   private static void pushWarning(String message) {
     JOptionPane.showMessageDialog(null, message);
+    log.warning(message);
   }
 
   private static int chooseEditorDialog() {
@@ -156,23 +155,6 @@ public class ViewApp implements Runnable {
       if(process != null) process.destroy();
     }
     return new String[1];
-  }
-
-  private void setupFileLogging() {
-    File logFile = new File("spiralview.log");
-    File oldLogFile = new File("old-spiralview.log");
-
-    if (logFile.exists()) {
-      logFile.renameTo(oldLogFile);
-    }
-
-    try {
-      PrintStream printStream = new PrintStream(new BufferedOutputStream(Files.newOutputStream(logFile.toPath())), true);
-      System.setOut(printStream);
-      System.setErr(printStream);
-    } catch (IOException e) {
-      log.error(ExceptionUtils.getStackTrace(e));
-    }
   }
 
   private void logVMInfo() {

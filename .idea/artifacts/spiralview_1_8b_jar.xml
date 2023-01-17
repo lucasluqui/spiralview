@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="spiralview-1.8b:jar">
     <output-path>$PROJECT_DIR$/classes/artifacts/spiralview</output-path>
-    <root id="archive" name="spiralview.jar">
+    <root id="archive" name="spiralview-1.8b.jar">
       <element id="module-output" name="spiralview" />
       <element id="extracted-dir" path="$PROJECT_DIR$/code/clyde.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/code/narya-1.15.jar" path-in-jar="/" />
