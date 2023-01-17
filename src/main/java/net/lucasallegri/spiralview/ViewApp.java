@@ -33,7 +33,7 @@ public class ViewApp implements Runnable {
     setupFileLogging();
     logVMInfo();
 
-    if(!isRunningInRootFolder()) pushWarning("You need to place this .jar inside your Spiral Knights main directory.");
+    if(!isRunningInRootFolder()) pushWarning("You need to place this .jar inside your Spiral Knights main directory. In some cases this is just a false positive and this message can be ignored.");
     if(!hasCleanConfigs()) pushError("There are .xml files in your rsrc/config directory, spiralview can not proceed.");
 
     try {
