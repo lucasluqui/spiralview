@@ -1,10 +1,13 @@
 package net.lucasallegri.spiralview;
 
 import java.awt.EventQueue;
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.Charset;
+import java.nio.file.Files;
 
 import javax.swing.JOptionPane;
 import com.threerings.util.ResourceUtil;
@@ -27,7 +30,7 @@ public class ViewApp implements Runnable {
   }
 
   public void run() {
-    Log.setupFileLogging();
+    setupFileLogging();
     logVMInfo();
 
     if(!isRunningInRootFolder()) pushWarning("You need to place this .jar inside your Spiral Knights main directory.");
@@ -47,7 +50,7 @@ public class ViewApp implements Runnable {
     ResourceUtil.setPreferredResourceDir(rsrcDir.getAbsolutePath());
 
     resolveTargetedClass(_chosen);
-    String[] output = runAndCapture(createRuntimeCommand(_targetClass));
+    String[] output = runAndCapture(createRuntimeCommand(_targetClass, "java"));
     log.info(output[0]);
     log.info(output[1]);
   }
@@ -102,9 +105,8 @@ public class ViewApp implements Runnable {
     }
   }
 
-  private String[] createRuntimeCommand(String targetClass) {
+  private String[] createRuntimeCommand(String targetClass, String javaVMPath) {
     //String javaVMPath = SystemUtil.isWindows() ? ".\\java_vm\\bin\\java.exe" : "./java/bin/java";
-    String javaVMPath = "java";
     String libSeparator = SystemUtil.isWindows() ? ";" : ":";
 
     return new String[] {
@@ -155,6 +157,23 @@ public class ViewApp implements Runnable {
       if(process != null) process.destroy();
     }
     return new String[1];
+  }
+
+  private static void setupFileLogging() {
+    File logFile = new File("spiralview.log");
+    File oldLogFile = new File("old-spiralview.log");
+
+    if (logFile.exists()) {
+      logFile.renameTo(oldLogFile);
+    }
+
+    try {
+      PrintStream printStream = new PrintStream(new BufferedOutputStream(Files.newOutputStream(logFile.toPath())), true);
+      System.setOut(printStream);
+      System.setErr(printStream);
+    } catch (IOException e) {
+      log.error(ExceptionUtils.getStackTrace(e));
+    }
   }
 
   private void logVMInfo() {
