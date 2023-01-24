@@ -20,7 +20,7 @@ import static net.lucasallegri.spiralview.Log.log;
 
 public class ViewApp implements Runnable {
 
-  private static final String VERSION = "1.8.1";
+  private static final String VERSION = "1.8.2";
   private static final String USER_DIR = System.getProperty("user.dir");
   private static String _targetClass = "net.lucasallegri.spiralview.ModelViewerHook";
   private int _chosen = 0;
@@ -32,6 +32,7 @@ public class ViewApp implements Runnable {
   public void run() {
     setupFileLogging();
     logVMInfo();
+    log.info("Running version " + VERSION);
 
     if(!isRunningInRootFolder()) pushWarning("You need to place this .jar inside your Spiral Knights main directory. In some cases this is just a false positive and this message can be ignored.");
     if(!hasCleanConfigs()) pushError("There are .xml files in your rsrc/config directory, spiralview can not proceed.");
@@ -106,16 +107,22 @@ public class ViewApp implements Runnable {
   }
 
   private String[] createRuntimeCommand(String targetClass, String javaVMPath) {
-    //String javaVMPath = SystemUtil.isWindows() ? ".\\java_vm\\bin\\java.exe" : "./java/bin/java";
+    if(!System.getProperty("java.version").startsWith("1.8")) {
+      log.warning("Incompatible Java version found: " + System.getProperty("java.version"));
+      javaVMPath = SystemUtil.isWindows() ? USER_DIR + File.separator + "java_vm\\bin\\java.exe" : USER_DIR + File.separator + "java/bin/java";
+      log.warning("Falling back to: " + runAndCapture(new String[] { javaVMPath, "-version" })[1]);
+    }
+
     String libSeparator = SystemUtil.isWindows() ? ";" : ":";
 
     return new String[] {
         javaVMPath,
         "-classpath",
         USER_DIR + File.separator + "./spiralview.jar" + libSeparator +
-            USER_DIR + File.separator + "./code/projectx-config.jar" + libSeparator +
-            USER_DIR + File.separator + "./code/projectx-pcode.jar" + libSeparator +
-            USER_DIR + File.separator + "./code/lwjgl.jar",
+          USER_DIR + File.separator + "./code/projectx-config.jar" + libSeparator +
+          USER_DIR + File.separator + "./code/projectx-pcode.jar" + libSeparator +
+          USER_DIR + File.separator + "./code/lwjgl_util.jar" + libSeparator +
+          USER_DIR + File.separator + "./code/lwjgl.jar",
         "-Xms1G",
         "-Xmx2G",
         "-Dappdir=" + USER_DIR + File.separator + "./",
