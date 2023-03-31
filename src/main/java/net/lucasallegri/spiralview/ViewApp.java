@@ -107,10 +107,16 @@ public class ViewApp implements Runnable {
   }
 
   private String[] createRuntimeCommand(String targetClass, String javaVMPath) {
-    if(!System.getProperty("java.version").startsWith("1.8")) {
-      log.warning("Incompatible Java version found: " + System.getProperty("java.version"));
-      javaVMPath = SystemUtil.isWindows() ? USER_DIR + File.separator + "java_vm\\bin\\java.exe" : USER_DIR + File.separator + "java/bin/java";
-      log.warning("Falling back to: " + runAndCapture(new String[] { javaVMPath, "-version" })[1]);
+    String gameJavaVMPath = SystemUtil.isWindows() ? USER_DIR + File.separator + "java_vm\\bin\\java.exe" : USER_DIR + File.separator + "java/bin/java";
+    String gameJavaVMVersion = runAndCapture(new String[] { gameJavaVMPath, "-version" })[1];
+
+    if(gameJavaVMVersion.contains("1.7") || gameJavaVMVersion.contains("1.8")) {
+      log.info("Compatible game Java VM version found: " + gameJavaVMVersion);
+      javaVMPath = gameJavaVMPath;
+    } else if (System.getProperty("java.version").contains("1.7") || System.getProperty("java.version").contains("1.8")) {
+      log.warning("Incompatible game Java VM version: " + gameJavaVMVersion + ". Luckily we can rely on system's (" + System.getProperty("java.version") + ")");
+    } else {
+      pushError("We have no compatible Java VM to work with, goodbye.");
     }
 
     String libSeparator = SystemUtil.isWindows() ? ";" : ":";
@@ -123,8 +129,8 @@ public class ViewApp implements Runnable {
           USER_DIR + File.separator + "./code/projectx-pcode.jar" + libSeparator +
           USER_DIR + File.separator + "./code/lwjgl_util.jar" + libSeparator +
           USER_DIR + File.separator + "./code/lwjgl.jar",
-        "-Xms1G",
-        "-Xmx2G",
+        "-Xms3G",
+        "-Xmx3G",
         "-Dappdir=" + USER_DIR + File.separator + "./",
         "-Dresource_dir=" + USER_DIR + File.separator + "./rsrc",
         "-Djava.library.path=" + USER_DIR + File.separator + "./native",
