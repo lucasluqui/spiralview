@@ -10,12 +10,14 @@
       <root url="jar://$PROJECT_DIR$/code/commons-io-2.6.jar!/" />
       <root url="jar://$PROJECT_DIR$/code/samskivert-1.9.jar!/" />
       <root url="jar://$PROJECT_DIR$/code/commons-lang3-3.12.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/code/px.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/code/narya-1.15.jar!/" />
       <root url="jar://$PROJECT_DIR$/code/rest-lib.jar!/" />
       <root url="jar://$PROJECT_DIR$/code/samskivert-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/code/px.jar!/" />
     </SOURCES>
   </library>
 </component>
