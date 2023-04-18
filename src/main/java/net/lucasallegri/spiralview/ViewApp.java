@@ -22,7 +22,7 @@ public class ViewApp implements Runnable {
 
   private static final String VERSION = "1.8.4";
   private static final String USER_DIR = System.getProperty("user.dir");
-  private static String _targetClass = "net.lucasallegri.spiralview.ModelViewerHook";
+  private static String _targetClass = "null";
   private int _chosen = 0;
 
   public static void main(String[] args) {
@@ -51,6 +51,10 @@ public class ViewApp implements Runnable {
     ResourceUtil.setPreferredResourceDir(rsrcDir.getAbsolutePath());
 
     resolveTargetedClass(_chosen);
+
+    // No editor was chosen (possibly forcibly closed) hence no need to keep the program alive.
+    if(_targetClass.equalsIgnoreCase("null")) System.exit(1);
+
     String[] output = runAndCapture(createRuntimeCommand(_targetClass, "java"));
     log.info(output[0]);
     log.info(output[1]);
@@ -93,7 +97,7 @@ public class ViewApp implements Runnable {
   private static void resolveTargetedClass(int clazz) {
     switch(clazz) {
       case 0:
-        break;
+        _targetClass = "net.lucasallegri.spiralview.ModelViewerHook";
       case 1:
         _targetClass = "net.lucasallegri.spiralview.SceneEditorHook";
         break;
