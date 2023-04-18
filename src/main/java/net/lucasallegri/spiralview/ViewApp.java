@@ -20,7 +20,7 @@ import static net.lucasallegri.spiralview.Log.log;
 
 public class ViewApp implements Runnable {
 
-  private static final String VERSION = "1.8.3";
+  private static final String VERSION = "1.8.4";
   private static final String USER_DIR = System.getProperty("user.dir");
   private static String _targetClass = "net.lucasallegri.spiralview.ModelViewerHook";
   private int _chosen = 0;
