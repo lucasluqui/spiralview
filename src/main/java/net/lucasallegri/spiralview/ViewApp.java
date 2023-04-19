@@ -1,5 +1,7 @@
 package net.lucasallegri.spiralview;
 
+import net.lucasallegri.util.*;
+
 import java.awt.EventQueue;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -10,10 +12,10 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 
 import javax.swing.JOptionPane;
-import com.threerings.util.ResourceUtil;
-import org.apache.commons.io.IOUtils;
 
-import net.lucasallegri.util.*;
+import com.threerings.util.ResourceUtil;
+
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 
 import static net.lucasallegri.spiralview.Log.log;
@@ -98,6 +100,7 @@ public class ViewApp implements Runnable {
     switch(clazz) {
       case 0:
         _targetClass = "net.lucasallegri.spiralview.ModelViewerHook";
+        break;
       case 1:
         _targetClass = "net.lucasallegri.spiralview.SceneEditorHook";
         break;
