@@ -3610,17 +3610,41 @@
     <name>Dev/Floor Label</name>
     <parameters>
       <entry class="com.threerings.config.Parameter$Direct">
-        <name>Model</name>
-        <paths>implementation.model</paths>
+        <name>Text</name>
+        <paths>implementation.model["Text"]</paths>
       </entry>
     </parameters>
+    <implementation class="com.threerings.tudey.config.PlaceableConfig$Prop">
+      <model>
+        <name>model/debug/label_floor/label_floor.dat</name>
+        <arguments>
+          <key class="java.lang.String">Text</key>
+          <value class="java.lang.String">room_battle_EW_3w_01</value>
+        </arguments>
+      </model>
+      <shape class="com.threerings.tudey.shape.config.ShapeConfig$Compound">
+        <shapes>
+          <entry>
+            <shape class="com.threerings.tudey.shape.config.ShapeConfig$Circle">
+              <radius>0.5</radius>
+            </shape>
+          </entry>
+          <entry>
+            <shape class="com.threerings.tudey.shape.config.ShapeConfig$Segment">
+            </shape>
+          </entry>
+        </shapes>
+      </shape>
+      <collisionFlags>0</collisionFlags>
+      <floorFlags>0</floorFlags>
+    </implementation>
   </entry>
   <entry>
     <name>Dev/Floor Label (non-debug)</name>
     <parameters>
       <entry class="com.threerings.config.Parameter$Direct">
-        <name>Model</name>
-        <paths>implementation.model</paths>
+        <name>Text</name>
+        <paths>implementation.model["Text"]</paths>
       </entry>
     </parameters>
     <implementation class="com.threerings.tudey.config.PlaceableConfig$Prop">
@@ -3656,6 +3680,52 @@
         <paths>implementation.model["Models"][0].model["Text"]</paths>
       </entry>
     </parameters>
+    <implementation class="com.threerings.tudey.config.PlaceableConfig$Prop">
+      <model>
+        <name>model/compound/model.dat</name>
+        <arguments>
+          <key class="java.lang.String">Influences</key>
+          <value class="com.threerings.opengl.model.config.InfluenceFlagConfig">
+            <fog>false</fog>
+            <lights>false</lights>
+            <projections>false</projections>
+            <definitions>false</definitions>
+          </value>
+          <key class="java.lang.String">Models</key>
+          <value class="[Lcom.threerings.opengl.model.config.CompoundConfig$ComponentModel;">
+            <entry>
+              <model>
+                <name>model/debug/label_prefab_indicator.dat</name>
+                <arguments>
+                  <key class="java.lang.String">Text</key>
+                  <value class="java.lang.String">room_battle_EW_3w_01</value>
+                </arguments>
+              </model>
+            </entry>
+            <entry>
+              <model>
+                <name>model/conditional/marker.dat</name>
+                <arguments>
+                  <key class="java.lang.String">Model</key>
+                  <value class="com.threerings.config.ConfigReference">
+                    <name>editor/marker/generic_selectors/box_2x1.dat</name>
+                    <arguments>
+                      <key class="java.lang.String">Color State Override</key>
+                      <value class="com.threerings.opengl.renderer.config.ColorStateConfig">
+                        <color>0.24313726, 0.23921569, 0.4, 0.5</color>
+                      </value>
+                    </arguments>
+                  </value>
+                </arguments>
+              </model>
+            </entry>
+          </value>
+        </arguments>
+      </model>
+      <shape class="com.threerings.tudey.shape.config.ShapeConfig$Rectangle">
+        <width>2.0</width>
+      </shape>
+    </implementation>
   </entry>
   <entry>
     <name>Dev/Magical Effect-Firing Rock</name>
