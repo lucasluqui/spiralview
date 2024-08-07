@@ -1,10 +1,11 @@
-package net.lucasallegri.spiralview.actions;
+package com.luuqui.spiralview.actions;
 
 /*
  * 		Original author: onyxbits (spiral.onyxbits.de)
  * 		Origin: spiralspy-1.5.jar/de/onyxbits/spiralspy/SavePrefsAction.java
  */
 
+import com.luuqui.spiralview.Log;
 import com.threerings.ClydeLog;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 
@@ -15,8 +16,6 @@ import java.util.prefs.Preferences;
 import javax.swing.AbstractAction;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-
-import static net.lucasallegri.spiralview.Log.log;
 
 @SuppressWarnings("serial")
 public final class SavePrefsAction extends AbstractAction {
@@ -39,7 +38,7 @@ public final class SavePrefsAction extends AbstractAction {
     } catch (Exception ex) {
       ex.printStackTrace();
       JOptionPane.showMessageDialog(null, ex.getMessage());
-      log.error(ExceptionUtils.getStackTrace(ex));
+      Log.log.error(ExceptionUtils.getStackTrace(ex));
     }
   }
 }

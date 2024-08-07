@@ -1,10 +1,11 @@
-package net.lucasallegri.spiralview.actions;
+package com.luuqui.spiralview.actions;
 
 /*
  * 		Original author: onyxbits (spiral.onyxbits.de)
  * 		Origin: spiralspy-1.5.jar/de/onyxbits/spiralspy/SnapShotAction.java
  */
 
+import com.luuqui.spiralview.Log;
 import com.threerings.opengl.GlApp;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 
@@ -16,8 +17,6 @@ import javax.swing.AbstractAction;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
-
-import static net.lucasallegri.spiralview.Log.log;
 
 @SuppressWarnings("serial")
 public final class SnapshotAction extends AbstractAction {
@@ -44,7 +43,7 @@ public final class SnapshotAction extends AbstractAction {
     } catch (Exception ex) {
       JOptionPane.showMessageDialog(null, ex.getMessage());
       ex.printStackTrace();
-      log.error(ExceptionUtils.getStackTrace(ex));
+      Log.log.error(ExceptionUtils.getStackTrace(ex));
     }
   }
 }

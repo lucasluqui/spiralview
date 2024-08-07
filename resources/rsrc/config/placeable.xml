@@ -3653,9 +3653,33 @@
     <parameters>
       <entry class="com.threerings.config.Parameter$Direct">
         <name>Text</name>
-        <paths>implementation.model["Models"][0].model["Text"]</paths>
+        <paths>implementation.model["Text"]</paths>
       </entry>
     </parameters>
+    <implementation class="com.threerings.tudey.config.PlaceableConfig$Prop">
+      <model>
+        <name>model/debug/label_floor/label_floor.dat</name>
+        <arguments>
+          <key class="java.lang.String">Text</key>
+          <value class="java.lang.String">room_battle_EW_3w_01</value>
+        </arguments>
+      </model>
+      <shape class="com.threerings.tudey.shape.config.ShapeConfig$Compound">
+        <shapes>
+          <entry>
+            <shape class="com.threerings.tudey.shape.config.ShapeConfig$Circle">
+              <radius>0.5</radius>
+            </shape>
+          </entry>
+          <entry>
+            <shape class="com.threerings.tudey.shape.config.ShapeConfig$Segment">
+            </shape>
+          </entry>
+        </shapes>
+      </shape>
+      <collisionFlags>0</collisionFlags>
+      <floorFlags>0</floorFlags>
+    </implementation>
   </entry>
   <entry>
     <name>Dev/Magical Effect-Firing Rock</name>

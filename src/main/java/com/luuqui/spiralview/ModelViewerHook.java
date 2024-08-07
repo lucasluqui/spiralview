@@ -1,23 +1,13 @@
-package net.lucasallegri.spiralview;
+package com.luuqui.spiralview;
 
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
+import javax.swing.*;
 
-import com.threerings.ClydeLog;
 import com.threerings.opengl.model.tools.ModelViewer;
 
-import net.lucasallegri.spiralview.actions.ClearPrefsAction;
-import net.lucasallegri.spiralview.actions.RestorePrefsAction;
-import net.lucasallegri.spiralview.actions.SavePrefsAction;
-import net.lucasallegri.spiralview.actions.SnapshotAction;
-import org.apache.commons.lang3.exception.ExceptionUtils;
-
-import java.io.File;
-import java.nio.file.Files;
-import java.util.prefs.Preferences;
-
-import static net.lucasallegri.spiralview.Log.log;
+import com.luuqui.spiralview.actions.ClearPrefsAction;
+import com.luuqui.spiralview.actions.RestorePrefsAction;
+import com.luuqui.spiralview.actions.SavePrefsAction;
+import com.luuqui.spiralview.actions.SnapshotAction;
 
 public class ModelViewerHook extends ModelViewer {
 
@@ -33,8 +23,16 @@ public class ModelViewerHook extends ModelViewer {
     file.add(environment, 0);
   }
 
+  protected void didInit() {
+    super.didInit();
+
+    this._grid.getColor().set(0.21F, 0.21F, 0.21F, 0.0F);
+    this._compositor.getDefaultBackgroundColor().set(0.41F, 0.41F, 0.41F, 0.0F);
+  }
+
   public static void main(String[] args) {
     _prefs.remove("environment_models");
+    ViewKL.setupLAF();
     new ModelViewerHook(args.length > 0 ? args[0] : null).startup();
   }
 

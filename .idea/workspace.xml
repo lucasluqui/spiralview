@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="spiralview:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="03152800-68d6-42ed-b2e7-f14ba7b01268" name="Changes" comment="Prepare for release 1.8.5">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/CustomColors.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/Globals.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/InterfaceTesterHook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/ParticleEditorHook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/SceneEditorHook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/Stylesheet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/ViewKL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/ViewLegacy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/editor/swing/BaseEditorPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/editor/swing/BasePropertyEditor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/editor/swing/EditorPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/editor/swing/TreeEditorPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/model/tools/ModelViewer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/spiralview_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/spiralview_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/clyde.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/clyde.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/rsrc/config/placeable.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/rsrc/config/placeable.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/lucasallegri/spiralview/InterfaceTesterHook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/lucasallegri/spiralview/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/Log.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/lucasallegri/spiralview/ModelViewerHook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/ModelViewerHook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/lucasallegri/spiralview/ParticleEditorHook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/lucasallegri/spiralview/SceneEditorHook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/lucasallegri/spiralview/ViewApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/ViewApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/lucasallegri/spiralview/actions/ClearPrefsAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/actions/ClearPrefsAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/lucasallegri/spiralview/actions/RestorePrefsAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/actions/RestorePrefsAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/lucasallegri/spiralview/actions/SavePrefsAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/actions/SavePrefsAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/lucasallegri/spiralview/actions/SnapshotAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/actions/SnapshotAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/lucasallegri/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/util/FileUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/lucasallegri/util/SystemUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/util/SystemUtil.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2HwyT8zbcz16H11fGZUeeKPhK3L" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ModelViewerHook.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/lucas/IdeaProjects/spiralview/code/flatlaf.jar",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lucas\IdeaProjects\spiralview\code" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lucas\IdeaProjects\spiralview\code" />
+      <recent name="C:\Users\lucas\IdeaProjects\spiralview\resources\rsrc\config\tudey" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="03152800-68d6-42ed-b2e7-f14ba7b01268" name="Changes" comment="" />
+      <created>1669210447759</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669210447759</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Fix NullPointerException in FileUtil#fileNamesInDirectory()">
+      <created>1669210558027</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669210558027</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Re-enable temporarily disabled features within Model Viewer">
+      <created>1669210680245</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669210680245</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Simplified file checking functions">
+      <created>1669210704837</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669210704837</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Include commons-io jar library">
+      <created>1669210727435</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669210727435</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Include manifest in resources">
+      <created>1669211231343</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669211231343</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Remove unused file functions">
+      <created>1669211420553</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1669211420553</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Make OS variable final">
+      <created>1669211446637</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1669211446637</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Prepare for release 1.8.1">
+      <created>1669211455820</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1669211455820</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Revert version to 1.8">
+      <created>1669211537833</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1669211537833</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Re-indent source files with 2 spaces instead of 4 space tabs">
+      <created>1669212283916</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1669212283916</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Now actually a fix for NullPointerExeception in FileUtil">
+      <created>1669214564530</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1669214564530</updated>
+    </task>
+    <task id="LOCAL-00012" summary="rrrrex's scene_global.xml changes">
+      <created>1669653731676</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1669653731676</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Capture runtime output and compile using Java 7 instead of 8">
+      <created>1673663724800</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1673663724800</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Implement proper logging">
+      <created>1673664547536</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1673664547536</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Spread new logging throughout all editors">
+      <created>1673980577633</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1673980577633</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Clear environment models on startup">
+      <created>1673983986891</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1673983986891</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Remove logging from hooks">
+      <created>1673985004649</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1673985004649</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Change versioning">
+      <created>1673985019677</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1673985019677</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Pass Java VM path as an argument of createRuntimeCommand">
+      <created>1673985041462</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1673985041462</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Prepare for release 1.8.1">
+      <created>1673985109156</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1673985109156</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Warn the user about possible false positive">
+      <created>1673985475078</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1673985475078</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Fall back to game's Java VM when the system's higher than 8. Prepare for release 1.8.2">
+      <created>1674585215497</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1674585215497</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Prioritize game's java VM and use system as fallback">
+      <created>1680276924633</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1680276924633</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Prepare for release 1.8.3">
+      <created>1680276948466</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1680276948466</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Include a copy of projectx-pcode to work with certain packages">
+      <created>1681836384277</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1681836384277</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Include the new projectx-pcode jar when building the project">
+      <created>1681836405761</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1681836405761</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Stub implementation of Stats to fix UnlockAchievement errors on some scenes">
+      <created>1681836433664</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1681836433664</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Add two missing libraries">
+      <created>1681837395443</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1681837395443</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Prepare for release 1.8.4">
+      <created>1681837471199</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1681837471199</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Do not open an editor when the program is prematurely closed">
+      <created>1681839302856</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1681839302856</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Don't attempt to pass any init files">
+      <created>1681912002281</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1681912002281</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Reorganize imports">
+      <created>1681912018373</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1681912018373</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Reorganize imports">
+      <created>1681912084944</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1681912084944</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Custom SceneEditor implementation to remove file filtering">
+      <created>1681912105187</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1681912105187</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Include latest lwjgl version (required by SceneEditor implementation)">
+      <created>1681912126219</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1681912126219</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Prepare for release 1.8.5">
+      <created>1681912241087</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1681912241087</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Now actually a fix for NullPointerExeception in FileUtil" />
+    <MESSAGE value="rrrrex's scene_global.xml changes" />
+    <MESSAGE value="Capture runtime output and compile using Java 7 instead of 8" />
+    <MESSAGE value="Implement proper logging" />
+    <MESSAGE value="Spread new logging throughout all editors" />
+    <MESSAGE value="Clear environment models on startup" />
+    <MESSAGE value="Remove logging from hooks" />
+    <MESSAGE value="Change versioning" />
+    <MESSAGE value="Pass Java VM path as an argument of createRuntimeCommand" />
+    <MESSAGE value="Prepare for release 1.8.1" />
+    <MESSAGE value="Warn the user about possible false positive" />
+    <MESSAGE value="Fall back to game's Java VM when the system's higher than 8. Prepare for release 1.8.2" />
+    <MESSAGE value="Prioritize game's java VM and use system as fallback" />
+    <MESSAGE value="Prepare for release 1.8.3" />
+    <MESSAGE value="Include a copy of projectx-pcode to work with certain packages" />
+    <MESSAGE value="Include the new projectx-pcode jar when building the project" />
+    <MESSAGE value="Stub implementation of Stats to fix UnlockAchievement errors on some scenes" />
+    <MESSAGE value="Add two missing libraries" />
+    <MESSAGE value="Prepare for release 1.8.4" />
+    <MESSAGE value="Do not open an editor when the program is prematurely closed" />
+    <MESSAGE value="Don't attempt to pass any init files" />
+    <MESSAGE value="Reorganize imports" />
+    <MESSAGE value="Custom SceneEditor implementation to remove file filtering" />
+    <MESSAGE value="Include latest lwjgl version (required by SceneEditor implementation)" />
+    <MESSAGE value="Prepare for release 1.8.5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prepare for release 1.8.5" />
+  </component>
+</project>

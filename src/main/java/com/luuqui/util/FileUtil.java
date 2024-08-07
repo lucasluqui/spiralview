@@ -1,4 +1,4 @@
-package net.lucasallegri.util;
+package com.luuqui.util;
 
 import java.io.File;
 import java.util.ArrayList;

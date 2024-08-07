@@ -1,4 +1,4 @@
-package net.lucasallegri.util;
+package com.luuqui.util;
 
 public class SystemUtil {
 

@@ -1,4 +1,4 @@
-package net.lucasallegri.spiralview;
+package com.luuqui.spiralview;
 
 import com.samskivert.util.Logger;
 import org.apache.commons.lang3.exception.ExceptionUtils;
