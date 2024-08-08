@@ -1,7 +1,6 @@
 package com.luuqui.spiralview;
 
 import com.formdev.flatlaf.FlatDarkLaf;
-import com.threerings.util.ResourceUtil;
 
 import javax.swing.*;
 
@@ -11,8 +10,6 @@ public class ViewKL {
 
   public static void start(String editor, String rsrc) {
     resolveEditor(editor);
-
-    ResourceUtil.setPreferredResourceDir(rsrc.replace("\"", ""));
 
     ViewApp.run(ViewApp.createRuntimeCommand(
       _targetClass, "java", editor.equalsIgnoreCase("model") ? 0 : -1), true);

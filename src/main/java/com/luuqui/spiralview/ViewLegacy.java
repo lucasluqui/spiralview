@@ -1,6 +1,5 @@
 package com.luuqui.spiralview;
 
-import com.threerings.util.ResourceUtil;
 import com.luuqui.util.FileUtil;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 
@@ -27,9 +26,6 @@ public class ViewLegacy {
     } catch (InvocationTargetException | InterruptedException e) {
       Log.log.error(ExceptionUtils.getStackTrace(e));
     }
-
-    File rsrcDir = new File(new File(Globals.USER_DIR), "rsrc");
-    ResourceUtil.setPreferredResourceDir(rsrcDir.getAbsolutePath());
 
     resolveTargetedClass(_chosen);
 
