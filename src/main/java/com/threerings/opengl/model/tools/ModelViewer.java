@@ -72,7 +72,7 @@ public class ModelViewer extends ModelTool
     super("viewer");
 
     // set the title
-    _frame.setTitle(_msgs.get("m.title"));
+    _frame.setTitle("Model Viewer");
 
     // populate the menu bar
     JMenuBar menubar = new JMenuBar();

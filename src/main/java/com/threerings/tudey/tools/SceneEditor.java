@@ -1648,7 +1648,7 @@ public class SceneEditor extends TudeyTool
    */
   protected void updateTitle ()
   {
-    String title = _msgs.get("m.title");
+    String title = "Scene Editor";
     if (_file != null) {
       title = title + ": " + _file;
     }

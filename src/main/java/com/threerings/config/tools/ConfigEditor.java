@@ -73,6 +73,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Multiset;
 
+import com.luuqui.util.ImageUtil;
 import com.samskivert.swing.GroupLayout;
 import com.samskivert.swing.VGroupLayout;
 import com.samskivert.swing.util.SwingUtil;
@@ -183,6 +184,9 @@ public class ConfigEditor extends BaseConfigEditor
         updateUndoActions();
       }
     });
+
+    this.setTitle("Config Editor");
+    this.setIconImage(ImageUtil.loadImageWithinJar("/img/icon-128.png"));
 
     // populate the menu bar
     JMenuBar menubar = new JMenuBar();

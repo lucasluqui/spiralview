@@ -1,11 +1,14 @@
 package com.luuqui.spiralview;
 
+import com.luuqui.util.ImageUtil;
 import com.threerings.opengl.gui.tools.InterfaceTester;
 
 public class InterfaceTesterHook extends InterfaceTester {
 
   public InterfaceTesterHook(String userInterface) {
     super(userInterface);
+    this._frame.setTitle("Interface Tester");
+    this._frame.setIconImage(ImageUtil.loadImageWithinJar("/img/icon-128.png"));
   }
 
   protected void didInit() {

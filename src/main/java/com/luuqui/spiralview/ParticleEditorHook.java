@@ -1,11 +1,14 @@
 package com.luuqui.spiralview;
 
+import com.luuqui.util.ImageUtil;
 import com.threerings.opengl.effect.tools.ParticleEditor;
 
 public class ParticleEditorHook extends ParticleEditor {
 
   public ParticleEditorHook(String particles) {
     super(particles);
+    this._frame.setTitle("Particle Editor");
+    this._frame.setIconImage(ImageUtil.loadImageWithinJar("/img/icon-128.png"));
   }
 
   protected void didInit() {

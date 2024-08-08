@@ -1,11 +1,13 @@
 package com.luuqui.spiralview;
 
+import com.luuqui.util.ImageUtil;
 import com.threerings.tudey.tools.SceneEditor;
 
 public class SceneEditorHook extends SceneEditor {
 
   public SceneEditorHook(String scene) {
     super(scene);
+    this._frame.setIconImage(ImageUtil.loadImageWithinJar("/img/icon-128.png"));
   }
 
   protected void didInit() {
