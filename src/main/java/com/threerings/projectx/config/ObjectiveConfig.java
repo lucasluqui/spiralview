@@ -3,6 +3,7 @@ package com.threerings.projectx.config;
 import com.threerings.config.ConfigReference;
 import com.threerings.editor.c;
 import com.threerings.editor.e;
+import com.threerings.export.Exportable;
 import com.threerings.export.f;
 import com.threerings.io.Streamable;
 import com.threerings.opengl.gui.ay;
@@ -15,7 +16,7 @@ import com.threerings.tudey.config.ActionConfig;
 import com.threerings.util.g;
 
 @e({ObjectiveConfig.Simple.class, ObjectiveConfig.ReadSystemMail.class})
-public abstract class ObjectiveConfig extends g implements f, Streamable {
+public abstract class ObjectiveConfig extends g implements f, Streamable, Exportable {
   public ObjectiveConfig() {
   }
 
