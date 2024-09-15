@@ -186,7 +186,7 @@ public class ConfigEditor extends BaseConfigEditor
     });
 
     this.setTitle("Config Editor");
-    this.setIconImage(ImageUtil.loadImageWithinJar("/img/icon-128.png"));
+    this.setIconImage(ImageUtil.loadImageWithinJar("/img/icon-512.png"));
 
     // populate the menu bar
     JMenuBar menubar = new JMenuBar();

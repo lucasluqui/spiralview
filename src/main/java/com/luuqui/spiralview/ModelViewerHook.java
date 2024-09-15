@@ -22,7 +22,7 @@ public class ModelViewerHook extends ModelViewer {
     environment.add(new JMenuItem(new ClearPrefsAction()));
     file.add(new JMenuItem(new SnapshotAction(this)), 0);
     file.add(environment, 0);
-    this._frame.setIconImage(ImageUtil.loadImageWithinJar("/img/icon-128.png"));
+    this._frame.setIconImage(ImageUtil.loadImageWithinJar("/img/icon-512.png"));
   }
 
   protected void didInit() {

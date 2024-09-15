@@ -7,7 +7,7 @@ public class SceneEditorHook extends SceneEditor {
 
   public SceneEditorHook(String scene) {
     super(scene);
-    this._frame.setIconImage(ImageUtil.loadImageWithinJar("/img/icon-128.png"));
+    this._frame.setIconImage(ImageUtil.loadImageWithinJar("/img/icon-512.png"));
   }
 
   protected void didInit() {

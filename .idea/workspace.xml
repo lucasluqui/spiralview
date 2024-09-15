@@ -9,36 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03152800-68d6-42ed-b2e7-f14ba7b01268" name="Changes" comment="Prepare for release 1.8.5">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/CustomColors.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/Globals.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/InterfaceTesterHook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/ParticleEditorHook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/SceneEditorHook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/Stylesheet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/ViewKL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/ViewLegacy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/editor/swing/BaseEditorPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/editor/swing/BasePropertyEditor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/editor/swing/EditorPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/editor/swing/TreeEditorPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/model/tools/ModelViewer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/spiralview_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/spiralview_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/clyde.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/clyde.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/resources/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/rsrc/config/placeable.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/rsrc/config/placeable.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/lucasallegri/spiralview/InterfaceTesterHook.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/lucasallegri/spiralview/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/lucasallegri/spiralview/ModelViewerHook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/ModelViewerHook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/lucasallegri/spiralview/ParticleEditorHook.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/lucasallegri/spiralview/SceneEditorHook.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/lucasallegri/spiralview/ViewApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/ViewApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/lucasallegri/spiralview/actions/ClearPrefsAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/actions/ClearPrefsAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/lucasallegri/spiralview/actions/RestorePrefsAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/actions/RestorePrefsAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/lucasallegri/spiralview/actions/SavePrefsAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/actions/SavePrefsAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/lucasallegri/spiralview/actions/SnapshotAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/actions/SnapshotAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/lucasallegri/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/util/FileUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/lucasallegri/util/SystemUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/util/SystemUtil.java" afterDir="false" />
+    <list default="true" id="03152800-68d6-42ed-b2e7-f14ba7b01268" name="Changes" comment="Rename Interface Tester to Interface Editor">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/icon-128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/rsrc/i18n/editor/default.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/rsrc/i18n/editor/default.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/InterfaceTesterHook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/InterfaceTesterHook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/ModelViewerHook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/ModelViewerHook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/ParticleEditorHook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/ParticleEditorHook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/SceneEditorHook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/SceneEditorHook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/threerings/config/tools/ConfigEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/threerings/config/tools/ConfigEditor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,33 +37,34 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2HwyT8zbcz16H11fGZUeeKPhK3L" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ModelViewerHook.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/lucas/IdeaProjects/spiralview/code/flatlaf.jar",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ModelViewerHook.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lucas/IdeaProjects/spiralview/resources/img&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lucas\IdeaProjects\spiralview\resources\img" />
       <recent name="C:\Users\lucas\IdeaProjects\spiralview\code" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -353,7 +333,79 @@
       <option name="project" value="LOCAL" />
       <updated>1681912241087</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Update icons to support new style">
+      <option name="closed" value="true" />
+      <created>1723124048103</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1723124048103</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Remove unrequired resource directory setting, we're already passing it through the cmd line">
+      <option name="closed" value="true" />
+      <created>1723124093003</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1723124093003</updated>
+    </task>
+    <task id="LOCAL-00039" summary="You should be exportable">
+      <option name="closed" value="true" />
+      <created>1723129857596</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1723129857596</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Sometimes you just gotta hack">
+      <option name="closed" value="true" />
+      <created>1723130012790</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1723130012790</updated>
+    </task>
+    <task id="LOCAL-00041" summary="A little hack so scenes with SendMail action can load">
+      <option name="closed" value="true" />
+      <created>1723130876222</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1723130876222</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Fix borders on config editor">
+      <option name="closed" value="true" />
+      <created>1723132298604</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1723132298604</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Set a standardized title and window icon across all editors">
+      <option name="closed" value="true" />
+      <created>1723133779050</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1723133779050</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Bump version to 2.0.1">
+      <option name="closed" value="true" />
+      <created>1723133799649</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1723133799649</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Rename Interface Tester to Interface Editor">
+      <option name="closed" value="true" />
+      <created>1723240313699</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1723240313699</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -368,15 +420,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Now actually a fix for NullPointerExeception in FileUtil" />
-    <MESSAGE value="rrrrex's scene_global.xml changes" />
-    <MESSAGE value="Capture runtime output and compile using Java 7 instead of 8" />
-    <MESSAGE value="Implement proper logging" />
-    <MESSAGE value="Spread new logging throughout all editors" />
-    <MESSAGE value="Clear environment models on startup" />
-    <MESSAGE value="Remove logging from hooks" />
-    <MESSAGE value="Change versioning" />
-    <MESSAGE value="Pass Java VM path as an argument of createRuntimeCommand" />
     <MESSAGE value="Prepare for release 1.8.1" />
     <MESSAGE value="Warn the user about possible false positive" />
     <MESSAGE value="Fall back to game's Java VM when the system's higher than 8. Prepare for release 1.8.2" />
@@ -393,6 +436,15 @@
     <MESSAGE value="Custom SceneEditor implementation to remove file filtering" />
     <MESSAGE value="Include latest lwjgl version (required by SceneEditor implementation)" />
     <MESSAGE value="Prepare for release 1.8.5" />
-    <option name="LAST_COMMIT_MESSAGE" value="Prepare for release 1.8.5" />
+    <MESSAGE value="Update icons to support new style" />
+    <MESSAGE value="Remove unrequired resource directory setting, we're already passing it through the cmd line" />
+    <MESSAGE value="You should be exportable" />
+    <MESSAGE value="Sometimes you just gotta hack" />
+    <MESSAGE value="A little hack so scenes with SendMail action can load" />
+    <MESSAGE value="Fix borders on config editor" />
+    <MESSAGE value="Set a standardized title and window icon across all editors" />
+    <MESSAGE value="Bump version to 2.0.1" />
+    <MESSAGE value="Rename Interface Tester to Interface Editor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rename Interface Tester to Interface Editor" />
   </component>
 </project>

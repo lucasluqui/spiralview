@@ -8,7 +8,7 @@ public class InterfaceTesterHook extends InterfaceTester {
   public InterfaceTesterHook(String userInterface) {
     super(userInterface);
     this._frame.setTitle("Interface Editor");
-    this._frame.setIconImage(ImageUtil.loadImageWithinJar("/img/icon-128.png"));
+    this._frame.setIconImage(ImageUtil.loadImageWithinJar("/img/icon-512.png"));
   }
 
   protected void didInit() {
