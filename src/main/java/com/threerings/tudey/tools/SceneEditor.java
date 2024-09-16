@@ -280,6 +280,7 @@ public class SceneEditor extends TudeyTool
     _toolbar.add(_camera = createToggleButton("camera"), GroupLayout.FIXED);
     _camera.setSelected(!_cameraEnabled);
     _toolbar.add(new Spacer(1, 1));
+    _toolbar.add(createIconButton("reset_grid"), GroupLayout.FIXED);
     _toolbar.add(createIconButton("raise_grid"), GroupLayout.FIXED);
     _toolbar.add(createIconButton("lower_grid"), GroupLayout.FIXED);
 
@@ -1012,6 +1013,8 @@ public class SceneEditor extends TudeyTool
       deleteErrors();
     } else if (action.equals("configs")) {
       ConfigEditor.create(this).setVisible(true);
+    } else if (action.equals("reset_grid")) {
+      _grid.setElevation(0);
     } else if (action.equals("raise_grid")) {
       _grid.setElevation(_grid.getElevation() + 1);
     } else if (action.equals("lower_grid")) {
