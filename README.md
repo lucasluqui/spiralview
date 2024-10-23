@@ -1,3 +1,7 @@
+# ⚠️ ATTENTION ⚠️
+
+spiralview releases are no longer published to this repository as it is now integrated into [Knight Launcher](https://github.com/lucasluqui/KnightLauncher). Please [download Knight Launcher](https://github.com/lucasluqui/KnightLauncher/releases/latest) to use spiralview.
+
 # spiralview
 <p align="left">
     <a href="https://GitHub.com/lucas-allegri/spiralview/releases/"><img alt="Total downloads" src="https://img.shields.io/github/downloads/lucas-allegri/spiralview/total.svg"></a>
