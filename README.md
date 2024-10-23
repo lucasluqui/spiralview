@@ -1,6 +1,6 @@
 # ⚠️ ATTENTION ⚠️
 
-spiralview releases are no longer published to this repository as it is now integrated into [Knight Launcher](https://github.com/lucasluqui/KnightLauncher). Please [download Knight Launcher](https://github.com/lucasluqui/KnightLauncher/releases/latest) to use spiralview.
+This repository no longer hosts the latest release of spiralview as it has been integrated into [Knight Launcher](https://github.com/lucasluqui/KnightLauncher). Please [download Knight Launcher](https://github.com/lucasluqui/KnightLauncher/releases/latest) to use spiralview. You will only find the latest **source code** here, not releases.
 
 # spiralview
 <p align="left">
