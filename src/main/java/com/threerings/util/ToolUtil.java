@@ -106,7 +106,7 @@ public class ToolUtil
 
       // KL fix to avoid third party editors softlocking the official editors
       if(dstr.contains("thirdparty")) {
-        dstr = null;
+        dstr = System.getProperty("user.dir") + File.separator + "rsrc";
       }
 
       _resourceDir = (dstr == null) ? null : new File(dstr);
