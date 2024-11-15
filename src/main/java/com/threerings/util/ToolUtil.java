@@ -105,7 +105,7 @@ public class ToolUtil
       String dstr = ResourceUtil.getPreferredResourceDir();
 
       // KL fix to avoid third party editors softlocking the official editors
-      if(dstr.contains("thirdparty")) {
+      if(dstr != null && dstr.contains("thirdparty")) {
         dstr = System.getProperty("user.dir") + File.separator + "rsrc";
       }
 
