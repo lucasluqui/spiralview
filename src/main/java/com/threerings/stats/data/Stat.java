@@ -1,237 +1,61 @@
 package com.threerings.stats.data;
 
 import com.samskivert.util.HashIntMap;
-import com.samskivert.util.U;
-import com.samskivert.util.aq;
+import com.samskivert.util.ar;
 import com.threerings.presents.dobj.DSet;
 import com.threerings.stats.a;
 import java.io.Serializable;
 import java.util.zip.CRC32;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-public abstract class Stat
-  implements DSet.Entry, Cloneable
-{
+public abstract class Stat implements DSet.Entry, Cloneable {
   protected Type _type;
   protected boolean _modified;
   protected byte _modCount;
+  private static CRC32 aXG = new CRC32();
+  private static HashIntMap<Type> aXH = new HashIntMap();
 
-  public static Type dT(int paramInt)
-  {
-    return (Type)aXj.get(paramInt);
+  public static Type dR(int var0) {
+    return (Type)aXH.get(var0);
   }
 
-
-
-
-
-
-
-  public static int a(Type paramType, Stat paramStat)
-  {
-    int i = dy(paramType.name());
-
-
-    if (aXj.containsKey(i)) {
-      a.log.f("Stat type collision! " + paramType.name() + " and " + ((Type)aXj.get(i)).name() + " both map to '" + i + "'.", new Object[0]);
-
+  public static int a(Type var0, Stat var1) {
+    int var2 = du(var0.name());
+    if (aXH.containsKey(var2)) {
+      a.log.f("Stat type collision! " + var0.name() + " and " + ((Type)aXH.get(var2)).name() + " both map to '" + var2 + "'.", new Object[0]);
       return -1;
+    } else {
+      var1._type = var0;
+      aXH.put(var2, var0);
+      return var2;
     }
-
-
-    paramStat._type = paramType;
-
-
-    aXj.put(i, paramType);
-    return i;
   }
 
-
-
-
-  public static int dy(String paramString)
-  {
-    aXi.reset();
-    aXi.update(paramString.getBytes());
-    return (int)aXi.getValue();
+  public static int du(String var0) {
+    aXG.reset();
+    aXG.update(var0.getBytes());
+    return (int)aXG.getValue();
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  public String toString()
-  {
-    StringBuilder localStringBuilder;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    (localStringBuilder = new StringBuilder(aq.ac(this._type.name()))).append("=").append(NQ());
-    localStringBuilder.append("(").append(this._modCount).append(")");
-    return localStringBuilder.toString();
+  public String toString() {
+    StringBuilder var1;
+    (var1 = new StringBuilder(ar.af(this._type.name()))).append("=").append(this.Ml());
+    var1.append("(").append(this._modCount).append(")");
+    return var1.toString();
   }
 
+  public abstract String Ml();
 
-
-
-
-
-  public abstract String NQ();
-
-
-
-
-
-
-  public final Stat NR()
-  {
-    try
-    {
+  public final Stat Mm() {
+    try {
       return (Stat)super.clone();
-    } catch (CloneNotSupportedException localCloneNotSupportedException) {
-      throw new AssertionError(localCloneNotSupportedException);
+    } catch (CloneNotSupportedException var2) {
+      throw new AssertionError(var2);
     }
   }
 
+  public interface Type extends Serializable {
+    String name();
 
-
-
-
-
-
-
-
-
-
-
-  private static CRC32 aXi = new CRC32();
-
-
-  private static HashIntMap<Type> aXj = new HashIntMap();
-
-  public static abstract interface Type
-    extends Serializable
-  {
-    public abstract String name();
-
-    public abstract int code();
+    int code();
   }
 }

@@ -84,9 +84,7 @@ public class ModelViewer extends ModelTool
 
     JMenu edit = createMenu("edit", KeyEvent.VK_E);
     menubar.add(edit);
-    edit.add(createMenuItem("configs", KeyEvent.VK_C, KeyEvent.VK_G));
-    edit.add(createMenuItem("resources", KeyEvent.VK_R, KeyEvent.VK_R));
-    edit.add(createMenuItem("preferences", KeyEvent.VK_P, KeyEvent.VK_P));
+    createEditMenuItems(edit);
 
     JMenu view = createMenu("view", KeyEvent.VK_V);
     menubar.add(view);
@@ -113,7 +111,7 @@ public class ModelViewer extends ModelTool
 
     // configure the side panel
     _cpanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
-    _cpanel.setPreferredSize(new Dimension(350, 1));
+    _cpanel.setPreferredSize(new Dimension(SIDEBAR_WIDTH, 1));
 
     // add the config editor
     _cpanel.add(_epanel = new EditorPanel(this));
@@ -249,6 +247,13 @@ public class ModelViewer extends ModelTool
   protected void createFileMenuItems (JMenu file)
   {
     file.add(createMenuItem("quit", KeyEvent.VK_Q, KeyEvent.VK_Q));
+  }
+
+  protected void createEditMenuItems (JMenu edit)
+  {
+    edit.add(createMenuItem("configs", KeyEvent.VK_C, KeyEvent.VK_G));
+    edit.add(createMenuItem("resources", KeyEvent.VK_R, KeyEvent.VK_R));
+    edit.add(createMenuItem("preferences", KeyEvent.VK_P, KeyEvent.VK_P));
   }
 
   @Override

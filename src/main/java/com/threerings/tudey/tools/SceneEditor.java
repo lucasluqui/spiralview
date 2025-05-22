@@ -77,11 +77,6 @@ import javax.swing.undo.UndoableEditSupport;
 
 import org.lwjgl.opengl.GL11;
 
-import com.apple.eawt.Application;
-import com.apple.eawt.AppEvent;
-import com.apple.eawt.QuitHandler;
-import com.apple.eawt.QuitResponse;
-
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.base.Predicate;
@@ -199,10 +194,6 @@ public class SceneEditor extends TudeyTool
   {
     super("scene");
 
-    if (RunAnywhere.isMacOS()) {
-      setupMacSupport();
-    }
-
     // we override shutdown() and may want to abort a close
     _frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
 
@@ -286,7 +277,7 @@ public class SceneEditor extends TudeyTool
 
     // configure the edit panel
     _epanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
-    _epanel.setPreferredSize(new Dimension(350, 1));
+    _epanel.setPreferredSize(new Dimension(SIDEBAR_WIDTH, 1));
 
     // create the tool box
     JPanel outer = new JPanel();
@@ -330,29 +321,6 @@ public class SceneEditor extends TudeyTool
 
     // add ourself as a mouse listener
     _canvas.addMouseListener(this);
-  }
-
-  /**
-   * Configure Mac support, if we're running on a Mac.
-   */
-  protected void setupMacSupport ()
-  {
-    Application app = Application.getApplication();
-    if (app == null) {
-      return;
-    }
-
-    // TODO: This was deprecated. I guess it doesn't really
-    // we do not handle the "About" menu item, so remove it.
-//        app.removeAboutMenuItem();
-
-    // add a listener to gracefully shut down
-    app.setQuitHandler(new QuitHandler() {
-      @Override public void handleQuitRequestWith (AppEvent.QuitEvent e, QuitResponse resp) {
-        resp.cancelQuit();
-        shutdown();
-      }
-    });
   }
 
   /**

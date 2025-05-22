@@ -1,10 +1,5 @@
 package com.threerings.projectx.uplink.data;
 
-import com.google.common.collect.Maps;
-
-import java.util.Arrays;
-import java.util.Map;
-
 public enum SystemSender {
   SYSTEM,
   PVP,
@@ -25,8 +20,7 @@ public enum SystemSender {
   public final int senderId = -1 * this.ordinal();
   //public static final Map<Integer, SystemSender> BY_ID = Maps.uniqueIndex(Arrays.asList(values()), new a());
 
-  private SystemSender() {
-  }
+  private SystemSender() {}
 
   public static boolean isSystemName(String var0) {
     return var0 != null && var0.startsWith(" ");

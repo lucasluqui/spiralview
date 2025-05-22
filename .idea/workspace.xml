@@ -10,14 +10,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03152800-68d6-42ed-b2e7-f14ba7b01268" name="Changes" comment="Rename Interface Tester to Interface Editor">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lukaseichberg/fbxloader/FBXDataCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lukaseichberg/fbxloader/FBXDataType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lukaseichberg/fbxloader/FBXFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lukaseichberg/fbxloader/FBXLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lukaseichberg/fbxloader/FBXNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lukaseichberg/fbxloader/FBXProperty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/config/swing/ConfigTreeNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/editor/swing/editors/TableArrayListEditor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/export/Stringifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/expr/FloatExpression.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/GlApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/GlCanvasApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/effect/tools/ParticleEditor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/gui/tools/InterfaceTester.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/material/config/PassConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/model/Conditional.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/model/config/AnimationConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/model/config/CompletedConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/model/config/ModelConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/model/tools/ModelDef.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/model/tools/fbx/AbstractFbxParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/model/tools/fbx/AnimationFbxParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/model/tools/fbx/FbxDumper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/model/tools/fbx/ModelFbxParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/renderer/config/ColorizationConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/util/XmlFormatter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/spiralview_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/spiralview_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/clyde.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/clyde.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/icon-128.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/rsrc/i18n/editor/default.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/rsrc/i18n/editor/default.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/InterfaceTesterHook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/InterfaceTesterHook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/ModelViewerHook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/ModelViewerHook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/ParticleEditorHook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/ParticleEditorHook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/SceneEditorHook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/SceneEditorHook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/threerings/config/tools/ConfigEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/threerings/config/tools/ConfigEditor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/px.jar" beforeDir="false" afterPath="$PROJECT_DIR$/code/px.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/rsrc/i18n/editor/expr.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/rsrc/i18n/editor/expr.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/rsrc/i18n/editor/model.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/rsrc/i18n/editor/model.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/rsrc/i18n/editor/renderer.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/rsrc/i18n/editor/renderer.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/threerings/export/Exporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/threerings/export/Exporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/model/tools/ModelViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/model/tools/ModelViewer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/threerings/projectx/config/ObjectiveConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/threerings/projectx/config/ObjectiveConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/threerings/projectx/data/Achievement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/threerings/projectx/data/Achievement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/threerings/projectx/uplink/data/SystemSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/threerings/projectx/uplink/data/SystemSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/threerings/stats/data/Stat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/threerings/stats/data/Stat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/threerings/tudey/tools/SceneEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/threerings/tudey/tools/SceneEditor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +67,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;lucasluqui&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/lucasluqui/spiralview.git&quot;,
+    &quot;accountId&quot;: &quot;a9f0c66f-bc99-44a7-8767-544dbd9a3cba&quot;
+  }
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -42,26 +87,34 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2HwyT8zbcz16H11fGZUeeKPhK3L" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.ModelViewerHook.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/lucas/IdeaProjects/spiralview/resources/img&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ModelViewerHook.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/lucas/IdeaProjects/spiralview/resources/img",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\lucas\IdeaProjects\spiralview\resources\img" />

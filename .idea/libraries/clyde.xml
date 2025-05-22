@@ -13,6 +13,7 @@
       <root url="jar://$PROJECT_DIR$/code/px.jar!/" />
       <root url="jar://$PROJECT_DIR$/code/lwjgl-2.9.3.jar!/" />
       <root url="jar://$PROJECT_DIR$/code/flatlaf.jar!/" />
+      <root url="jar://$PROJECT_DIR$/code/jsr305-3.0.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
