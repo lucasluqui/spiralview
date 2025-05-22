@@ -9,48 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03152800-68d6-42ed-b2e7-f14ba7b01268" name="Changes" comment="Rename Interface Tester to Interface Editor">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lukaseichberg/fbxloader/FBXDataCategory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lukaseichberg/fbxloader/FBXDataType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lukaseichberg/fbxloader/FBXFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lukaseichberg/fbxloader/FBXLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lukaseichberg/fbxloader/FBXNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lukaseichberg/fbxloader/FBXProperty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/config/swing/ConfigTreeNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/editor/swing/editors/TableArrayListEditor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/export/Stringifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/expr/FloatExpression.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/GlApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/GlCanvasApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/effect/tools/ParticleEditor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/gui/tools/InterfaceTester.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/material/config/PassConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/model/Conditional.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/model/config/AnimationConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/model/config/CompletedConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/model/config/ModelConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/model/tools/ModelDef.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/model/tools/fbx/AbstractFbxParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/model/tools/fbx/AnimationFbxParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/model/tools/fbx/FbxDumper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/model/tools/fbx/ModelFbxParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/renderer/config/ColorizationConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/threerings/util/XmlFormatter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/spiralview_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/spiralview_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/clyde.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/clyde.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/px.jar" beforeDir="false" afterPath="$PROJECT_DIR$/code/px.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/rsrc/i18n/editor/expr.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/rsrc/i18n/editor/expr.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/rsrc/i18n/editor/model.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/rsrc/i18n/editor/model.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/rsrc/i18n/editor/renderer.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/rsrc/i18n/editor/renderer.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/threerings/export/Exporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/threerings/export/Exporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/model/tools/ModelViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/threerings/opengl/model/tools/ModelViewer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/threerings/projectx/config/ObjectiveConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/threerings/projectx/config/ObjectiveConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/threerings/projectx/data/Achievement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/threerings/projectx/data/Achievement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/threerings/projectx/uplink/data/SystemSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/threerings/projectx/uplink/data/SystemSender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/threerings/stats/data/Stat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/threerings/stats/data/Stat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/threerings/tudey/tools/SceneEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/threerings/tudey/tools/SceneEditor.java" afterDir="false" />
+    <list default="true" id="03152800-68d6-42ed-b2e7-f14ba7b01268" name="Changes" comment="Compatibility patches for May 21st update">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/Globals.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -458,7 +418,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723240313699</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Compatibility patches for May 21st update">
+      <option name="closed" value="true" />
+      <created>1747952590707</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1747952590707</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -473,7 +441,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Prepare for release 1.8.1" />
     <MESSAGE value="Warn the user about possible false positive" />
     <MESSAGE value="Fall back to game's Java VM when the system's higher than 8. Prepare for release 1.8.2" />
     <MESSAGE value="Prioritize game's java VM and use system as fallback" />
@@ -498,6 +465,7 @@
     <MESSAGE value="Set a standardized title and window icon across all editors" />
     <MESSAGE value="Bump version to 2.0.1" />
     <MESSAGE value="Rename Interface Tester to Interface Editor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rename Interface Tester to Interface Editor" />
+    <MESSAGE value="Compatibility patches for May 21st update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Compatibility patches for May 21st update" />
   </component>
 </project>
