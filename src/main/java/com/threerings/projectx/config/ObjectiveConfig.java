@@ -7,6 +7,7 @@ package com.threerings.projectx.config;
 import com.threerings.config.ConfigReference;
 import com.threerings.editor.c;
 import com.threerings.editor.e;
+import com.threerings.export.Exportable;
 import com.threerings.export.f;
 import com.threerings.io.Streamable;
 import com.threerings.opengl.gui.ax;
@@ -28,7 +29,7 @@ public abstract class ObjectiveConfig extends g implements f, Streamable {
     return null;
   }
 
-  public static class Simple extends ObjectiveConfig {
+  public static class Simple extends ObjectiveConfig implements Exportable {
     @c
     public String text = "";
     @c(
