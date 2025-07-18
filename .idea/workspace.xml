@@ -9,8 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03152800-68d6-42ed-b2e7-f14ba7b01268" name="Changes" comment="Compatibility patches for May 21st update">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luuqui/spiralview/Globals.java" afterDir="false" />
+    <list default="true" id="03152800-68d6-42ed-b2e7-f14ba7b01268" name="Changes" comment="Set version to 2.0.10">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/px.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +73,7 @@
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
@@ -346,22 +348,6 @@
       <option name="project" value="LOCAL" />
       <updated>1681912241087</updated>
     </task>
-    <task id="LOCAL-00037" summary="Update icons to support new style">
-      <option name="closed" value="true" />
-      <created>1723124048103</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1723124048103</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Remove unrequired resource directory setting, we're already passing it through the cmd line">
-      <option name="closed" value="true" />
-      <created>1723124093003</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1723124093003</updated>
-    </task>
     <task id="LOCAL-00039" summary="You should be exportable">
       <option name="closed" value="true" />
       <created>1723129857596</created>
@@ -426,7 +412,47 @@
       <option name="project" value="LOCAL" />
       <updated>1747952590707</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Prepare for release 2.0.8">
+      <option name="closed" value="true" />
+      <created>1747952625545</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1747952625545</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Update with clyde changes up to 1.0.108">
+      <option name="closed" value="true" />
+      <created>1748969587460</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1748969587460</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Set version to 2.0.9">
+      <option name="closed" value="true" />
+      <created>1748969618143</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1748969618143</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Clyde 1.0.109">
+      <option name="closed" value="true" />
+      <created>1750019840400</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1750019840400</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Set version to 2.0.10">
+      <option name="closed" value="true" />
+      <created>1750023427651</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1750023427651</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -441,11 +467,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Warn the user about possible false positive" />
-    <MESSAGE value="Fall back to game's Java VM when the system's higher than 8. Prepare for release 1.8.2" />
-    <MESSAGE value="Prioritize game's java VM and use system as fallback" />
-    <MESSAGE value="Prepare for release 1.8.3" />
-    <MESSAGE value="Include a copy of projectx-pcode to work with certain packages" />
     <MESSAGE value="Include the new projectx-pcode jar when building the project" />
     <MESSAGE value="Stub implementation of Stats to fix UnlockAchievement errors on some scenes" />
     <MESSAGE value="Add two missing libraries" />
@@ -466,6 +487,11 @@
     <MESSAGE value="Bump version to 2.0.1" />
     <MESSAGE value="Rename Interface Tester to Interface Editor" />
     <MESSAGE value="Compatibility patches for May 21st update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Compatibility patches for May 21st update" />
+    <MESSAGE value="Prepare for release 2.0.8" />
+    <MESSAGE value="Update with clyde changes up to 1.0.108" />
+    <MESSAGE value="Set version to 2.0.9" />
+    <MESSAGE value="Clyde 1.0.109" />
+    <MESSAGE value="Set version to 2.0.10" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set version to 2.0.10" />
   </component>
 </project>
