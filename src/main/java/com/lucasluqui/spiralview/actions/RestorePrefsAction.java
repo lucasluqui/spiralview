@@ -1,40 +1,42 @@
-package com.luuqui.spiralview.actions;
+package com.lucasluqui.spiralview.actions;
 
 /*
  * 		Original author: onyxbits (spiral.onyxbits.de)
- * 		Origin: spiralspy-1.5.jar/de/onyxbits/spiralspy/SavePrefsAction.java
+ * 		Origin: spiralspy-1.5.jar/de/onyxbits/spiralspy/RestorePrefsAction.java
  */
 
-import com.luuqui.spiralview.Log;
+import com.lucasluqui.spiralview.Log;
 import com.threerings.ClydeLog;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 
 import java.awt.event.ActionEvent;
 import java.io.File;
-import java.io.FileOutputStream;
+import java.io.FileInputStream;
 import java.util.prefs.Preferences;
 import javax.swing.AbstractAction;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 @SuppressWarnings("serial")
-public final class SavePrefsAction extends AbstractAction {
+public final class RestorePrefsAction extends AbstractAction {
 
+  @SuppressWarnings("unused")
   private Preferences cfg = Preferences.userNodeForPackage(ClydeLog.class);
   
-  public SavePrefsAction() {
-    putValue("Name", "Save");
-    putValue("ShortDescription", "Write the environment settings to a file");
+  public RestorePrefsAction() {
+    putValue("Name", "Restore");
+    putValue("ShortDescription", "Read the environment from a file");
   }
   
   public void actionPerformed(ActionEvent e) {
     JFileChooser chooser = new JFileChooser();
-    if (chooser.showSaveDialog(null) != 0) {
+    if (chooser.showOpenDialog(null) != 0) {
       return;
     }
     File selected = chooser.getSelectedFile();
     try {
-      this.cfg.exportSubtree(new FileOutputStream(selected));
+      Preferences.importPreferences(new FileInputStream(selected));
+      JOptionPane.showMessageDialog(null, "Preferences loaded, you need to restart spiralview.");
     } catch (Exception ex) {
       ex.printStackTrace();
       JOptionPane.showMessageDialog(null, ex.getMessage());

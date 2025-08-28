@@ -1,14 +1,14 @@
-package com.luuqui.spiralview;
+package com.lucasluqui.spiralview;
 
 import javax.swing.*;
 
-import com.luuqui.util.ImageUtil;
+import com.lucasluqui.util.ImageUtil;
 import com.threerings.opengl.model.tools.ModelViewer;
 
-import com.luuqui.spiralview.actions.ClearPrefsAction;
-import com.luuqui.spiralview.actions.RestorePrefsAction;
-import com.luuqui.spiralview.actions.SavePrefsAction;
-import com.luuqui.spiralview.actions.SnapshotAction;
+import com.lucasluqui.spiralview.actions.ClearPrefsAction;
+import com.lucasluqui.spiralview.actions.RestorePrefsAction;
+import com.lucasluqui.spiralview.actions.SavePrefsAction;
+import com.lucasluqui.spiralview.actions.SnapshotAction;
 
 public class ModelViewerHook extends ModelViewer {
 

@@ -1,13 +1,12 @@
-package com.luuqui.spiralview;
+package com.lucasluqui.spiralview;
 
-import com.luuqui.util.ImageUtil;
-import com.threerings.opengl.effect.tools.ParticleEditor;
+import com.lucasluqui.util.ImageUtil;
+import com.threerings.tudey.tools.SceneEditor;
 
-public class ParticleEditorHook extends ParticleEditor {
+public class SceneEditorHook extends SceneEditor {
 
-  public ParticleEditorHook(String particles) {
-    super(particles);
-    this._frame.setTitle("Particle Editor");
+  public SceneEditorHook(String scene) {
+    super(scene);
     this._frame.setIconImage(ImageUtil.loadImageWithinJar("/img/icon-512.png"));
   }
 
@@ -20,7 +19,7 @@ public class ParticleEditorHook extends ParticleEditor {
 
   public static void main(String[] args) {
     ViewKL.setupLAF();
-    new ParticleEditorHook(null).startup();
+    new SceneEditorHook(null).startup();
   }
 
 }

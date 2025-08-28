@@ -1,4 +1,4 @@
-package com.luuqui.spiralview;
+package com.lucasluqui.spiralview;
 
 import javax.swing.*;
 import javax.swing.plaf.FontUIResource;

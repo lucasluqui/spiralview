@@ -1,6 +1,6 @@
-package com.luuqui.spiralview;
+package com.lucasluqui.spiralview;
 
-import com.luuqui.util.FileUtil;
+import com.lucasluqui.util.FileUtil;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 
 import javax.swing.*;
@@ -63,16 +63,16 @@ public class ViewLegacy {
   private static void resolveTargetedClass(int clazz) {
     switch(clazz) {
       case 0:
-        _targetClass = "com.luuqui.spiralview.ModelViewerHook";
+        _targetClass = "com.lucasluqui.spiralview.ModelViewerHook";
         break;
       case 1:
-        _targetClass = "com.luuqui.spiralview.SceneEditorHook";
+        _targetClass = "com.lucasluqui.spiralview.SceneEditorHook";
         break;
       case 2:
-        _targetClass = "com.luuqui.spiralview.InterfaceTesterHook";
+        _targetClass = "com.lucasluqui.spiralview.InterfaceTesterHook";
         break;
       case 3:
-        _targetClass = "com.luuqui.spiralview.ParticleEditorHook";
+        _targetClass = "com.lucasluqui.spiralview.ParticleEditorHook";
         break;
     }
   }

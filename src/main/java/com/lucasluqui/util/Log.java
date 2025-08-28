@@ -1,4 +1,4 @@
-package com.luuqui.util;
+package com.lucasluqui.util;
 
 import com.samskivert.util.Logger;
 
@@ -11,5 +11,5 @@ public class Log {
   /**
    * The {@link Logger} reference.
    */
-  public static Logger log = Logger.getLogger("com.luuqui.util");
+  public static Logger log = Logger.getLogger("com.lucasluqui.util");
 }

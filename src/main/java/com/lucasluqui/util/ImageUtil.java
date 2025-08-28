@@ -1,9 +1,9 @@
-package com.luuqui.util;
+package com.lucasluqui.util;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
-import static com.luuqui.util.Log.log;
+import static com.lucasluqui.util.Log.log;
 
 public class ImageUtil {
 

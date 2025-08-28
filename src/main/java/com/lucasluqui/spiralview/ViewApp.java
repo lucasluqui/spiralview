@@ -1,7 +1,7 @@
-package com.luuqui.spiralview;
+package com.lucasluqui.spiralview;
 
-import com.luuqui.util.SystemUtil;
-import com.luuqui.util.*;
+import com.lucasluqui.util.SystemUtil;
+import com.lucasluqui.util.*;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 
-import static com.luuqui.spiralview.Log.log;
+import static com.lucasluqui.spiralview.Log.log;
 
 public class ViewApp implements Runnable {
 

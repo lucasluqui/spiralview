@@ -1,4 +1,4 @@
-package com.luuqui.spiralview;
+package com.lucasluqui.spiralview;
 
 import com.formdev.flatlaf.FlatDarkLaf;
 
@@ -32,16 +32,16 @@ public class ViewKL {
   private static void resolveEditor(String editor) {
     switch(editor) {
       case "model":
-        _targetClass = "com.luuqui.spiralview.ModelViewerHook";
+        _targetClass = "com.lucasluqui.spiralview.ModelViewerHook";
         break;
       case "scene":
-        _targetClass = "com.luuqui.spiralview.SceneEditorHook";
+        _targetClass = "com.lucasluqui.spiralview.SceneEditorHook";
         break;
       case "interface":
-        _targetClass = "com.luuqui.spiralview.InterfaceTesterHook";
+        _targetClass = "com.lucasluqui.spiralview.InterfaceTesterHook";
         break;
       case "particle":
-        _targetClass = "com.luuqui.spiralview.ParticleEditorHook";
+        _targetClass = "com.lucasluqui.spiralview.ParticleEditorHook";
         break;
     }
   }

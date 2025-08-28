@@ -1,4 +1,4 @@
-package com.luuqui.spiralview;
+package com.lucasluqui.spiralview;
 
 public class Globals {
 

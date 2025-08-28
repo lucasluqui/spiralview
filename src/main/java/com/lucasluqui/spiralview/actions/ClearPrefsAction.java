@@ -1,11 +1,11 @@
-package com.luuqui.spiralview.actions;
+package com.lucasluqui.spiralview.actions;
 
 /*
  * 		Original author: onyxbits (spiral.onyxbits.de)
  * 		Origin: spiralspy-1.5.jar/de/onyxbits/spiralspy/ClearPrefsAction.java
  */
 
-import com.luuqui.spiralview.Log;
+import com.lucasluqui.spiralview.Log;
 import com.threerings.ClydeLog;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 

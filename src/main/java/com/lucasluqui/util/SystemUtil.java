@@ -1,4 +1,4 @@
-package com.luuqui.util;
+package com.lucasluqui.util;
 
 public class SystemUtil {
 

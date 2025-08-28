@@ -1,6 +1,6 @@
-package com.luuqui.spiralview;
+package com.lucasluqui.spiralview;
 
-import com.luuqui.util.ImageUtil;
+import com.lucasluqui.util.ImageUtil;
 import com.threerings.opengl.gui.tools.InterfaceTester;
 
 public class InterfaceTesterHook extends InterfaceTester {

@@ -73,7 +73,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Multiset;
 
-import com.luuqui.util.ImageUtil;
+import com.lucasluqui.util.ImageUtil;
 import com.samskivert.swing.GroupLayout;
 import com.samskivert.swing.VGroupLayout;
 import com.samskivert.swing.util.SwingUtil;
