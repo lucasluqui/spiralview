@@ -7,6 +7,7 @@ public class SceneEditorHook extends SceneEditor {
 
   public SceneEditorHook(String scene) {
     super(scene);
+    this._frame.setTitle("Three Rings Scene Editor");
     this._frame.setIconImage(ImageUtil.loadImageWithinJar("/img/icon-512.png"));
   }
 
