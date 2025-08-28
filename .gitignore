@@ -24,3 +24,6 @@ hs_err_pid*
 
 # exclude binaries
 bin/
+
+# Classes folder
+classes/
