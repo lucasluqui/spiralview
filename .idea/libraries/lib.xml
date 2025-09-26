@@ -1,13 +1,25 @@
 <component name="libraryTable">
   <library name="lib">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/lib" />
+      <root url="jar://$PROJECT_DIR$/lib/clyde.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-io-2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-lang3-3.12.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/flatlaf.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jsr305-3.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-2.9.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/narya-1.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/nenya-1.6.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/ooo-util-1.4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/rest-lib.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/samskivert-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/vilya-1.6.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="file://$PROJECT_DIR$/lib" />
+      <root url="jar://$PROJECT_DIR$/lib/clyde.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/narya-1.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/rest-lib.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/samskivert-1.9.jar!/" />
     </SOURCES>
-    <jarDirectory url="file://$PROJECT_DIR$/lib" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/lib" recursive="false" type="SOURCES" />
   </library>
 </component>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="projectx-pcode">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/projectx-pcode.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/projectx-pcode.jar!/" />
+    </SOURCES>
+  </library>
+</component>
