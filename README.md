@@ -1,14 +1,12 @@
-# ⚠️ ATTENTION ⚠️
-
-This repository no longer hosts the latest release of spiralview as it has been integrated into [Knight Launcher](https://github.com/lucasluqui/KnightLauncher). Please [download Knight Launcher](https://github.com/lucasluqui/KnightLauncher/releases/latest) to use spiralview. You will only find the latest **source code** here, not releases.
-
 # spiralview
-<p align="left">
-    <a href="https://GitHub.com/lucas-allegri/spiralview/releases/"><img alt="Total downloads" src="https://img.shields.io/github/downloads/lucas-allegri/spiralview/total.svg"></a>
-</p>
-Model Viewer, Scene Editor, Interface Tester and Particle Editor for a certain game.
+> [!NOTE]
+> This repository no longer hosts the latest release of spiralview as it has been integrated into [Knight Launcher](https://github.com/lucasluqui/KnightLauncher). Please [download Knight Launcher](https://github.com/lucasluqui/KnightLauncher/releases/latest) to use spiralview. You will only find the latest **source code** here, not releases.
 
-## Special thanks to
-**rrrrex (Discord: rrrrex#7286)**: Providing local repositories to build Clyde and updated configs.
+Wrapper of various Three Rings editors for Spiral Knights.
 
-**onyxbits (spiral.onyxbits.de)**: Author of spiralspy; predecessor of spiralview.
+spiralview relies on the [clyde](https://github.com/threerings/clyde) library to work, 99.9% of the work is done there, 
+this is simply a wrapper for it with some minor quality of life changes and fixes for [Spiral Knights](https://spiralknights.com) in specific.
+
+## Thanks
+- **rrrrex** (rrrrex, 357940678489014284 @ Discord): For in the past providing local repositories to build clyde and updated configs.
+- **onyxbits** (spiral.onyxbits.de): Author of spiralspy; predecessor of spiralview.
