@@ -22,8 +22,7 @@ public class ModelViewerHook extends ModelViewer {
     environment.add(new JMenuItem(new ClearPrefsAction()));
     file.add(new JMenuItem(new SnapshotAction(this)), 0);
     file.add(environment, 0);
-    this._frame.setTitle("Three Rings Model Viewer");
-    this._frame.setIconImage(ImageUtil.loadImageWithinJar("/img/icon-512.png"));
+    this._frame.setIconImage(ImageUtil.loadImageWithinJar("/img/icon.png"));
   }
 
   protected void didInit() {

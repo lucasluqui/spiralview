@@ -7,8 +7,7 @@ public class ParticleEditorHook extends ParticleEditor {
 
   public ParticleEditorHook(String particles) {
     super(particles);
-    this._frame.setTitle("Three Rings Particle Editor");
-    this._frame.setIconImage(ImageUtil.loadImageWithinJar("/img/icon-512.png"));
+    this._frame.setIconImage(ImageUtil.loadImageWithinJar("/img/icon.png"));
   }
 
   protected void didInit() {

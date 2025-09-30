@@ -7,8 +7,7 @@ public class InterfaceTesterHook extends InterfaceTester {
 
   public InterfaceTesterHook(String userInterface) {
     super(userInterface);
-    this._frame.setTitle("Three Rings Interface Tester");
-    this._frame.setIconImage(ImageUtil.loadImageWithinJar("/img/icon-512.png"));
+    this._frame.setIconImage(ImageUtil.loadImageWithinJar("/img/icon.png"));
   }
 
   protected void didInit() {
