@@ -60,9 +60,16 @@ public abstract class Exporter implements Closeable {
     }
   }
 
+  // START: List of obfuscated methods (I assume used throughout time), helps patch odd Scene Editor errors
+  // when saving certain scene files.
   public final void kz() throws IOException {
     defaultWriteFields();
   }
+
+  public final void kG() throws IOException {
+    defaultWriteFields();
+  }
+  // END
 
   public void write(String name, boolean value, boolean defvalue) throws IOException {
     if (value != defvalue) {
