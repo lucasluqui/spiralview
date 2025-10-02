@@ -81,6 +81,7 @@ import com.samskivert.swing.util.SwingUtil;
 import com.samskivert.util.ObserverList;
 import com.samskivert.util.QuickSort;
 
+import com.threerings.config.util.ConfigId;
 import com.threerings.media.image.ColorPository;
 import com.threerings.resource.ResourceManager;
 import com.threerings.swing.PrintStreamDialog;
@@ -186,7 +187,7 @@ public class ConfigEditor extends BaseConfigEditor
     });
 
     this.setTitle("Config Editor");
-    this.setIconImage(ImageUtil.loadImageWithinJar("/img/icon-512.png"));
+    this.setIconImage(ImageUtil.loadImageWithinJar("/img/icon.png"));
 
     // populate the menu bar
     JMenuBar menubar = new JMenuBar();
@@ -515,6 +516,18 @@ public class ConfigEditor extends BaseConfigEditor
         return;
       }
     }
+  }
+
+  /**
+   * Get the currently-selected configuration.
+   */
+  protected ConfigId getSelected ()
+  {
+    ManagerPanel panel = (ManagerPanel)_tabs.getSelectedComponent();
+    String name = panel.getSelected();
+    if (name == null) return null;
+    ManagerPanel.GroupItem item = (ManagerPanel.GroupItem)panel.gbox.getSelectedItem();
+    return new ConfigId(item.group.getConfigClass(), name);
   }
 
   /**
