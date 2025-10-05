@@ -17,8 +17,8 @@ import java.util.Date;
 @SuppressWarnings("serial")
 public final class SnapshotAction extends AbstractAction
 {
-  private GlApp app;
-  private String appName;
+  private final GlApp app;
+  private final String appName;
 
   public SnapshotAction (GlApp app, String appName)
   {
@@ -28,7 +28,7 @@ public final class SnapshotAction extends AbstractAction
     this.app = app;
     this.appName = appName;
   }
-  
+
   public void actionPerformed (ActionEvent e)
   {
     SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");

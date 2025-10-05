@@ -1,9 +1,7 @@
 package com.lucasluqui.spiralview.actions;
 
-/*
- * 		Original author: onyxbits (spiral.onyxbits.de)
- * 		Origin: spiralspy-1.5.jar/de/onyxbits/spiralspy/SavePrefsAction.java
- */
+// Original author: onyxbits (spiral.onyxbits.de)
+// File: spiralspy-1.5.jar/de/onyxbits/spiralspy/SavePrefsAction.java
 
 import com.lucasluqui.spiralview.Log;
 import com.threerings.ClydeLog;
@@ -18,16 +16,18 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 @SuppressWarnings("serial")
-public final class SavePrefsAction extends AbstractAction {
+public final class SavePrefsAction extends AbstractAction
+{
+  private final Preferences cfg = Preferences.userNodeForPackage(ClydeLog.class);
 
-  private Preferences cfg = Preferences.userNodeForPackage(ClydeLog.class);
-  
-  public SavePrefsAction() {
+  public SavePrefsAction ()
+  {
     putValue("Name", "Save");
     putValue("ShortDescription", "Write the environment settings to a file");
   }
-  
-  public void actionPerformed(ActionEvent e) {
+
+  public void actionPerformed (ActionEvent e)
+  {
     JFileChooser chooser = new JFileChooser();
     if (chooser.showSaveDialog(null) != 0) {
       return;

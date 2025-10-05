@@ -4,11 +4,12 @@ import com.formdev.flatlaf.FlatDarkLaf;
 
 import javax.swing.*;
 
-public class ViewKL {
-
+public class ViewKL
+{
   private static String _targetClass = null;
 
-  public static void start(String editor, String rsrc) {
+  public static void start (String editor, String rsrc)
+  {
     resolveEditor(editor);
 
     ViewApp.run(ViewApp.createRuntimeCommand(
@@ -16,7 +17,8 @@ public class ViewKL {
     System.exit(1);
   }
 
-  protected static void setupLAF() {
+  protected static void setupLAF ()
+  {
     System.setProperty("awt.useSystemAAFontSettings", "on");
     System.setProperty("swing.aatext", "true");
 
@@ -29,8 +31,9 @@ public class ViewKL {
     Stylesheet.load();
   }
 
-  private static void resolveEditor(String editor) {
-    switch(editor) {
+  private static void resolveEditor (String editor)
+  {
+    switch (editor) {
       case "model":
         _targetClass = "com.lucasluqui.spiralview.ModelViewerHook";
         break;
@@ -45,5 +48,4 @@ public class ViewKL {
         break;
     }
   }
-
 }

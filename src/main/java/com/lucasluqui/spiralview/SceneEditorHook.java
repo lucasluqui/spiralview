@@ -7,9 +7,10 @@ import com.threerings.tudey.tools.SceneEditor;
 
 import javax.swing.*;
 
-public class SceneEditorHook extends SceneEditor {
-
-  public SceneEditorHook(String scene) {
+public class SceneEditorHook extends SceneEditor
+{
+  public SceneEditorHook (String scene)
+  {
     super(scene);
     JMenuBar mbar = this._frame.getJMenuBar();
     JMenu tools = mbar.getMenu(mbar.getMenuCount() - 1);
@@ -18,16 +19,17 @@ public class SceneEditorHook extends SceneEditor {
     this._frame.setIconImage(ImageUtil.loadImageWithinJar("/img/icon.png"));
   }
 
-  protected void didInit() {
+  protected void didInit ()
+  {
     super.didInit();
 
     this._grid.getColor().set(0.21F, 0.21F, 0.21F, 0.0F);
     this._compositor.getDefaultBackgroundColor().set(0.41F, 0.41F, 0.41F, 0.0F);
   }
 
-  public static void main(String[] args) {
+  public static void main (String[] args)
+  {
     ViewKL.setupLAF();
     new SceneEditorHook(null).startup();
   }
-
 }

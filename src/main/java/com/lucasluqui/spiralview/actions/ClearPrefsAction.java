@@ -1,9 +1,7 @@
 package com.lucasluqui.spiralview.actions;
 
-/*
- * 		Original author: onyxbits (spiral.onyxbits.de)
- * 		Origin: spiralspy-1.5.jar/de/onyxbits/spiralspy/ClearPrefsAction.java
- */
+// Original author: onyxbits (spiral.onyxbits.de)
+// File: spiralspy-1.5.jar/de/onyxbits/spiralspy/ClearPrefsAction.java
 
 import com.lucasluqui.spiralview.Log;
 import com.threerings.ClydeLog;
@@ -15,16 +13,18 @@ import javax.swing.AbstractAction;
 import javax.swing.JOptionPane;
 
 @SuppressWarnings("serial")
-public final class ClearPrefsAction extends AbstractAction {
+public final class ClearPrefsAction extends AbstractAction
+{
+  private final Preferences cfg = Preferences.userNodeForPackage(ClydeLog.class);
 
-  private Preferences cfg = Preferences.userNodeForPackage(ClydeLog.class);
-  
-  public ClearPrefsAction() {
+  public ClearPrefsAction ()
+  {
     putValue("Name", "Clear");
     putValue("ShortDescription", "Clear preferences settings");
   }
-  
-  public void actionPerformed(ActionEvent e) {
+
+  public void actionPerformed (ActionEvent e)
+  {
     try {
       this.cfg.removeNode();
       JOptionPane.showMessageDialog(null, "Preferences cleared, you need to restart spiralview.");

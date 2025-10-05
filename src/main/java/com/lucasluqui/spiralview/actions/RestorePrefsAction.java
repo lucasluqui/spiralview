@@ -1,9 +1,7 @@
 package com.lucasluqui.spiralview.actions;
 
-/*
- * 		Original author: onyxbits (spiral.onyxbits.de)
- * 		Origin: spiralspy-1.5.jar/de/onyxbits/spiralspy/RestorePrefsAction.java
- */
+// Original author: onyxbits (spiral.onyxbits.de)
+// File: spiralspy-1.5.jar/de/onyxbits/spiralspy/RestorePrefsAction.java
 
 import com.lucasluqui.spiralview.Log;
 import com.threerings.ClydeLog;
@@ -18,17 +16,19 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 @SuppressWarnings("serial")
-public final class RestorePrefsAction extends AbstractAction {
-
+public final class RestorePrefsAction extends AbstractAction
+{
   @SuppressWarnings("unused")
-  private Preferences cfg = Preferences.userNodeForPackage(ClydeLog.class);
-  
-  public RestorePrefsAction() {
+  private final Preferences cfg = Preferences.userNodeForPackage(ClydeLog.class);
+
+  public RestorePrefsAction ()
+  {
     putValue("Name", "Restore");
     putValue("ShortDescription", "Read the environment from a file");
   }
-  
-  public void actionPerformed(ActionEvent e) {
+
+  public void actionPerformed (ActionEvent e)
+  {
     JFileChooser chooser = new JFileChooser();
     if (chooser.showOpenDialog(null) != 0) {
       return;

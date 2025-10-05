@@ -5,10 +5,10 @@ import java.io.IOException;
 
 import static com.lucasluqui.util.Log.log;
 
-public class ImageUtil {
-
-  public static BufferedImage loadImageWithinJar(String fileName) {
-
+public class ImageUtil
+{
+  public static BufferedImage loadImageWithinJar (String fileName)
+  {
     BufferedImage buff = null;
     try {
       buff = javax.imageio.ImageIO.read(ImageUtil.class.getResourceAsStream(fileName));
@@ -18,5 +18,4 @@ public class ImageUtil {
     }
     return buff;
   }
-
 }

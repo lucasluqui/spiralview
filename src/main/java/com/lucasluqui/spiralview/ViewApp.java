@@ -17,25 +17,28 @@ import org.apache.commons.lang3.exception.ExceptionUtils;
 
 import static com.lucasluqui.spiralview.Log.log;
 
-public class ViewApp implements Runnable {
-
+public class ViewApp implements Runnable
+{
   String[] args = null;
 
-  public ViewApp(String... args) {
+  public ViewApp (String... args)
+  {
     this.args = args;
     run();
   }
 
-  public static void main(String[] args) {
+  public static void main (String[] args)
+  {
     new Thread(new ViewApp(args)).start();
   }
 
-  public void run() {
+  public void run ()
+  {
     setupFileLogging();
     logVMInfo();
     log.info("Running version " + Globals.VERSION);
 
-    if(this.args.length > 0 && this.args[0].equalsIgnoreCase("kl")) {
+    if (this.args.length > 0 && this.args[0].equalsIgnoreCase("kl")) {
       // kl boot
       ViewKL.start(args[1], args[2]);
     } else {
@@ -44,22 +47,25 @@ public class ViewApp implements Runnable {
     }
   }
 
-  protected static void pushError(String message) {
+  protected static void pushError (String message)
+  {
     JOptionPane.showMessageDialog(null, message);
     log.error(message);
     System.exit(1);
   }
 
-  protected static void pushWarning(String message) {
+  protected static void pushWarning (String message)
+  {
     JOptionPane.showMessageDialog(null, message);
     log.warning(message);
   }
 
-  protected static String[] createRuntimeCommand(String targetClass, String javaVMPath, int chosen) {
+  protected static String[] createRuntimeCommand (String targetClass, String javaVMPath, int chosen)
+  {
     String gameJavaVMPath = SystemUtil.isWindows() ? Globals.USER_DIR + File.separator + "java_vm\\bin\\java.exe" : Globals.USER_DIR + File.separator + "java/bin/java";
-    String gameJavaVMVersion = runAndCapture(new String[] { gameJavaVMPath, "-version" })[1];
+    String gameJavaVMVersion = runAndCapture(new String[]{gameJavaVMPath, "-version"})[1];
 
-    if(gameJavaVMVersion.contains("1.7") || gameJavaVMVersion.contains("1.8")) {
+    if (gameJavaVMVersion.contains("1.7") || gameJavaVMVersion.contains("1.8")) {
       log.info("Compatible game Java VM version found: " + gameJavaVMVersion);
       javaVMPath = gameJavaVMPath;
     } else if (System.getProperty("java.version").contains("1.7") || System.getProperty("java.version").contains("1.8")) {
@@ -70,25 +76,26 @@ public class ViewApp implements Runnable {
 
     String libSeparator = SystemUtil.isWindows() ? ";" : ":";
 
-    return new String[] {
-        javaVMPath,
-        "-classpath",
+    return new String[]{
+      javaVMPath,
+      "-classpath",
       Globals.USER_DIR + File.separator + "./spiralview.jar" + libSeparator +
         Globals.USER_DIR + File.separator + "./code/projectx-config.jar" + libSeparator +
         Globals.USER_DIR + File.separator + "./code/projectx-pcode.jar" + libSeparator +
         Globals.USER_DIR + File.separator + "./code/lwjgl_util.jar" + libSeparator +
         Globals.USER_DIR + File.separator + "./code/lwjgl.jar",
-        "-Xms3G",
-        "-Xmx3G",
-        "-Dappdir=" + Globals.USER_DIR + File.separator + "./",
-        "-Dresource_dir=" + Globals.USER_DIR + File.separator + "./rsrc",
-        "-Djava.library.path=" + Globals.USER_DIR + File.separator + "./native",
-        targetClass,
-        chosen == 0 ? "rsrc\\character\\pc\\model.dat" : ""
+      "-Xms3G",
+      "-Xmx3G",
+      "-Dappdir=" + Globals.USER_DIR + File.separator + "./",
+      "-Dresource_dir=" + Globals.USER_DIR + File.separator + "./rsrc",
+      "-Djava.library.path=" + Globals.USER_DIR + File.separator + "./native",
+      targetClass,
+      chosen == 0 ? "rsrc\\character\\pc\\model.dat" : ""
     };
   }
 
-  protected static void run(String[] command, boolean keepAlive) {
+  protected static void run (String[] command, boolean keepAlive)
+  {
     Process process = null;
     try {
       process = Runtime.getRuntime().exec(command);
@@ -101,7 +108,8 @@ public class ViewApp implements Runnable {
     }
   }
 
-  protected static String[] runAndCapture(String[] command) {
+  protected static String[] runAndCapture (String[] command)
+  {
     Process process = null;
     try {
       process = new ProcessBuilder(command).start();
@@ -110,18 +118,19 @@ public class ViewApp implements Runnable {
       // sending important stuff through stderr like -version.
       String stdout = IOUtils.toString(process.getInputStream(), Charset.defaultCharset());
       String stderr = IOUtils.toString(process.getErrorStream(), Charset.defaultCharset());
-      return new String[] {stdout, stderr};
+      return new String[]{stdout, stderr};
     } catch (IOException e) {
       log.error(ExceptionUtils.getStackTrace(e));
     } finally {
 
       // No need to keep the process active.
-      if(process != null) process.destroy();
+      if (process != null) process.destroy();
     }
     return new String[1];
   }
 
-  private static void setupFileLogging() {
+  private static void setupFileLogging ()
+  {
     File logFile = new File("spiralview.log");
     File oldLogFile = new File("old-spiralview.log");
 
@@ -138,7 +147,8 @@ public class ViewApp implements Runnable {
     }
   }
 
-  private void logVMInfo() {
+  private void logVMInfo ()
+  {
     log.info("------------ VM Info ------------");
     log.info("OS Name: " + System.getProperty("os.name"));
     log.info("OS Arch: " + System.getProperty("os.arch"));
@@ -150,5 +160,4 @@ public class ViewApp implements Runnable {
     log.info("Current Directory: " + System.getProperty("user.dir"));
     log.info("---------------------------------");
   }
-
 }

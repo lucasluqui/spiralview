@@ -1,9 +1,7 @@
 package com.lucasluqui.spiralview.actions;
 
-/*
- * 		Original author: onyxbits (spiral.onyxbits.de)
- * 		Origin: spiralspy-1.5.jar/de/onyxbits/spiralspy/SnapShotAction.java
- */
+// Original author: onyxbits (spiral.onyxbits.de)
+// File: spiralspy-1.5.jar/de/onyxbits/spiralspy/SnapShotPrefsAction.java
 
 import com.lucasluqui.spiralview.Log;
 import com.threerings.opengl.GlApp;
@@ -23,21 +21,23 @@ import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 
 @SuppressWarnings("serial")
-public final class SnapshotToAction extends AbstractAction {
-
-  private GlApp app;
-  private String appName;
+public final class SnapshotToAction extends AbstractAction
+{
+  private final GlApp app;
+  private final String appName;
   private String lastSavedPath = null;
-  
-  public SnapshotToAction (GlApp app, String appName) {
+
+  public SnapshotToAction (GlApp app, String appName)
+  {
     putValue("Name", "Save Snapshot To...");
     putValue("ShortDescription", "Dump the contents of the framebuffer to a file in a specified path");
     putValue("AcceleratorKey", KeyStroke.getKeyStroke(KeyEvent.VK_F12, InputEvent.CTRL_DOWN_MASK));
     this.app = app;
     this.appName = appName;
   }
-  
-  public void actionPerformed(ActionEvent e) {
+
+  public void actionPerformed (ActionEvent e)
+  {
     BufferedImage img = this.app.createSnapshot(true);
     JFileChooser chooser = new JFileChooser();
     SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");

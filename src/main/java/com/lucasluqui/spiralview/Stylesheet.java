@@ -5,9 +5,10 @@ import javax.swing.plaf.FontUIResource;
 import java.awt.*;
 import java.io.InputStream;
 
-public class Stylesheet {
-
-  public static void load() {
+public class Stylesheet
+{
+  public static void load ()
+  {
     // Start: KL Stylesheet
     //UIManager.put("TabbedPane.underlineColor", CustomColors.KL);
     //UIManager.put("TabbedPane.inactiveUnderlineColor", CustomColors.KL);
@@ -95,5 +96,4 @@ public class Stylesheet {
     }
     // End: spiralview Stylesheet
   }
-
 }
