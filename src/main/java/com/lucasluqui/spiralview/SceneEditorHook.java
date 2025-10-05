@@ -3,6 +3,7 @@ package com.lucasluqui.spiralview;
 import com.lucasluqui.spiralview.actions.SnapshotAction;
 import com.lucasluqui.spiralview.actions.SnapshotToAction;
 import com.lucasluqui.util.ImageUtil;
+import com.threerings.opengl.camera.OrbitCameraHandler;
 import com.threerings.tudey.tools.SceneEditor;
 
 import javax.swing.*;
@@ -23,6 +24,13 @@ public class SceneEditorHook extends SceneEditor
   {
     super.didInit();
 
+    // Modify the camera handler to allow unrestricted camera rotation.
+    //((OrbitCameraHandler) this._camhand).setCoordLimits(
+    //  (-(float) Math.PI / 2F),
+    //  ((float) Math.PI / 2F),
+    //  2.0F,
+    //  50.0F
+    //);
     this._grid.getColor().set(0.21F, 0.21F, 0.21F, 0.0F);
     this._compositor.getDefaultBackgroundColor().set(0.41F, 0.41F, 0.41F, 0.0F);
   }
