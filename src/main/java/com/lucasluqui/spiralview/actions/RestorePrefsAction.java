@@ -15,7 +15,6 @@ import javax.swing.AbstractAction;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
-@SuppressWarnings("serial")
 public final class RestorePrefsAction extends AbstractAction
 {
   @SuppressWarnings("unused")

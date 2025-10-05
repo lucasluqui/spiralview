@@ -14,7 +14,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@SuppressWarnings("serial")
 public final class SnapshotAction extends AbstractAction
 {
   private final GlApp app;

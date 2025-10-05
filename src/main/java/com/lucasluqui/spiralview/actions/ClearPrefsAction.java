@@ -12,7 +12,6 @@ import java.util.prefs.Preferences;
 import javax.swing.AbstractAction;
 import javax.swing.JOptionPane;
 
-@SuppressWarnings("serial")
 public final class ClearPrefsAction extends AbstractAction
 {
   private final Preferences cfg = Preferences.userNodeForPackage(ClydeLog.class);
