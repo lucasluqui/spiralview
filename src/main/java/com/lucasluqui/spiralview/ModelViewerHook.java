@@ -8,7 +8,6 @@ import com.threerings.opengl.model.tools.ModelViewer;
 import com.lucasluqui.spiralview.actions.ClearPrefsAction;
 import com.lucasluqui.spiralview.actions.RestorePrefsAction;
 import com.lucasluqui.spiralview.actions.SavePrefsAction;
-import com.lucasluqui.spiralview.actions.SnapshotToAction;
 
 public class ModelViewerHook extends ModelViewer
 {
@@ -17,13 +16,11 @@ public class ModelViewerHook extends ModelViewer
     super(model);
     JMenuBar mbar = this._frame.getJMenuBar();
     JMenu file = mbar.getMenu(0);
-    JMenu tools = mbar.getMenu(mbar.getMenuCount() - 1);
     JMenu environment = new JMenu("Environment");
     environment.add(new JMenuItem(new SavePrefsAction()));
     environment.add(new JMenuItem(new RestorePrefsAction()));
     environment.add(new JMenuItem(new ClearPrefsAction()));
     file.add(environment, 0);
-    tools.add(new JMenuItem(new SnapshotToAction(this, "viewer")), tools.getItemCount());
     this._frame.setIconImage(ImageUtil.loadImageWithinJar("/img/icon.png"));
   }
 

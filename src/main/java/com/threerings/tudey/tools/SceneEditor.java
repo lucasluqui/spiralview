@@ -44,13 +44,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Map;
-import java.util.List;
-import java.util.Set;
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.prefs.Preferences;
 
+import javax.imageio.ImageIO;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.BorderFactory;
@@ -72,9 +70,11 @@ import javax.swing.WindowConstants;
 import javax.swing.event.UndoableEditEvent;
 import javax.swing.event.UndoableEditListener;
 import javax.swing.filechooser.FileFilter;
+import javax.swing.filechooser.FileSystemView;
 import javax.swing.undo.UndoManager;
 import javax.swing.undo.UndoableEditSupport;
 
+import com.threerings.opengl.Log;
 import org.lwjgl.opengl.GL11;
 
 import com.google.common.base.Function;
@@ -1033,6 +1033,17 @@ public class SceneEditor extends TudeyTool
           return model.validateReferences(validator);
         }
       }.setVisible(true);
+    } else if (action.equals("save_snapshot")) {
+      SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
+      File file = new File(FileSystemView.getFileSystemView().getDefaultDirectory(),
+        "scene_" + fmt.format(new Date()) + ".png"
+      );
+
+      try {
+        ImageIO.write(this.createSnapshot(true), "png", file);
+      } catch (IOException e) {
+        Log.log.warning("Failed to write snapshot.", "file", file, e);
+      }
     } else {
       super.actionPerformed(event);
     }
@@ -1150,6 +1161,7 @@ public class SceneEditor extends TudeyTool
   {
     JMenu tools = createMenu("tools", KeyEvent.VK_T);
     tools.add(createMenuItem("batch_validate", KeyEvent.VK_B, -1));
+    tools.add(createMenuItem("save_snapshot", KeyEvent.VK_S, KeyEvent.VK_F12, 0));
 
     return tools;
   }

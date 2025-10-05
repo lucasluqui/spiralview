@@ -22,7 +22,7 @@ public final class SnapshotAction extends AbstractAction
   public SnapshotAction (GlApp app, String appName)
   {
     putValue("Name", "Save Snapshot");
-    putValue("ShortDescription", "Dump the contents of the framebuffer to a file");
+    putValue("ShortDescription", "Dump the contents of the framebuffer to a file.");
     putValue("AcceleratorKey", KeyStroke.getKeyStroke(KeyEvent.VK_F12, 0));
     this.app = app;
     this.appName = appName;
