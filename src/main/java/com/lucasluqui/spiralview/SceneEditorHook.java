@@ -1,12 +1,18 @@
 package com.lucasluqui.spiralview;
 
+import com.lucasluqui.spiralview.actions.SnapshotAction;
 import com.lucasluqui.util.ImageUtil;
 import com.threerings.tudey.tools.SceneEditor;
+
+import javax.swing.*;
 
 public class SceneEditorHook extends SceneEditor {
 
   public SceneEditorHook(String scene) {
     super(scene);
+    JMenuBar mbar = this._frame.getJMenuBar();
+    JMenu file = mbar.getMenu(0);
+    file.add(new JMenuItem(new SnapshotAction(this, "scene")), 0);
     this._frame.setIconImage(ImageUtil.loadImageWithinJar("/img/icon.png"));
   }
 
