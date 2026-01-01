@@ -62,12 +62,216 @@ public abstract class Exporter implements Closeable {
 
   // START: List of obfuscated methods (I assume used throughout time), helps patch odd Scene Editor errors
   // when saving certain scene files.
-  public final void kz() throws IOException {
+  public final void obfuscatedToDefaultWriteFields() throws IOException {
     defaultWriteFields();
   }
 
+  public final void ka() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kA() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kb() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kB() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kc() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kC() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kd() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kD() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void ke() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kE() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kf() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kF() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kg() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
   public final void kG() throws IOException {
-    defaultWriteFields();
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kh() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kH() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void ki() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kI() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kj() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kJ() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kk() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kK() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kl() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kL() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void km() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kM() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kn() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kN() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void ko() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kO() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kp() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kP() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kq() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kQ() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kr() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kR() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void ks() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kS() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kt() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kT() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void ku() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kU() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kv() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kV() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kw() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kW() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kx() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kX() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void ky() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kY() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kz() throws IOException {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kZ() throws IOException {
+    obfuscatedToDefaultWriteFields();
   }
   // END
 

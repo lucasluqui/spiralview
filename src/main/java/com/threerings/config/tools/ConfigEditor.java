@@ -845,10 +845,8 @@ public class ConfigEditor extends BaseConfigEditor
 //                log.info("Config changed " + _tree.getSelectedNode().getConfig(),
 //                        "lastValue", _lastValue);
         ManagedConfig oldLastValue = _lastValue;
-        _lastValue = (ManagedConfig)
-          ((ManagedConfig)_tree.getSelectedNode().getConfig()).clone();
-        maybePostUndo(
-          new ConfigEdit(ConfigEdit.Type.CHANGE, group, _lastValue, oldLastValue));
+        _lastValue = (ManagedConfig)_tree.getSelectedNode().getConfig().clone();
+        maybePostUndo(new ConfigEdit(ConfigEdit.Type.CHANGE, group, _lastValue, oldLastValue));
 
         DirtyGroupManager.setDirty(group, true);
         _tree.selectedConfigChanged();
@@ -1120,6 +1118,18 @@ public class ConfigEditor extends BaseConfigEditor
     public ColorPository getColorPository ()
     {
       return _colorpos;
+    }
+
+    // from EditorContext
+    public Predicate<? super ManagedConfig> getChoosingFilter (Class<? extends ManagedConfig> clazz)
+    {
+      return ConfigEditor.this.getChoosingFilter(clazz);
+    }
+
+    // from EditorContext
+    public Predicate<Class<?>> getTypeFilter ()
+    {
+      return ConfigEditor.this.getTypeFilter();
     }
 
     // documentation inherited from interface ItemListener

@@ -1,75 +1,72 @@
-package com.threerings.projectx.config;
-
 // add Simple empty constructor
 // replace return type of b method
 // fix return type of b method within simple class
 
+package com.threerings.projectx.config;
+
 import com.threerings.config.ConfigReference;
 import com.threerings.editor.c;
 import com.threerings.editor.e;
-import com.threerings.export.Exportable;
-import com.threerings.export.f;
+import com.threerings.export.d;
 import com.threerings.io.Streamable;
-import com.threerings.opengl.gui.ax;
-import com.threerings.opengl.gui.p;
+import com.threerings.opengl.gui.ay;
 import com.threerings.opengl.gui.config.UserInterfaceConfig;
-import com.threerings.projectx.client.er;
+import com.threerings.projectx.client.ew;
 import com.threerings.projectx.uplink.data.SystemSender;
-import com.threerings.projectx.util.A;
+import com.threerings.projectx.util.C;
 import com.threerings.tudey.config.ActionConfig;
 import com.threerings.util.g;
 
 @e({ObjectiveConfig.Simple.class, ObjectiveConfig.ReadSystemMail.class})
-public abstract class ObjectiveConfig extends g implements f, Streamable {
+public abstract class ObjectiveConfig extends g implements d, Streamable {
   public String getText() {
     return null;
   }
 
-  public ax b(A var1, er var2) {
+  public Object b(C var1, ew var2) {
     return null;
   }
 
-  public static class Simple extends ObjectiveConfig implements Exportable {
+  public static class Simple extends ObjectiveConfig {
+    public Simple () {}
+
     @c
     public String text = "";
     @c(
-        iM = 0.01,
-        iC = "c"
+      iG = 0.01,
+      iv = "c"
     )
     public float childX = 0.5F;
     @c(
-        iM = 0.01,
-        iC = "c"
+      iG = 0.01,
+      iv = "c"
     )
     public float childY = 0.5F;
     @c(
-        iM = 0.01,
-        iC = "p"
+      iG = 0.01,
+      iv = "p"
     )
     public float parentX = 0.5F;
     @c(
-        iM = 0.01,
-        iC = "p"
+      iG = 0.01,
+      iv = "p"
     )
     public float parentY = 0.5F;
     @c(
-        iR = true
+      iL = true
     )
     public ConfigReference<UserInterfaceConfig> userInterface;
-
-    public Simple() {
-    }
 
     public final String getText() {
       return this.text;
     }
 
-    public final ax b(A var1, er var2) {
+    public final Object b(C var1, ew var2) {
       if (this.userInterface == null) {
         return null;
       } else {
-        ax var3 = new ax(var1, this.userInterface);
-        //var2.xK().add(var3, new b.a(this.childX, this.childY, this.parentX, this.parentY, 0, 0, false));
+        Object var3 = new ay(var1, this.userInterface);
+        //var2.xS().add(var3, new b.a(this.childX, this.childY, this.parentX, this.parentY, 0, 0, false));
         return var3;
       }
     }

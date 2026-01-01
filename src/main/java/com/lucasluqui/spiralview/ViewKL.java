@@ -4,16 +4,18 @@ import com.formdev.flatlaf.FlatDarkLaf;
 
 import javax.swing.*;
 
+import static com.lucasluqui.spiralview.Log.log;
+
 public class ViewKL
 {
-  private static String _targetClass = null;
+  private static String targetClass = null;
 
   public static void start (String editor, String rsrc)
   {
     resolveEditor(editor);
 
     ViewApp.run(ViewApp.createRuntimeCommand(
-      _targetClass, "java", editor.equalsIgnoreCase("model") ? 0 : -1), true);
+      targetClass, "java", editor.equalsIgnoreCase("model") ? 0 : -1), true);
     System.exit(1);
   }
 
@@ -25,7 +27,7 @@ public class ViewKL
     try {
       UIManager.setLookAndFeel(new FlatDarkLaf());
     } catch (UnsupportedLookAndFeelException e) {
-      Log.log.error(e);
+      log.error(e);
     }
 
     Stylesheet.load();
@@ -35,16 +37,16 @@ public class ViewKL
   {
     switch (editor) {
       case "model":
-        _targetClass = "com.lucasluqui.spiralview.ModelViewerHook";
+        targetClass = "com.lucasluqui.spiralview.ModelViewerHook";
         break;
       case "scene":
-        _targetClass = "com.lucasluqui.spiralview.SceneEditorHook";
+        targetClass = "com.lucasluqui.spiralview.SceneEditorHook";
         break;
       case "interface":
-        _targetClass = "com.lucasluqui.spiralview.InterfaceTesterHook";
+        targetClass = "com.lucasluqui.spiralview.InterfaceTesterHook";
         break;
       case "particle":
-        _targetClass = "com.lucasluqui.spiralview.ParticleEditorHook";
+        targetClass = "com.lucasluqui.spiralview.ParticleEditorHook";
         break;
     }
   }

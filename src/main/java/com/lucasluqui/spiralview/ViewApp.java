@@ -19,7 +19,8 @@ import static com.lucasluqui.spiralview.Log.log;
 
 public class ViewApp implements Runnable
 {
-  String[] args = null;
+  private String[] args = null;
+  private static final String USER_DIR = System.getProperty("user.dir");
 
   public ViewApp (String... args)
   {
@@ -36,7 +37,7 @@ public class ViewApp implements Runnable
   {
     setupFileLogging();
     logVMInfo();
-    log.info("Running version " + Globals.VERSION);
+    log.info("Running version " + BuildConfig.getVersion());
 
     if (this.args.length > 0 && this.args[0].equalsIgnoreCase("kl")) {
       // kl boot
@@ -62,7 +63,7 @@ public class ViewApp implements Runnable
 
   protected static String[] createRuntimeCommand (String targetClass, String javaVMPath, int chosen)
   {
-    String gameJavaVMPath = SystemUtil.isWindows() ? Globals.USER_DIR + File.separator + "java_vm\\bin\\java.exe" : Globals.USER_DIR + File.separator + "java/bin/java";
+    String gameJavaVMPath = SystemUtil.isWindows() ? USER_DIR + File.separator + "java_vm\\bin\\java.exe" : USER_DIR + File.separator + "java/bin/java";
     String gameJavaVMVersion = runAndCapture(new String[]{gameJavaVMPath, "-version"})[1];
 
     if (gameJavaVMVersion.contains("1.7") || gameJavaVMVersion.contains("1.8")) {
@@ -79,16 +80,16 @@ public class ViewApp implements Runnable
     return new String[]{
       javaVMPath,
       "-classpath",
-      Globals.USER_DIR + File.separator + "./spiralview.jar" + libSeparator +
-        Globals.USER_DIR + File.separator + "./code/projectx-config.jar" + libSeparator +
-        Globals.USER_DIR + File.separator + "./code/projectx-pcode.jar" + libSeparator +
-        Globals.USER_DIR + File.separator + "./code/lwjgl_util.jar" + libSeparator +
-        Globals.USER_DIR + File.separator + "./code/lwjgl.jar",
+      USER_DIR + File.separator + "./spiralview.jar" + libSeparator +
+        USER_DIR + File.separator + "./code/projectx-config.jar" + libSeparator +
+        USER_DIR + File.separator + "./code/projectx-pcode.jar" + libSeparator +
+        USER_DIR + File.separator + "./code/lwjgl_util.jar" + libSeparator +
+        USER_DIR + File.separator + "./code/lwjgl.jar",
       "-Xms3G",
       "-Xmx3G",
-      "-Dappdir=" + Globals.USER_DIR + File.separator + "./",
-      "-Dresource_dir=" + Globals.USER_DIR + File.separator + "./rsrc",
-      "-Djava.library.path=" + Globals.USER_DIR + File.separator + "./native",
+      "-Dappdir=" + USER_DIR + File.separator + "./",
+      "-Dresource_dir=" + USER_DIR + File.separator + "./rsrc",
+      "-Djava.library.path=" + USER_DIR + File.separator + "./native",
       targetClass,
       chosen == 0 ? "rsrc\\character\\pc\\model.dat" : ""
     };

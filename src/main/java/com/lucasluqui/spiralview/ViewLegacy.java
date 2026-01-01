@@ -8,10 +8,13 @@ import java.awt.*;
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 
+import static com.lucasluqui.spiralview.Log.log;
+
 public class ViewLegacy
 {
-  private static String _targetClass = "null";
-  private static int _chosen = 0;
+  private static String targetClass = "null";
+  private static int chosen = 0;
+  private static final String USER_DIR = System.getProperty("user.dir");
 
   public static void start ()
   {
@@ -21,19 +24,19 @@ public class ViewLegacy
       ViewApp.pushError("There are .xml files in your rsrc/config directory, spiralview can not proceed.");
 
     try {
-      EventQueue.invokeAndWait((Runnable) () -> _chosen = chooseEditorDialog());
+      EventQueue.invokeAndWait((Runnable) () -> chosen = chooseEditorDialog());
     } catch (InvocationTargetException | InterruptedException e) {
-      Log.log.error(ExceptionUtils.getStackTrace(e));
+      log.error(ExceptionUtils.getStackTrace(e));
     }
 
-    resolveTargetedClass(_chosen);
+    resolveTargetedClass(chosen);
 
     // No editor was chosen (possibly forcibly closed) hence no need to keep the program alive.
-    if (_targetClass.equalsIgnoreCase("null")) System.exit(1);
+    if (targetClass.equalsIgnoreCase("null")) System.exit(1);
 
-    String[] output = ViewApp.runAndCapture(ViewApp.createRuntimeCommand(_targetClass, "java", _chosen));
-    Log.log.info(output[0]);
-    Log.log.info(output[1]);
+    String[] output = ViewApp.runAndCapture(ViewApp.createRuntimeCommand(targetClass, "java", chosen));
+    log.info(output[0]);
+    log.info(output[1]);
   }
 
   private static boolean isRunningInRootFolder ()
@@ -43,7 +46,7 @@ public class ViewLegacy
 
   private static boolean hasCleanConfigs ()
   {
-    return FileUtil.fileNamesInDirectory(Globals.USER_DIR + "\\rsrc\\config", ".xml").size() <= 0;
+    return FileUtil.fileNamesInDirectory(USER_DIR + "\\rsrc\\config", ".xml").size() <= 0;
   }
 
   private static int chooseEditorDialog ()
@@ -52,7 +55,7 @@ public class ViewLegacy
 
     int n = JOptionPane.showOptionDialog(null,
       "Choose an editor to start",
-      "spiralview (" + Globals.VERSION + ")",
+      "spiralview (" + BuildConfig.getVersion() + ")",
       JOptionPane.DEFAULT_OPTION,
       JOptionPane.QUESTION_MESSAGE,
       null,
@@ -62,20 +65,20 @@ public class ViewLegacy
     return n;
   }
 
-  private static void resolveTargetedClass (int clazz)
+  private static void resolveTargetedClass (int chosen)
   {
-    switch (clazz) {
+    switch (chosen) {
       case 0:
-        _targetClass = "com.lucasluqui.spiralview.ModelViewerHook";
+        targetClass = "com.lucasluqui.spiralview.ModelViewerHook";
         break;
       case 1:
-        _targetClass = "com.lucasluqui.spiralview.SceneEditorHook";
+        targetClass = "com.lucasluqui.spiralview.SceneEditorHook";
         break;
       case 2:
-        _targetClass = "com.lucasluqui.spiralview.InterfaceTesterHook";
+        targetClass = "com.lucasluqui.spiralview.InterfaceTesterHook";
         break;
       case 3:
-        _targetClass = "com.lucasluqui.spiralview.ParticleEditorHook";
+        targetClass = "com.lucasluqui.spiralview.ParticleEditorHook";
         break;
     }
   }

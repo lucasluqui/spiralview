@@ -1,16 +1,20 @@
-package com.threerings.projectx.data;
-
-import com.samskivert.util.z;
-import com.threerings.projectx.item.data.ItemCodes;
-import com.threerings.util.L;
-
 // set method b to return 0 instead of all the gibberish.
 // comment super() call in Achievement constructor.
 // set all qualifies to false.
 
+package com.threerings.projectx.data;
+
+import com.samskivert.util.HashIntMap;
+import com.samskivert.util.z;
+import com.threerings.presents.dobj.SimpleEntry;
+import com.threerings.projectx.a;
+import com.threerings.projectx.item.data.ItemCodes;
+import com.threerings.stats.data.Stat;
+import com.threerings.util.N;
+
 public class Achievement {
   protected long _unlocked;
-  private static z<Type> ave;
+  private static z<Type> awf;
 
   public static int b(Type var0) {
     return 0;
@@ -281,7 +285,7 @@ public class Achievement {
 
     public String description() {
       String var1 = "d.achievement_" + Integer.toHexString(this._code);
-      return this.isObsolete() ? L.c("m.newline", new String[]{var1, "m.achievement_obsolete"}) : var1;
+      return this.isObsolete() ? N.c("m.newline", new String[]{var1, "m.achievement_obsolete"}) : var1;
     }
 
     public String icon() {

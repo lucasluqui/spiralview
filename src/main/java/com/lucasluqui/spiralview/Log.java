@@ -3,7 +3,7 @@ package com.lucasluqui.spiralview;
 import com.samskivert.util.Logger;
 
 /**
- * Contains a reference to the {@link Logger} object used by the launcher package.
+ * Contains a reference to the {@link Logger} object used by the spiralview package.
  */
 @SuppressWarnings("unused")
 public class Log
