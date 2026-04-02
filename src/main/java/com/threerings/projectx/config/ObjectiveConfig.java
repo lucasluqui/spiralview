@@ -1,7 +1,7 @@
 package com.threerings.projectx.config;
 
 import com.threerings.config.ConfigReference;
-import com.threerings.opengl.gui.ay;
+//import com.threerings.opengl.gui.ay;
 import com.threerings.opengl.gui.config.UserInterfaceConfig;
 //import com.threerings.projectx.client.ew;
 import com.threerings.projectx.uplink.data.SystemSender;
@@ -48,7 +48,7 @@ public class ObjectiveConfig
       if (this.userInterface == null) {
         return null;
       } else {
-        Object var3 = new ay(var1, this.userInterface);
+        Object var3 = new Object();
         return var3;
       }
     }

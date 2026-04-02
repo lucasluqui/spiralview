@@ -21,7 +21,7 @@ public abstract class Stat implements DSet.Entry, Cloneable {
   public static int a(Type var0, Stat var1) {
     int var2 = du(var0.name());
     if (aXH.containsKey(var2)) {
-      a.log.f("Stat type collision! " + var0.name() + " and " + ((Type)aXH.get(var2)).name() + " both map to '" + var2 + "'.", new Object[0]);
+      //a.log.f("Stat type collision! " + var0.name() + " and " + ((Type)aXH.get(var2)).name() + " both map to '" + var2 + "'.", new Object[0]);
       return -1;
     } else {
       var1._type = var0;
@@ -37,10 +37,10 @@ public abstract class Stat implements DSet.Entry, Cloneable {
   }
 
   public String toString() {
-    StringBuilder var1;
-    (var1 = new StringBuilder(ar.af(this._type.name()))).append("=").append(this.Ml());
-    var1.append("(").append(this._modCount).append(")");
-    return var1.toString();
+    //StringBuilder var1;
+    //(var1 = new StringBuilder(ar.af(this._type.name()))).append("=").append(this.Ml());
+    //var1.append("(").append(this._modCount).append(")");
+    return "";
   }
 
   public abstract String Ml();

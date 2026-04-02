@@ -139,8 +139,7 @@ public class ConfigEditor extends BaseConfigEditor
   {
     ConfigEditor editor = (_editorCreator != null)
       ? _editorCreator.apply(ctx)
-      : new ConfigEditor(
-      ctx.getMessageManager(), ctx.getConfigManager(), ctx.getColorPository());
+      : new ConfigEditor(ctx.getMessageManager(), ctx.getConfigManager(), ctx.getColorPository());
     if (clazz != null) {
       editor.select(clazz, name);
     }
@@ -263,11 +262,7 @@ public class ConfigEditor extends BaseConfigEditor
       }
       public void menuDeselected (MenuEvent event) {
         // restore after a delay so as not to interfere with selected item
-        EventQueue.invokeLater(new Runnable() {
-          public void run () {
-            restoreActions();
-          }
-        });
+        EventQueue.invokeLater(this::restoreActions);
       }
       public void menuCanceled (MenuEvent event) {
         // no-op
@@ -722,8 +717,8 @@ public class ConfigEditor extends BaseConfigEditor
       {
         Class<?> clazz = group.getRawConfigClasses().get(0);
         try {
-          ManagedConfig cfg = (ManagedConfig)PreparedEditable.PREPARER.apply(
-            clazz.newInstance());
+          ManagedConfig cfg = (ManagedConfig)PreparedEditable.prepare(
+            clazz.getConstructor().newInstance());
           if (cfg instanceof DerivedConfig) {
             ((DerivedConfig)cfg).cclass = group.getConfigClass();
           }
@@ -845,10 +840,8 @@ public class ConfigEditor extends BaseConfigEditor
 //                log.info("Config changed " + _tree.getSelectedNode().getConfig(),
 //                        "lastValue", _lastValue);
         ManagedConfig oldLastValue = _lastValue;
-        _lastValue = (ManagedConfig)
-          ((ManagedConfig)_tree.getSelectedNode().getConfig()).clone();
-        maybePostUndo(
-          new ConfigEdit(ConfigEdit.Type.CHANGE, group, _lastValue, oldLastValue));
+        _lastValue = (ManagedConfig)_tree.getSelectedNode().getConfig().clone();
+        maybePostUndo(new ConfigEdit(ConfigEdit.Type.CHANGE, group, _lastValue, oldLastValue));
 
         DirtyGroupManager.setDirty(group, true);
         _tree.selectedConfigChanged();
@@ -1120,6 +1113,18 @@ public class ConfigEditor extends BaseConfigEditor
     public ColorPository getColorPository ()
     {
       return _colorpos;
+    }
+
+    // from EditorContext
+    public Predicate<? super ManagedConfig> getChoosingFilter (Class<? extends ManagedConfig> clazz)
+    {
+      return ConfigEditor.this.getChoosingFilter(clazz);
+    }
+
+    // from EditorContext
+    public Predicate<Class<?>> getTypeFilter ()
+    {
+      return ConfigEditor.this.getTypeFilter();
     }
 
     // documentation inherited from interface ItemListener
