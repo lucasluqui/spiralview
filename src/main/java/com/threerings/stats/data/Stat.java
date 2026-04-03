@@ -1,9 +1,9 @@
 package com.threerings.stats.data;
 
 import com.samskivert.util.HashIntMap;
-import com.samskivert.util.ar;
+//import com.samskivert.util.ar;
 import com.threerings.presents.dobj.DSet;
-import com.threerings.stats.a;
+//import com.threerings.stats.a;
 import java.io.Serializable;
 import java.util.zip.CRC32;
 

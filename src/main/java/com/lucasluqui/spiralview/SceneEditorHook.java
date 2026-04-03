@@ -3,7 +3,7 @@ package com.lucasluqui.spiralview;
 import com.lucasluqui.util.ImageUtil;
 import com.threerings.tudey.tools.SceneEditor;
 
-public class SceneEditorHook extends  com.threerings.projectx.tools.s
+public class SceneEditorHook extends SceneEditor
 {
   public SceneEditorHook (String scene)
   {

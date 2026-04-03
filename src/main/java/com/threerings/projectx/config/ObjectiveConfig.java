@@ -5,7 +5,7 @@ import com.threerings.config.ConfigReference;
 import com.threerings.opengl.gui.config.UserInterfaceConfig;
 //import com.threerings.projectx.client.ew;
 import com.threerings.projectx.uplink.data.SystemSender;
-import com.threerings.projectx.util.C;
+//import com.threerings.projectx.util.C;
 import com.threerings.tudey.config.ActionConfig;
 
 public class ObjectiveConfig
@@ -18,7 +18,7 @@ public class ObjectiveConfig
   //}
 
   // does this work?
-  public Object b (C var1, Object var2) {
+  public Object b (Object var1, Object var2) {
     return null;
   }
 
@@ -43,7 +43,7 @@ public class ObjectiveConfig
     //  }
     //}
 
-    public final Object b (C var1, Object var2)
+    public final Object b (Object var1, Object var2)
     {
       if (this.userInterface == null) {
         return null;

@@ -52,10 +52,11 @@ public abstract class ActionDesc extends DeepObject implements Exportable, Strea
   }
 
   protected static int getEmoteActivity(ConfigManager cfgmgr, String emote) {
-    EmoteConfig config = (EmoteConfig) cfgmgr.getConfig(EmoteConfig.class, emote);
+    //EmoteConfig config = (EmoteConfig) cfgmgr.getConfig(EmoteConfig.class, emote);
 
     // I don't want to bother figuring this out, get commented.
-    return config == null ? 2 : 9 /*+ config.getAnimatedIndex(cfgmgr)*/;
+    //return config == null ? 2 : 9 /*+ config.getAnimatedIndex(cfgmgr)*/;
+    return 2;
   }
 
   public static class ConfirmEnergy extends ActionDesc {
