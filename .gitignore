@@ -27,3 +27,6 @@ bin/
 
 # Classes folder
 classes/
+
+# Target folder
+target/
