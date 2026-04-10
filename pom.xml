@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.lucasluqui</groupId>
+  <artifactId>spiralview</artifactId>
+  <packaging>jar</packaging>
+  <version>2.1.1-SNAPSHOT</version>
+
+  <name>spiralview</name>
+  <description>Wrapper for various Three Rings editors for the game Spiral Knights.</description>
+  <url>https://github.com/lucasluqui/spiralview</url>
+  <issueManagement>
+    <url>https://github.com/lucasluqui/spiralview/issues</url>
+  </issueManagement>
+
+  <repositories>
+    <repository>
+      <id>ooo-maven-repo</id>
+      <url>https://raw.githubusercontent.com/threerings/maven-repo/master/repository</url>
+    </repository>
+    <repository>
+      <id>ooo-repo</id>
+      <url>https://raw.githubusercontent.com/threerings/maven-repo/master/repository</url>
+    </repository>
+  </repositories>
+
+  <dependencies>
+    <!-- OOO dependencies -->
+    <dependency>
+      <groupId>com.threerings</groupId>
+      <artifactId>clyde</artifactId>
+      <version>1.1.4</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <!-- extra dependencies (mostly fixes for SK-related errors) -->
+    <dependency>
+      <groupId>com.jcraft</groupId>
+      <artifactId>jogg</artifactId>
+      <version>0.0.7</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.jcraft</groupId>
+      <artifactId>jorbis</artifactId>
+      <version>0.0.15</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <!-- spiralview dependencies -->
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.21.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.20.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.formdev</groupId>
+      <artifactId>flatlaf</artifactId>
+      <version>3.6</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <!--
+      For this local dependency, you must copy 'projectx-pcode.jar' from the game's 'code' directory into the
+      project's 'lib' directory, as it would be illegal for us to bundle proprietary software.
+    -->
+    <dependency>
+      <groupId>pcode</groupId>
+      <artifactId>pcode</artifactId>
+      <version>1.0.0</version>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/lib/projectx-pcode.jar</systemPath>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <sourceDirectory>src/main/java</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.12.1</version>
+        <configuration>
+          <release>21</release>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.7.1</version>
+        <configuration>
+          <finalName>spiralview</finalName>
+          <archive>
+            <manifest>
+              <mainClass>com.lucasluqui.spiralview.ViewApp</mainClass>
+            </manifest>
+          </archive>
+          <descriptors>
+            <descriptor>src/assembly/jar-with-dependencies-last.xml</descriptor>
+          </descriptors>
+          <appendAssemblyId>false</appendAssemblyId>
+        </configuration>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

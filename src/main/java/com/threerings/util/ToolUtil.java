@@ -107,7 +107,7 @@ public class ToolUtil
       // KL fix to avoid third party editors softlocking the official editors
       dstr = System.getProperty("user.dir") + File.separator + "rsrc";
 
-      _resourceDir = (dstr == null) ? null : new File(dstr);
+      _resourceDir = new File(dstr);
       _rsrcmgr.initResourceDir(dstr);
     }
 
