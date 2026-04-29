@@ -10,6 +10,21 @@
 
   <name>spiralview</name>
   <description>Wrapper for various Three Rings editors for the game Spiral Knights.</description>
+
+  <properties>
+    <env>dev</env>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
+
+  <developers>
+    <developer>
+      <id>lucasluqui</id>
+      <name>Lucas Allegri</name>
+      <email>contact@lucasluqui.com</email>
+    </developer>
+  </developers>
+
   <url>https://github.com/lucasluqui/spiralview</url>
   <issueManagement>
     <url>https://github.com/lucasluqui/spiralview/issues</url>
@@ -83,28 +98,42 @@
   </dependencies>
 
   <build>
+    <finalName>${project.artifactId}</finalName>
     <sourceDirectory>src/main/java</sourceDirectory>
+
     <resources>
       <resource>
         <directory>src/main/resources</directory>
+      </resource>
+      <resource>
+        <directory>src/main/resources/rsrc/build</directory>
         <filtering>true</filtering>
       </resource>
     </resources>
+
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.12.1</version>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.5.0</version>
         <configuration>
+          <encoding>${project.build.sourceEncoding}</encoding>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.15.0</version>
+        <configuration>
+          <encoding>UTF-8</encoding>
           <release>21</release>
         </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
-        <version>3.7.1</version>
+        <version>3.8.0</version>
         <configuration>
-          <finalName>spiralview</finalName>
           <archive>
             <manifest>
               <mainClass>com.lucasluqui.spiralview.ViewApp</mainClass>
