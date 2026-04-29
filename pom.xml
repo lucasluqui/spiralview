@@ -11,10 +11,10 @@
   <name>spiralview</name>
   <description>Wrapper for various Three Rings editors for the game Spiral Knights.</description>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-  </properties>
+  <url>https://github.com/lucasluqui/spiralview</url>
+  <issueManagement>
+    <url>https://github.com/lucasluqui/spiralview/issues</url>
+  </issueManagement>
 
   <developers>
     <developer>
@@ -24,10 +24,12 @@
     </developer>
   </developers>
 
-  <url>https://github.com/lucasluqui/spiralview</url>
-  <issueManagement>
-    <url>https://github.com/lucasluqui/spiralview/issues</url>
-  </issueManagement>
+  <!-- See 'LICENSE' file for license info. -->
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
 
   <repositories>
     <repository>
