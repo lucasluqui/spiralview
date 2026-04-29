@@ -1,5 +1,6 @@
 package com.lucasluqui.spiralview;
 
+import com.lucasluqui.util.BuildConfig;
 import com.lucasluqui.util.FileUtil;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 
@@ -52,7 +53,7 @@ public class ViewLegacy
 
     int n = JOptionPane.showOptionDialog(null,
       "Choose an editor to start",
-      "spiralview (" + Globals.VERSION + ")",
+      "spiralview (" + BuildConfig.getVersion() + ")",
       JOptionPane.DEFAULT_OPTION,
       JOptionPane.QUESTION_MESSAGE,
       null,

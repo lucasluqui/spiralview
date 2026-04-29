@@ -36,7 +36,7 @@ public class ViewApp implements Runnable
   {
     setupFileLogging();
     logVMInfo();
-    log.info("Running version " + Globals.VERSION);
+    log.info("Running version " + BuildConfig.getVersion());
 
     if (this.args.length > 0 && this.args[0].equalsIgnoreCase("kl")) {
       // kl boot
