@@ -1,33 +1,494 @@
-<?xml version="1.0" standalone="yes"?>
+<?xml version="1.0" standalone="yes"?>
 <colors>
-
-  <!-- example recolorations -->
-  <class classId="1" name="example" source="#FF00FF" range="0.025, 1.0, 1.0" starter="true">
-    <color colorId="1" name="magenta" offsets="0.0, 0.0, 0.0"/>
-    <color colorId="2" name="lavender" offsets="0.041, 0.0, 0.0"/>
-    <color colorId="3" name="crimson" offsets="0.083, 0.0, 0.0"/>
-    <color colorId="4" name="lake" offsets="0.125, 0.0, 0.0"/>
-    <color colorId="5" name="red" offsets="0.166, 0.0, 0.0"/>
-    <color colorId="6" name="vermillion" offsets="0.208, 0.0, 0.0"/>
-    <color colorId="7" name="orange" offsets="0.25, 0.0, 0.0"/>
-    <color colorId="8" name="amber" offsets="0.291, 0.0, 0.0"/>
-    <color colorId="9" name="yellow" offsets="0.333, 0.0, 0.0"/>
-    <color colorId="10" name="chartreuse" offsets="0.375, 0.0, 0.0"/>
-    <color colorId="11" name="lime" offsets="0.416, 0.0, 0.0"/>
-    <color colorId="12" name="emerald" offsets="0.458, 0.0, 0.0"/>
-    <color colorId="13" name="green" offsets="0.5, 0.0, 0.0"/>
-    <color colorId="14" name="aquamarine" offsets="0.541, 0.0, 0.0"/>
-    <color colorId="15" name="turquoise" offsets="0.583, 0.0, 0.0"/>
-    <color colorId="16" name="viridian" offsets="0.625, 0.0, 0.0"/>
-    <color colorId="17" name="cyan" offsets="0.666, 0.0, 0.0"/>
-    <color colorId="18" name="sky" offsets="0.708, 0.0, 0.0"/>
-    <color colorId="19" name="cobalt" offsets="0.75, 0.0, 0.0"/>
-    <color colorId="20" name="utramarine" offsets="0.791, 0.0, 0.0"/>
-    <color colorId="21" name="blue" offsets="0.833, 0.0, 0.0"/>
-    <color colorId="22" name="indigo" offsets="0.875, 0.0, 0.0"/>
-    <color colorId="23" name="violet" offsets="0.916, 0.0, 0.0"/>
-    <color colorId="24" name="purple" offsets="0.958, 0.0, 0.0"/>
+  <class classId="1" name="player" source="#ff00ff" range="0.025, 1.0, 1.0" starter="true">
+    <color colorId="1" name="magenta" offsets="0.0, 0.0, 0.0" starter="true"/>
+    <color colorId="2" name="lavender" offsets="0.041, 0.0, 0.0" starter="true"/>
+    <color colorId="3" name="crimson" offsets="0.083, 0.0, 0.0" starter="true"/>
+    <color colorId="4" name="lake" offsets="0.125, 0.0, 0.0" starter="true"/>
+    <color colorId="5" name="red" offsets="0.166, 0.0, 0.0" starter="true"/>
+    <color colorId="6" name="vermillion" offsets="0.208, 0.0, 0.0" starter="true"/>
+    <color colorId="7" name="orange" offsets="0.25, 0.0, 0.0" starter="true"/>
+    <color colorId="8" name="amber" offsets="0.291, 0.0, 0.0" starter="true"/>
+    <color colorId="9" name="yellow" offsets="0.333, 0.0, 0.0" starter="true"/>
+    <color colorId="10" name="chartreuse" offsets="0.375, 0.0, 0.0" starter="true"/>
+    <color colorId="11" name="lime" offsets="0.416, 0.0, 0.0" starter="true"/>
+    <color colorId="12" name="emerald" offsets="0.458, 0.0, 0.0" starter="true"/>
+    <color colorId="13" name="green" offsets="0.5, 0.0, 0.0" starter="true"/>
+    <color colorId="14" name="aquamarine" offsets="0.541, 0.0, 0.0" starter="true"/>
+    <color colorId="15" name="turquoise" offsets="0.583, 0.0, 0.0" starter="true"/>
+    <color colorId="16" name="viridian" offsets="0.625, 0.0, 0.0" starter="true"/>
+    <color colorId="17" name="cyan" offsets="0.666, 0.0, 0.0" starter="true"/>
+    <color colorId="18" name="sky" offsets="0.708, 0.0, 0.0" starter="true"/>
+    <color colorId="19" name="cobalt" offsets="0.75, 0.0, 0.0" starter="true"/>
+    <color colorId="20" name="ultramarine" offsets="0.791, 0.0, 0.0" starter="true"/>
+    <color colorId="21" name="blue" offsets="0.833, 0.0, 0.0" starter="true"/>
+    <color colorId="22" name="indigo" offsets="0.875, 0.0, 0.0" starter="true"/>
+    <color colorId="23" name="violet" offsets="0.916, 0.0, 0.0" starter="true"/>
+    <color colorId="24" name="purple" offsets="0.958, 0.0, 0.0" starter="true"/>
+    <color colorId="25" name="silver" offsets="0.0, -1.0, 0.0"/>
+    <color colorId="99" name="team_neutral" offsets="0.0, -1.0, 0.0"/>
   </class>
+  <class classId="2" name="item_1" source="#ff00ff" range="0.025, 1.0, 1.0">
+    <color colorId="1" name="white" offsets="-1.0, -1.0, 0.0"/>
+    <color colorId="2" name="grey_lite" offsets="-1.0, -1.0, -0.25"/>
+    <color colorId="3" name="grey" offsets="-1.0, -1.0, -0.5"/>
+    <color colorId="4" name="grey_dark" offsets="-1.0, -1.0, -0.75"/>
+    <color colorId="5" name="red_lite" offsets="-0.833, -0.67, 0.0"/>
+    <color colorId="6" name="red" offsets="-0.833, 0.0, 0.0"/>
+    <color colorId="7" name="red_dark" offsets="-0.833, 0.0, -0.67"/>
+    <color colorId="8" name="red_grey" offsets="-0.833, -0.597, -0.376"/>
+    <color colorId="9" name="orange_lite" offsets="-0.75, -0.67, 0.0"/>
+    <color colorId="10" name="orange" offsets="-0.75, 0.0, 0.0"/>
+    <color colorId="11" name="orange_dark" offsets="-0.75, 0.0, -0.67"/>
+    <color colorId="12" name="orange_grey" offsets="-0.75, -0.597, -0.376"/>
+    <color colorId="13" name="yellow_lite" offsets="-0.666, -0.67, 0.0"/>
+    <color colorId="14" name="yellow" offsets="-0.666, 0.0, 0.0"/>
+    <color colorId="15" name="yellow_dark" offsets="-0.666, 0.0, -0.67"/>
+    <color colorId="16" name="yellow_grey" offsets="-0.666, -0.597, -0.376"/>
+    <color colorId="17" name="green_lite" offsets="-0.5, -0.67, 0.0"/>
+    <color colorId="18" name="green" offsets="-0.5, 0.0, 0.0"/>
+    <color colorId="19" name="green_dark" offsets="-0.5, 0.0, -0.67"/>
+    <color colorId="20" name="green_grey" offsets="-0.5, -0.597, -0.376"/>
+    <color colorId="21" name="cyan_lite" offsets="-0.333, -0.67, 0.0"/>
+    <color colorId="22" name="cyan" offsets="-0.333, 0.0, 0.0"/>
+    <color colorId="23" name="cyan_dark" offsets="-0.333, 0.0, -0.67"/>
+    <color colorId="24" name="cyan_grey" offsets="-0.333, -0.597, -0.376"/>
+    <color colorId="25" name="blue_lite" offsets="-0.166, -0.67, 0.0"/>
+    <color colorId="26" name="blue" offsets="-0.166, 0.0, 0.0"/>
+    <color colorId="27" name="blue_dark" offsets="-0.166, 0.0, -0.67"/>
+    <color colorId="28" name="blue_grey" offsets="-0.166, -0.597, -0.376"/>
+    <color colorId="29" name="purple_lite" offsets="-0.083, -0.67, 0.0"/>
+    <color colorId="30" name="purple" offsets="-0.083, 0.0, 0.0"/>
+    <color colorId="31" name="purple_dark" offsets="-0.083, 0.0, -0.67"/>
+    <color colorId="32" name="purple_grey" offsets="-0.083, -0.597, -0.376"/>
+    <color colorId="33" name="magenta_lite" offsets="-0.0, -0.67, 0.0"/>
+    <color colorId="34" name="magenta" offsets="-0.0, 0.0, 0.0"/>
+    <color colorId="35" name="magenta_dark" offsets="-0.0, 0.0, -0.67"/>
+    <color colorId="36" name="magenta_grey" offsets="-0.0, -0.597, -0.376"/>
+  </class>
+  <class classId="3" name="item_2" source="#ff0000" range="0.025, 1.0, 1.0">
+    <color colorId="1" name="white" offsets="-1.0, -1.0, 0.0"/>
+    <color colorId="2" name="grey_lite" offsets="-1.0, -1.0, -0.25"/>
+    <color colorId="3" name="grey" offsets="-1.0, -1.0, -0.5"/>
+    <color colorId="4" name="grey_dark" offsets="-1.0, -1.0, -0.75"/>
+    <color colorId="5" name="red_lite" offsets="0.0, -0.67, 0.0"/>
+    <color colorId="6" name="red" offsets="0.0, 0.0, 0.0"/>
+    <color colorId="7" name="red_dark" offsets="0.0, 0.0, -0.67"/>
+    <color colorId="8" name="red_grey" offsets="0.0, -0.597, -0.376"/>
+    <color colorId="9" name="orange_lite" offsets="0.083, -0.67, 0.0"/>
+    <color colorId="10" name="orange" offsets="0.083, 0.0, 0.0"/>
+    <color colorId="11" name="orange_dark" offsets="0.083, 0.0, -0.67"/>
+    <color colorId="12" name="orange_grey" offsets="0.083, -0.597, -0.376"/>
+    <color colorId="13" name="yellow_lite" offsets="0.166, -0.67, 0.0"/>
+    <color colorId="14" name="yellow" offsets="0.166, 0.0, 0.0"/>
+    <color colorId="15" name="yellow_dark" offsets="0.166, 0.0, -0.67"/>
+    <color colorId="16" name="yellow_grey" offsets="0.166, -0.597, -0.376"/>
+    <color colorId="17" name="green_lite" offsets="0.333, -0.67, 0.0"/>
+    <color colorId="18" name="green" offsets="0.333, 0.0, 0.0"/>
+    <color colorId="19" name="green_dark" offsets="0.333, 0.0, -0.67"/>
+    <color colorId="20" name="green_grey" offsets="0.333, -0.597, -0.376"/>
+    <color colorId="21" name="cyan_lite" offsets="0.5, -0.67, 0.0"/>
+    <color colorId="22" name="cyan" offsets="0.5, 0.0, 0.0"/>
+    <color colorId="23" name="cyan_dark" offsets="0.5, 0.0, -0.67"/>
+    <color colorId="24" name="cyan_grey" offsets="0.5, -0.597, -0.376"/>
+    <color colorId="25" name="blue_lite" offsets="0.666, -0.67, 0.0"/>
+    <color colorId="26" name="blue" offsets="0.666, 0.0, 0.0"/>
+    <color colorId="27" name="blue_dark" offsets="0.666, 0.0, -0.67"/>
+    <color colorId="28" name="blue_grey" offsets="0.666, -0.597, -0.376"/>
+    <color colorId="29" name="purple_lite" offsets="0.75, -0.67, 0.0"/>
+    <color colorId="30" name="purple" offsets="0.75, 0.0, 0.0"/>
+    <color colorId="31" name="purple_dark" offsets="0.75, 0.0, -0.67"/>
+    <color colorId="32" name="purple_grey" offsets="0.75, -0.597, -0.376"/>
+    <color colorId="33" name="magenta_lite" offsets="0.833, -0.67, 0.0"/>
+    <color colorId="34" name="magenta" offsets="0.833, 0.0, 0.0"/>
+    <color colorId="35" name="magenta_dark" offsets="0.833, 0.0, -0.67"/>
+    <color colorId="36" name="magenta_grey" offsets="0.833, -0.597, -0.376"/>
+  </class>
+  <class classId="4" name="item_3" source="#0000ff" range="0.025, 1.0, 1.0">
+    <color colorId="1" name="white" offsets="-1.0, -1.0, 0.0"/>
+    <color colorId="2" name="grey_lite" offsets="-1.0, -1.0, -0.25"/>
+    <color colorId="3" name="grey" offsets="-1.0, -1.0, -0.5"/>
+    <color colorId="4" name="grey_dark" offsets="-1.0, -1.0, -0.75"/>
+    <color colorId="5" name="red_lite" offsets="-0.666, -0.67, 0.0"/>
+    <color colorId="6" name="red" offsets="-0.666, 0.0, 0.0"/>
+    <color colorId="7" name="red_dark" offsets="-0.666, 0.0, -0.67"/>
+    <color colorId="8" name="red_grey" offsets="-0.666, -0.597, -0.376"/>
+    <color colorId="9" name="orange_lite" offsets="-0.583, -0.67, 0.0"/>
+    <color colorId="10" name="orange" offsets="-0.583, 0.0, 0.0"/>
+    <color colorId="11" name="orange_dark" offsets="-0.583, 0.0, -0.67"/>
+    <color colorId="12" name="orange_grey" offsets="-0.583, -0.597, -0.376"/>
+    <color colorId="13" name="yellow_lite" offsets="-0.5, -0.67, 0.0"/>
+    <color colorId="14" name="yellow" offsets="-0.5, 0.0, 0.0"/>
+    <color colorId="15" name="yellow_dark" offsets="-0.5, 0.0, -0.67"/>
+    <color colorId="16" name="yellow_grey" offsets="-0.5, -0.597, -0.376"/>
+    <color colorId="17" name="green_lite" offsets="-0.333, -0.67, 0.0"/>
+    <color colorId="18" name="green" offsets="-0.333, 0.0, 0.0"/>
+    <color colorId="19" name="green_dark" offsets="-0.333, 0.0, -0.67"/>
+    <color colorId="20" name="green_grey" offsets="-0.333, -0.597, -0.376"/>
+    <color colorId="21" name="cyan_lite" offsets="-0.166, -0.67, 0.0"/>
+    <color colorId="22" name="cyan" offsets="-0.166, 0.0, 0.0"/>
+    <color colorId="23" name="cyan_dark" offsets="-0.166, 0.0, -0.67"/>
+    <color colorId="24" name="cyan_grey" offsets="-0.166, -0.597, -0.376"/>
+    <color colorId="25" name="blue_lite" offsets="0.0, -0.67, 0.0"/>
+    <color colorId="26" name="blue" offsets="0.0, 0.0, 0.0"/>
+    <color colorId="27" name="blue_dark" offsets="0.0, 0.0, -0.67"/>
+    <color colorId="28" name="blue_grey" offsets="0.0, -0.597, -0.376"/>
+    <color colorId="29" name="purple_lite" offsets="0.083, -0.67, 0.0"/>
+    <color colorId="30" name="purple" offsets="0.083, 0.0, 0.0"/>
+    <color colorId="31" name="purple_dark" offsets="0.083, 0.0, -0.67"/>
+    <color colorId="32" name="purple_grey" offsets="0.083, -0.597, -0.376"/>
+    <color colorId="33" name="magenta_lite" offsets="0.166, -0.67, 0.0"/>
+    <color colorId="34" name="magenta" offsets="0.166, 0.0, 0.0"/>
+    <color colorId="35" name="magenta_dark" offsets="0.166, 0.0, -0.67"/>
+    <color colorId="36" name="magenta_grey" offsets="0.166, -0.597, -0.376"/>
+    <color colorId="37" name="pink_luck" offsets="0.247, -0.36, -0.055"/>
+  </class>
+  <class classId="5" name="snipe_primary" source="#ff00ff" range="0.055, 1.0, 1.0">
+    <color colorId="1" name="Red, Strawberry" offsets="0.14, -0.505, -0.161"/>
+    <color colorId="2" name="Red, Dark Cherry" offsets="0.086, -0.247, -0.484"/>
+    <color colorId="3" name="Orange, Pale" offsets="0.247, -0.409, -0.075"/>
+    <color colorId="4" name="Yellow, Unripe" offsets="0.323, -0.161, -0.161"/>
+    <color colorId="5" name="Green, Lime" offsets="0.376, -0.398, -0.118"/>
+    <color colorId="6" name="Green, Kiwi" offsets="0.473, -0.527, -0.247"/>
+    <color colorId="7" name="Green, Mint" offsets="0.613, -0.645, -0.355"/>
+    <color colorId="8" name="Green, Dark Mint" offsets="0.634, -0.548, -0.495"/>
+    <color colorId="9" name="Blue, Baby" offsets="0.699, -0.473, -0.108"/>
+    <color colorId="10" name="Blue, Stormy" offsets="0.731, -0.484, -0.344"/>
+    <color colorId="11" name="Purple, Bright" offsets="0.871, -0.387, -0.151"/>
+    <color colorId="12" name="Purple, Royal" offsets="0.871, -0.387, -0.355"/>
+    <color colorId="13" name="White, Ivory" offsets="0.306, -0.828, -0.075"/>
+    <color colorId="14" name="Brown, Warm Leather" offsets="0.242, -0.497, -0.298"/>
+    <color colorId="15" name="Brown, Charcoal" offsets="0.199, -0.677, -0.634"/>
+  </class>
+  <class classId="6" name="snipe_secondary" source="#0000ff" range="0.055, 1.0, 1.0">
+    <color colorId="1" name="Red, Strawberry" offsets="0.307, -0.505, -0.161"/>
+    <color colorId="2" name="Red, Dark Cherry" offsets="0.253, -0.247, -0.484"/>
+    <color colorId="3" name="Orange, Pale" offsets="0.414, -0.409, -0.075"/>
+    <color colorId="4" name="Yellow, Unripe" offsets="0.49, -0.161, -0.161"/>
+    <color colorId="5" name="Green, Lime" offsets="0.543, -0.398, -0.118"/>
+    <color colorId="6" name="Green, Kiwi" offsets="0.64, -0.527, -0.247"/>
+    <color colorId="7" name="Green, Mint" offsets="0.78, -0.645, -0.355"/>
+    <color colorId="8" name="Green, Dark Mint" offsets="0.801, -0.548, -0.495"/>
+    <color colorId="9" name="Blue, Baby" offsets="0.866, -0.473, -0.108"/>
+    <color colorId="10" name="Blue, Stormy" offsets="0.898, -0.484, -0.344"/>
+    <color colorId="11" name="Purple, Bright" offsets="-0.962, -0.387, -0.151"/>
+    <color colorId="12" name="Purple, Royal" offsets="-0.962, -0.387, -0.355"/>
+    <color colorId="13" name="White, Ivory" offsets="0.473, -0.828, -0.075"/>
+    <color colorId="14" name="Brown, Warm Leather" offsets="0.409, -0.497, -0.298"/>
+    <color colorId="15" name="Brown, Charcoal" offsets="0.366, -0.677, -0.634"/>
+  </class>
+  <class classId="7" name="foliage" source="#ff00ff" range="0.025, 1.0, 1.0">
+    <color colorId="1" name="Haven" offsets="0.426, 0.215, -0.044"/>
+    <color colorId="2" name="Sky Islands, Day" offsets="-0.425, 0.0, -0.08"/>
+    <color colorId="3" name="Sky Islands, Night" offsets="-0.362, 0.614, -0.132"/>
+    <color colorId="4" name="Graveyard" offsets="-0.384, 0.392, -0.135"/>
+    <color colorId="5" name="Clockworks, Base" offsets="-0.24, -0.62, -0.38"/>
+    <color colorId="6" name="Dry" offsets="0.267, -0.653, -0.138"/>
+    <color colorId="7" name="Wood, Brown" offsets="0.225, -0.45, -0.25"/>
+    <color colorId="8" name="City, desaturated" offsets="-0.46, -0.64, -0.22"/>
+    <color colorId="9" name="Haven, Winter" offsets="0.76, -0.94, 0.08"/>
+    <color colorId="10" name="Haven, Wintergreen" offsets="-0.345, -0.64, -0.12"/>
+    <color colorId="11" name="Autumn Red" offsets="0.14, -0.25, 0.0"/>
+    <color colorId="12" name="Autumn Gold" offsets="0.272, 0.0, 0.188"/>
+  </class>
+  <class classId="8" name="theme-family" source="#ff00ff" range="0.025, 1.0, 1.0">
+    <color colorId="1" name="none" offsets="0.0, -1.0, -0.25"/>
+    <color colorId="2" name="beast" offsets="0.277, -0.36, -0.055"/>
+    <color colorId="3" name="undead" offsets="-0.229, -0.675, -0.167"/>
+    <color colorId="4" name="slime" offsets="0.08, -0.36, -0.055"/>
+    <color colorId="5" name="construct" offsets="0.275, -0.789, -0.401"/>
+    <color colorId="6" name="fiend" offsets="-0.192, -0.166, -0.22"/>
+    <color colorId="7" name="gremlin" offsets="0.235, -0.245, -0.055"/>
+  </class>
+  <class classId="9" name="theme-status" source="#ff0000" range="0.025, 1.0, 1.0">
+    <color colorId="1" name="none" offsets="0.0, -1.0, -0.67"/>
+    <color colorId="2" name="fire" offsets="0.065, 0.0, -0.53"/>
+    <color colorId="3" name="freeze" offsets="0.567, -0.415, -0.375"/>
+    <color colorId="4" name="poison" offsets="0.4, 0.0, -0.67"/>
+    <color colorId="5" name="shock" offsets="0.5, 1.0, -0.53"/>
+  </class>
+  <class classId="10" name="player_aux01" source="#00ff00" range="0.025, 1.0, 1.0">
+    <color colorId="1" name="magenta" offsets="-0.498, 0.0, 0.0"/>
+    <color colorId="2" name="lavender" offsets="-0.458, 0.0, 0.0"/>
+    <color colorId="3" name="crimson" offsets="0.0, 0.0, 0.0"/>
+    <color colorId="4" name="lake" offsets="0.0, 0.0, 0.0"/>
+    <color colorId="5" name="red" offsets="-0.336, 0.0, 0.0"/>
+    <color colorId="6" name="vermillion" offsets="0.0, 0.0, 0.0"/>
+    <color colorId="7" name="orange" offsets="0.0, 0.0, 0.0"/>
+    <color colorId="8" name="amber" offsets="-0.209, 0.0, 0.0"/>
+    <color colorId="9" name="yellow" offsets="0.0, 0.0, 0.0"/>
+    <color colorId="10" name="chartreuse" offsets="-0.122, 0.0, 0.0"/>
+    <color colorId="11" name="lime" offsets="0.0, 0.0, 0.0"/>
+    <color colorId="12" name="emerald" offsets="0.0, 0.0, 0.0"/>
+    <color colorId="13" name="green" offsets="0.0, 0.0, 0.0"/>
+    <color colorId="14" name="aquamarine" offsets="0.038, 0.0, 0.0"/>
+    <color colorId="15" name="turquoise" offsets="0.0, 0.0, 0.0"/>
+    <color colorId="16" name="viridian" offsets="0.0, 0.0, 0.0"/>
+    <color colorId="17" name="cyan" offsets="0.162, 0.0, 0.0"/>
+    <color colorId="18" name="sky" offsets="0.0, 0.0, 0.0"/>
+    <color colorId="19" name="cobalt" offsets="0.0, 0.0, 0.0"/>
+    <color colorId="20" name="utramarine" offsets="0.29, 0.0, 0.0"/>
+    <color colorId="21" name="blue" offsets="0.0, 0.0, 0.0"/>
+    <color colorId="22" name="indigo" offsets="0.0, 0.0, 0.0"/>
+    <color colorId="23" name="violet" offsets="0.417, 0.0, 0.0"/>
+    <color colorId="24" name="purple" offsets="0.0, 0.0, 0.0"/>
+    <color colorId="99" name="team_neutral" offsets="0.0, -1.0, 0.0"/>
+  </class>
+  <class classId="11" name="armor_primary" source="#ff0000" range="0.1, 0.345, 1.0">
+    <color colorId="1" name="gld" offsets="0.111, -0.23, -0.227"/>
+    <color colorId="2" name="blu" offsets="0.588, -0.315, -0.338"/>
+    <color colorId="3" name="pnk" offsets="-0.299, -0.575, -0.281"/>
+    <color colorId="4" name="red" offsets="-0.017, -0.132, -0.331"/>
+    <color colorId="5" name="grn" offsets="0.046, -0.618, -0.312"/>
+    <color colorId="6" name="prp" offsets="0.641, -0.665, -0.438"/>
+    <color colorId="7" name="hvy" offsets="0.66, -0.68, -0.42"/>
+    <color colorId="8" name="dvn" offsets="0.062, -0.598, -0.223"/>
+    <color colorId="9" name="shd" offsets="-0.172, -0.651, -0.7"/>
+    <color colorId="10" name="vol" offsets="-0.043, -0.234, -0.573"/>
+    <color colorId="11" name="fre" offsets="0.545, -0.7, -0.2"/>
+    <color colorId="12" name="poi" offsets="-0.333, -0.326, -0.432"/>
+    <color colorId="13" name="shk" offsets="-0.04, -0.233, -0.444"/>
+    <color colorId="14" name="crs" offsets="-0.304, -0.396, -0.604"/>
+    <color colorId="15" name="lov" offsets="-0.035, -0.372, -0.071"/>
+    <color colorId="16" name="htr" offsets="0.202, -0.166, -0.547"/>
+    <color colorId="17" name="ash" offsets="0.09, -0.702, -0.559"/>
+    <color colorId="18" name="nov" offsets="0.075, 0.175, -0.22"/>
+    <color colorId="19" name="srg" offsets="-0.043, -0.234, -0.573"/>
+    <color colorId="20" name="plr" offsets="0.589, -0.37, -0.688"/>
+    <color colorId="21" name="trt" offsets="0.53, -0.618, -0.597"/>
+    <color colorId="22" name="spr" offsets="-0.075, -0.575, 0.0"/>
+    <color colorId="23" name="frz" offsets="0.575, -0.45, 0.0"/>
+    <color colorId="24" name="spk" offsets="-0.08, -0.2, -0.35"/>
+    <color colorId="25" name="vrn" offsets="0.375, -0.345, -0.05"/>
+    <color colorId="26" name="stn" offsets="0.12, -0.4, -0.022"/>
+    <color colorId="27" name="rby" offsets="-0.047, 0.107, -0.5"/>
+    <color colorId="28" name="fir" offsets="-0.1, -0.5, -0.5"/>
+    <color colorId="29" name="pdt" offsets="0.22, -0.1, -0.175"/>
+    <color colorId="30" name="slp" offsets="-0.415, -0.15, -0.35"/>
+    <color colorId="31" name="sph" offsets="0.562, -0.309, -0.244"/>
+    <color colorId="32" name="fal" offsets="0.08, -0.4, -0.2"/>
+    <color colorId="33" name="opl" offsets="0.19, -0.6, -0.22"/>
+    <color colorId="34" name="ctr" offsets="0.095, 0.0, 0.0"/>
+    <color colorId="35" name="trq" offsets="-0.526, -0.378, -0.279"/>
+    <color colorId="36" name="gar" offsets="0.965, -0.035, -0.2"/>
+    <color colorId="37" name="ame" offsets="0.75, -0.15, -0.075"/>
+    <color colorId="38" name="aqa" offsets="0.525, -0.315, -0.05"/>
+    <color colorId="39" name="dgr" offsets="0.095, -0.375, -0.1"/>
+    <color colorId="40" name="hzd" offsets="0.005, -0.1, -0.1"/>
+    <color colorId="41" name="hvs" offsets="0.205, -0.42, -0.105"/>
+    <color colorId="42" name="gry" offsets="0.0, -1.0, -0.275"/>
+    <color colorId="43" name="lky" offsets="0.245, -0.175, -0.365"/>
+    <color colorId="44" name="dia" offsets="0.6, -0.725, 0.125"/>
+    <color colorId="45" name="emd" offsets="0.385, 1.0, -0.345"/>
+    <color colorId="46" name="prl" offsets="0.075, -0.875, 0.135"/>
+    <color colorId="47" name="wtb" offsets="0.485, -0.0, -0.075"/>
+    <color colorId="48" name="wtg" offsets="0.365, -0.1, -0.05"/>
+    <color colorId="49" name="wto" offsets="0.065, -0.1, -0.05"/>
+    <color colorId="50" name="wtp" offsets="0.935, -0.215, -0.0"/>
+    <color colorId="51" name="wlv" offsets="0.125, -0.275, -0.125"/>
+    <color colorId="52" name="wty" offsets="0.15, -0.0, 0.075"/>
+    <color colorId="53" name="wtv" offsets="-0.283, -0.0, 0.0"/>
+    <color colorId="54" name="wtr" offsets="-0.034, 0.1, 0.05"/>
+    <color colorId="55" name="wtz" offsets="0.59, -0.0, 0.2"/>
+    <color colorId="56" name="nvy" offsets="0.612, -0.35, -0.637"/>
+    <color colorId="57" name="wht" offsets="0.043, -0.816, -0.258"/>
+    <color colorId="58" name="bee" offsets="-0.1, -0.5, -0.5"/>
+    <color colorId="59" name="cwk" offsets="0.08, 0.0, -0.15"/>
 
+    <!-- Include shadowtech colors that aren't bundled with the base colordefs. -->
+    <color colorId="901" name="stb" offsets="-0.172, -0.651, -0.7"/>
+    <color colorId="902" name="stg" offsets="-0.172, -0.651, -0.7"/>
+    <color colorId="903" name="sto" offsets="-0.172, -0.651, -0.7"/>
+    <color colorId="904" name="stp" offsets="-0.172, -0.651, -0.7"/>
+    <color colorId="905" name="sty" offsets="-0.172, -0.651, -0.7"/>
+    <color colorId="906" name="stv" offsets="-0.172, -0.651, -0.7"/>
+    <color colorId="907" name="str" offsets="-0.172, -0.651, -0.7"/>
+    <color colorId="908" name="stz" offsets="-0.172, -0.651, -0.7"/>
+  </class>
+  <class classId="12" name="armor_secondary" source="#0000ff" range="0.1, 0.4, 1.0">
+    <color colorId="1" name="gld" offsets="-0.5, -0.334, -0.49"/>
+    <color colorId="2" name="blu" offsets="-0.06, -0.735, -0.413"/>
+    <color colorId="3" name="pnk" offsets="0.005, -0.544, -0.532"/>
+    <color colorId="4" name="red" offsets="0.389, -0.429, -0.45"/>
+    <color colorId="5" name="grn" offsets="-0.2, -0.47, -0.482"/>
+    <color colorId="6" name="prp" offsets="-0.139, -0.539, -0.53"/>
+    <color colorId="7" name="hvy" offsets="0.345, -0.166, -0.506"/>
+    <color colorId="8" name="dvn" offsets="-0.038, -0.8, -0.218"/>
+    <color colorId="9" name="shd" offsets="-0.068, -0.208, -0.565"/>
+    <color colorId="10" name="vol" offsets="0.32, -0.187, -0.308"/>
+    <color colorId="11" name="fre" offsets="-0.08, -0.35, -0.4"/>
+    <color colorId="12" name="poi" offsets="0.624, -0.331, -0.433"/>
+    <color colorId="13" name="shk" offsets="-0.183, -0.6, -0.52"/>
+    <color colorId="14" name="crs" offsets="0.259, -0.756, -0.672"/>
+    <color colorId="15" name="lov" offsets="-0.18, -0.787, -0.217"/>
+    <color colorId="16" name="htr" offsets="0.5, 0.25, -0.333"/>
+    <color colorId="17" name="ash" offsets="-0.038, -0.8, -0.218"/>
+    <color colorId="18" name="nov" offsets="0.347, 0.25, -0.4"/>
+    <color colorId="19" name="srg" offsets="-0.068, -0.208, -0.565"/>
+    <color colorId="20" name="plr" offsets="-0.1, -0.681, -0.067"/>
+    <color colorId="21" name="trt" offsets="-0.255, -0.487, -0.463"/>
+    <color colorId="22" name="spr" offsets="0.305, -0.407, -0.215"/>
+    <color colorId="23" name="frz" offsets="-0.6, -0.225, -0.225"/>
+    <color colorId="24" name="spk" offsets="0.794, -0.362, -0.356"/>
+    <color colorId="25" name="vrn" offsets="0.22, -0.5, 0.0"/>
+    <color colorId="26" name="stn" offsets="0.384, -0.3, -0.28"/>
+    <color colorId="27" name="rby" offsets="0.25, -0.2, -0.55"/>
+    <color colorId="28" name="fir" offsets="0.343, 0.5, 0.0"/>
+    <color colorId="29" name="pdt" offsets="-0.3, 0.0, -0.65"/>
+    <color colorId="30" name="slp" offsets="-0.225, -0.15, -0.125"/>
+    <color colorId="31" name="sph" offsets="-0.069, 0.0, -0.415"/>
+    <color colorId="32" name="fal" offsets="-0.7, -0.1, -0.425"/>
+    <color colorId="33" name="opl" offsets="0.285, -0.39, -0.38"/>
+    <color colorId="34" name="ctr" offsets="0.395, 0.35, -0.45"/>
+    <color colorId="35" name="trq" offsets="-0.143, -0.123, -0.525"/>
+    <color colorId="36" name="gar" offsets="0.25, -0.025, -0.515"/>
+    <color colorId="37" name="ame" offsets="0.05, -0.55, -0.45"/>
+    <color colorId="38" name="aqa" offsets="0.875, -0.545, -0.485"/>
+    <color colorId="39" name="dgr" offsets="-0.56, -0.875, -0.65"/>
+    <color colorId="40" name="hzd" offsets="-0.56, -0.875, -0.65"/>
+    <color colorId="41" name="hvs" offsets="-0.552, -0.17, -0.321"/>
+    <color colorId="42" name="gry" offsets="0.0, -1.0, -0.45"/>
+    <color colorId="43" name="lky" offsets="0.478, -0.65, -0.485"/>
+    <color colorId="44" name="dia" offsets="0.95, -0.65, -0.15"/>
+    <color colorId="45" name="emd" offsets="0.675, -0.5, -0.525"/>
+    <color colorId="46" name="prl" offsets="0.4, -0.475, 0.0"/>
+    <color colorId="47" name="wtb" offsets="0.05, -0.875, -0.25"/>
+    <color colorId="48" name="wtg" offsets="0.05, -0.875, -0.25"/>
+    <color colorId="49" name="wto" offsets="0.05, -0.875, -0.25"/>
+    <color colorId="50" name="wtp" offsets="0.05, -0.875, -0.25"/>
+    <color colorId="51" name="wlv" offsets="0.375, -0.35, -0.525"/>
+    <color colorId="52" name="wty" offsets="0.05, -0.875, -0.25"/>
+    <color colorId="53" name="wtv" offsets="0.05, -0.875, -0.25"/>
+    <color colorId="54" name="wtr" offsets="0.05, -0.875, -0.25"/>
+    <color colorId="55" name="wtz" offsets="0.05, -0.875, -0.25"/>
+    <color colorId="56" name="nvy" offsets="-0.602, -0.825, -0.487"/>
+    <color colorId="57" name="wht" offsets="-0.602, -0.825, -0.487"/>
+    <color colorId="58" name="bee" offsets="0.465, 0.25, 0.0"/>
+    <color colorId="59" name="cwk" offsets="0.389, -0.429, -0.45"/>
+
+    <!-- Include shadowtech colors that aren't bundled with the base colordefs. -->
+    <color colorId="901" name="stb" offsets="-0.182, 0.0, -0.075"/>
+    <color colorId="902" name="stg" offsets="-0.302, -0.1, -0.05"/>
+    <color colorId="903" name="sto" offsets="-0.602, -0.1, -0.05"/>
+    <color colorId="904" name="stp" offsets="0.268, -0.215, 0.0"/>
+    <color colorId="905" name="sty" offsets="0.15, -0.0, 0.075"/>
+    <color colorId="906" name="stv" offsets="-0.283, -0.0, 0.0"/>
+    <color colorId="907" name="str" offsets="-0.034, 0.1, 0.05"/>
+    <color colorId="908" name="stz" offsets="0.59, -0.0, 0.2"/>
+  </class>
+  <class classId="13" name="armor_joint" source="#00ff00" range="0.1, 0.4, 1.0">
+    <color colorId="1" name="gld" offsets="0.286, -0.404, -0.633"/>
+    <color colorId="2" name="blu" offsets="0.21, -0.632, -0.656"/>
+    <color colorId="3" name="pnk" offsets="0.311, -0.458, -0.682"/>
+    <color colorId="4" name="red" offsets="0.235, -0.483, -0.691"/>
+    <color colorId="5" name="grn" offsets="0.241, -0.375, -0.715"/>
+    <color colorId="6" name="prp" offsets="0.338, -0.366, -0.57"/>
+    <color colorId="7" name="hvy" offsets="-0.292, -0.473, -0.661"/>
+    <color colorId="8" name="dvn" offsets="0.247, -0.63, -0.519"/>
+    <color colorId="9" name="shd" offsets="0.262, -0.292, -0.764"/>
+    <color colorId="10" name="vol" offsets="0.428, -0.564, -0.758"/>
+    <color colorId="11" name="fre" offsets="0.23, -0.45, -0.6"/>
+    <color colorId="12" name="poi" offsets="0.428, -0.564, -0.758"/>
+    <color colorId="13" name="shk" offsets="0.11, -0.75, -0.75"/>
+    <color colorId="14" name="crs" offsets="-0.397, -0.379, -0.699"/>
+    <color colorId="15" name="lov" offsets="0.667, -0.053, -0.553"/>
+    <color colorId="16" name="htr" offsets="0.241, -0.375, -0.715"/>
+    <color colorId="17" name="ash" offsets="-0.292, -0.473, -0.661"/>
+    <color colorId="18" name="nov" offsets="-0.23, -0.5, -0.75"/>
+    <color colorId="19" name="srg" offsets="0.311, -0.458, -0.682"/>
+    <color colorId="20" name="plr" offsets="0.23, -0.45, -0.6"/>
+    <color colorId="21" name="trt" offsets="0.265, -0.449, -0.617"/>
+    <color colorId="22" name="spr" offsets="-0.05, -0.5, -0.667"/>
+    <color colorId="23" name="frz" offsets="0.286, -0.414, -0.7"/>
+    <color colorId="24" name="spk" offsets="0.285, -0.325, -0.633"/>
+    <color colorId="25" name="vrn" offsets="0.875, -0.333, -0.6"/>
+    <color colorId="26" name="stn" offsets="-0.31, -0.4, -0.6"/>
+    <color colorId="27" name="rby" offsets="-0.251, -0.254, -0.71"/>
+    <color colorId="28" name="fir" offsets="0.667, 0.5, -0.695"/>
+    <color colorId="29" name="pdt" offsets="0.8, -0.55, -0.55"/>
+    <color colorId="30" name="slp" offsets="0.25, -0.05, -0.7"/>
+    <color colorId="31" name="sph" offsets="0.25, 0.0, -0.668"/>
+    <color colorId="32" name="fal" offsets="0.15, -0.2, -0.7"/>
+    <color colorId="33" name="opl" offsets="0.09, -0.525, -0.7"/>
+    <color colorId="34" name="ctr" offsets="0.75, -0.25, -0.725"/>
+    <color colorId="35" name="trq" offsets="0.247, -0.15, -0.675"/>
+    <color colorId="36" name="gar" offsets="0.6, -0.375, -0.675"/>
+    <color colorId="37" name="ame" offsets="0.62, -0.45, -0.625"/>
+    <color colorId="38" name="aqa" offsets="0.625, -0.475, -0.685"/>
+    <color colorId="39" name="dgr" offsets="0.444, -0.85, -0.755"/>
+    <color colorId="40" name="hzd" offsets="0.444, -0.85, -0.755"/>
+    <color colorId="41" name="hvs" offsets="-0.399, -0.325, -0.615"/>
+    <color colorId="42" name="gry" offsets="0.0, -1.0, -0.65"/>
+    <color colorId="43" name="lky" offsets="0.4, -0.575, -0.675"/>
+    <color colorId="44" name="dia" offsets="0.25, -0.4, -0.625"/>
+    <color colorId="45" name="emd" offsets="0.5, -0.675, -0.675"/>
+    <color colorId="46" name="prl" offsets="0.685, -0.6, -0.525"/>
+    <color colorId="47" name="wtb" offsets="0.375, -0.645, -0.645"/>
+    <color colorId="48" name="wtg" offsets="0.375, -0.645, -0.645"/>
+    <color colorId="49" name="wto" offsets="0.375, -0.645, -0.645"/>
+    <color colorId="50" name="wtp" offsets="0.375, -0.645, -0.645"/>
+    <color colorId="51" name="wlv" offsets="0.75, -0.65, -0.625"/>
+    <color colorId="52" name="wty" offsets="0.375, -0.645, -0.645"/>
+    <color colorId="53" name="wtv" offsets="0.375, -0.645, -0.645"/>
+    <color colorId="54" name="wtr" offsets="0.375, -0.645, -0.645"/>
+    <color colorId="55" name="wtz" offsets="0.375, -0.645, -0.645"/>
+    <color colorId="56" name="nvy" offsets="0.21, -0.581, -0.727"/>
+    <color colorId="57" name="wht" offsets="0.21, -0.581, -0.727"/>
+    <color colorId="58" name="bee" offsets="-0.22, 0.25, 0.0"/>
+    <color colorId="59" name="cwk" offsets="0.25, -0.2, -0.6"/>
+
+    <!-- Include shadowtech colors that aren't bundled with the base colordefs. -->
+    <color colorId="901" name="stb" offsets="0.262, -0.292, -0.764"/>
+    <color colorId="902" name="stg" offsets="0.262, -0.292, -0.764"/>
+    <color colorId="903" name="sto" offsets="0.262, -0.292, -0.764"/>
+    <color colorId="904" name="stp" offsets="0.262, -0.292, -0.764"/>
+    <color colorId="905" name="sty" offsets="0.262, -0.292, -0.764"/>
+    <color colorId="906" name="stv" offsets="0.262, -0.292, -0.764"/>
+    <color colorId="907" name="str" offsets="0.262, -0.292, -0.764"/>
+    <color colorId="908" name="stz" offsets="0.262, -0.292, -0.764"/>
+  </class>
+  <class classId="14" name="npc_primary" source="#ff0000" range="0.1, 0.345, 1.0">
+    <color colorId="1" name="default" offsets="0.612, -0.35, -0.637"/>
+    <color colorId="2" name="wht" offsets="0.043, -0.816, -0.258"/>
+    <color colorId="3" name="red" offsets="-0.039, -0.3, -0.448"/>
+    <color colorId="4" name="gry" offsets="-0.321, -0.797, -0.483"/>
+  </class>
+  <class classId="15" name="npc_secondary" source="#0000ff" range="0.1, 0.4, 1.0">
+    <color colorId="1" name="default" offsets="-0.602, -0.825, -0.487"/>
+  </class>
+  <class classId="16" name="npc_joint" source="#00ff00" range="0.1, 0.4, 1.0">
+    <color colorId="1" name="default" offsets="0.21, -0.581, -0.727"/>
+  </class>
+  <class classId="17" name="furni_icon_1" source="#ff00ff" range="0.025, 1.0, 1.0">
+    <color colorId="1" name="Spiral Order, metal primary" offsets="-0.12, -0.88, -0.74"/>
+    <color colorId="2" name="Pale, metal primary" offsets="0.372, -0.82, -0.68"/>
+    <color colorId="3" name="Rust, metal primary" offsets="0.19, -0.64, -0.68"/>
+    <color colorId="4" name="Antique, Manor wooden primary" offsets="0.18, -0.58, -0.68"/>
+  </class>
+  <class classId="18" name="furni_icon_2" source="#ff0000" range="0.025, 1.0, 1.0">
+    <color colorId="1" name="Spiral Order, cool tone" offsets="0.62, -0.56, -0.49"/>
+    <color colorId="2" name="Spiral Order, neutral tone" offsets="0.1, -0.94, -0.28"/>
+    <color colorId="3" name="Spiral Order, warm tone" offsets="0.012, -0.28, -0.46"/>
+    <color colorId="4" name="Pale, cool tone" offsets="0.42, -0.54, -0.574"/>
+    <color colorId="5" name="Pale, neutral tone" offsets="-0.1, -0.92, -0.54"/>
+    <color colorId="6" name="Pale, warm tone" offsets="0.06, -0.28, -0.164"/>
+    <color colorId="7" name="Rust, cool tone" offsets="-0.46, -0.42, -0.4"/>
+    <color colorId="8" name="Rust, neutral tone" offsets="0.2, -0.92, -0.632"/>
+    <color colorId="9" name="Rust, warm tone" offsets="0.12, -0.3, -0.18"/>
+    <color colorId="10" name="Antique, Manor violet" offsets="-0.07, -0.48, -0.36"/>
+    <color colorId="11" name="Antique, Manor green" offsets="0.38, -0.36, -0.58"/>
+    <color colorId="12" name="Antique, Manor wood" offsets="0.08, -0.68, -0.48"/>
+  </class>
+  <class classId="19" name="furni_icon_3" source="#0000ff" range="0.025, 1.0, 1.0">
+    <color colorId="1" name="Spiral Order, metal secondary" offsets="0.222, -0.98, -0.52"/>
+    <color colorId="2" name="Pale, metal secondary" offsets="0.46, -0.48, -0.28"/>
+    <color colorId="3" name="Rust, metal secondary" offsets="0.38, -0.3, -0.24"/>
+    <color colorId="4" name="Antique, Manor wooden secondary" offsets="0.38, -0.6, -0.5"/>
+  </class>
+  <class classId="20" name="cyan_base" source="#00ffff" range="0.1, 0.5, 1.0">
+  </class>
+  <class classId="21" name="yellow_base" source="#ffff00" range="0.1, 0.5, 1.0">
+  </class>
+  <class classId="22" name="white_base" source="#ffffff" range="0.1, 0.5, 1.0">
+  </class>
 </colors>
-
