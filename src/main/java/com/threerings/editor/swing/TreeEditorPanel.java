@@ -509,7 +509,7 @@ public class TreeEditorPanel extends BaseEditorPanel
    */
   protected Action createAction (String command, int mnemonic, int accelerator)
   {
-    return createAction(command, mnemonic, accelerator, KeyEvent.CTRL_MASK);
+    return createAction(command, mnemonic, accelerator, KeyEvent.CTRL_DOWN_MASK);
   }
 
   /**

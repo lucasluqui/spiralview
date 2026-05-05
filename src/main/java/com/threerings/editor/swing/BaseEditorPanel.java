@@ -27,7 +27,7 @@ public abstract class BaseEditorPanel extends BasePropertyEditor
    */
   public BaseEditorPanel (EditorContext ctx, Property[] ancestors, boolean omitColumns)
   {
-    _ctx = ctx;
+    init(ctx);
     _ancestors = ancestors;
     _omitColumns = omitColumns;
     _msgmgr = ctx.getMessageManager();
@@ -36,7 +36,7 @@ public abstract class BaseEditorPanel extends BasePropertyEditor
     // add a mapping to copy the path of the property under the mouse cursor to the clipboard
     if (ancestors == null) {
       getInputMap(WHEN_IN_FOCUSED_WINDOW).put(
-        KeyStroke.getKeyStroke(KeyEvent.VK_C, KeyEvent.CTRL_MASK | KeyEvent.SHIFT_MASK),
+        KeyStroke.getKeyStroke(KeyEvent.VK_C, KeyEvent.CTRL_DOWN_MASK | KeyEvent.SHIFT_DOWN_MASK),
         "copy_path");
       getActionMap().put("copy_path", new AbstractAction() {
         public void actionPerformed (ActionEvent event) {
@@ -44,7 +44,7 @@ public abstract class BaseEditorPanel extends BasePropertyEditor
         }
       });
       getInputMap(WHEN_IN_FOCUSED_WINDOW).put(
-        KeyStroke.getKeyStroke(KeyEvent.VK_D, KeyEvent.CTRL_MASK | KeyEvent.SHIFT_MASK),
+        KeyStroke.getKeyStroke(KeyEvent.VK_D, KeyEvent.CTRL_DOWN_MASK | KeyEvent.SHIFT_DOWN_MASK),
         "direct_path");
       getActionMap().put("direct_path", new AbstractAction() {
         public void actionPerformed (ActionEvent event) {
@@ -52,7 +52,7 @@ public abstract class BaseEditorPanel extends BasePropertyEditor
         }
       });
       getInputMap(WHEN_IN_FOCUSED_WINDOW).put(
-        KeyStroke.getKeyStroke(KeyEvent.VK_C, KeyEvent.CTRL_MASK | KeyEvent.META_MASK),
+        KeyStroke.getKeyStroke(KeyEvent.VK_C, KeyEvent.CTRL_DOWN_MASK | KeyEvent.META_DOWN_MASK),
         "copy_file_path");
       getActionMap().put("copy_file_path", new AbstractAction() {
         public void actionPerformed (ActionEvent event) {

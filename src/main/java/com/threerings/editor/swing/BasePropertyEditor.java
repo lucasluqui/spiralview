@@ -54,6 +54,11 @@ public abstract class BasePropertyEditor extends CollapsiblePanel
     setBackground(null);
   }
 
+  public void init (EditorContext ctx)
+  {
+    _ctx = ctx;
+  }
+
   /**
    * Adds a listener for change events.
    */
@@ -216,9 +221,7 @@ public abstract class BasePropertyEditor extends CollapsiblePanel
    */
   protected String getLabel (Enum<?> value, MessageBundle msgs)
   {
-    if (value == null) {
-      return _msgs.get("m.null_value");
-    }
+    if (value == null) return _msgs.get("m.null_value");
     String key = "m." + StringUtil.toUSLowerCase(value.name());
     return msgs.exists(key) ? msgs.get(key) : value.toString();
   }
@@ -228,7 +231,12 @@ public abstract class BasePropertyEditor extends CollapsiblePanel
    */
   protected void fireStateChanged ()
   {
-    Object[] listeners = listenerList.getListenerList();
+    final Object[] listeners = listenerList.getListenerList();
+//    _ctx.runOnRunQueue(() -> fireStateChangedOnQueue(listeners));
+//  }
+//
+//  private final void fireStateChangedOnQueue (Object[] listeners)
+//  {
     ChangeEvent event = null;
     for (int ii = listeners.length - 2; ii >= 0; ii -= 2) {
       if (listeners[ii] == ChangeListener.class) {
