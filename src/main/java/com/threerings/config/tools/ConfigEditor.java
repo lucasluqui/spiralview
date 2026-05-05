@@ -66,7 +66,6 @@ import javax.swing.undo.UndoableEditSupport;
 import javax.swing.undo.UndoManager;
 
 import com.google.common.base.Function;
-import com.google.common.base.Objects;
 import com.google.common.base.Predicate;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.collect.ImmutableList;
@@ -81,6 +80,7 @@ import com.samskivert.swing.util.SwingUtil;
 import com.samskivert.util.ObserverList;
 import com.samskivert.util.QuickSort;
 
+import com.samskivert.util.RunQueue;
 import com.threerings.config.util.ConfigId;
 import com.threerings.media.image.ColorPository;
 import com.threerings.resource.ResourceManager;
@@ -139,7 +139,8 @@ public class ConfigEditor extends BaseConfigEditor
   {
     ConfigEditor editor = (_editorCreator != null)
       ? _editorCreator.apply(ctx)
-      : new ConfigEditor(ctx.getMessageManager(), ctx.getConfigManager(), ctx.getColorPository());
+      : new ConfigEditor(ctx.getRunQueue(),
+      ctx.getMessageManager(), ctx.getConfigManager(), ctx.getColorPository());
     if (clazz != null) {
       editor.select(clazz, name);
     }
@@ -155,25 +156,26 @@ public class ConfigEditor extends BaseConfigEditor
     MessageManager msgmgr = new MessageManager("rsrc.i18n");
     ConfigManager cfgmgr = new ConfigManager(rsrcmgr, msgmgr, "config/");
     ColorPository colorpos = ColorPository.loadColorPository(rsrcmgr);
-    new ConfigEditor(msgmgr, cfgmgr, colorpos).setVisible(true);
-  }
-
-  /**
-   * Creates a new config editor.
-   */
-  public ConfigEditor (MessageManager msgmgr, ConfigManager cfgmgr, ColorPository colorpos)
-  {
-    this(msgmgr, cfgmgr, colorpos, null, null);
+    new ConfigEditor(RunQueue.AWT, msgmgr, cfgmgr, colorpos).setVisible(true);
   }
 
   /**
    * Creates a new config editor.
    */
   public ConfigEditor (
-    MessageManager msgmgr, ConfigManager cfgmgr, ColorPository colorpos,
+    RunQueue runQueue, MessageManager msgmgr, ConfigManager cfgmgr, ColorPository colorpos)
+  {
+    this(runQueue, msgmgr, cfgmgr, colorpos, null, null);
+  }
+
+  /**
+   * Creates a new config editor.
+   */
+  public ConfigEditor (
+    RunQueue runQueue, MessageManager msgmgr, ConfigManager cfgmgr, ColorPository colorpos,
     Class<?> clazz, String name)
   {
-    super(msgmgr, cfgmgr, colorpos, "editor.config");
+    super(runQueue, msgmgr, cfgmgr, colorpos, "editor.config");
 
     // create the undo apparatus
     _undoSupport = new UndoableEditSupport();
@@ -416,7 +418,7 @@ public class ConfigEditor extends BaseConfigEditor
     } else if (action.equals("validate_refs")) {
       validateReferences();
     } else if (action.equals("resources")) {
-      showFrame(new ResourceEditor(_msgmgr, _cfgmgr, _colorpos));
+      showFrame(new ResourceEditor(_runQueue, _msgmgr, _cfgmgr, _colorpos));
     } else if (action.equals("tree_mode")) {
       boolean enabled = _treeMode.isSelected();
       for (int ii = _tabs.getComponentCount() - 1; ii >= 0; ii--) {
@@ -567,13 +569,9 @@ public class ConfigEditor extends BaseConfigEditor
       return;
     }
     new ConfigSearcher(this, cfgNameOrPrefix,
-      ConfigSearcher.Presence.getReporter(clazz, new Predicate<ConfigReference<?>>() {
-        public boolean apply (ConfigReference<?> ref) {
-          return exact
-            ? ref.getName().equals(cfgNameOrPrefix)
-            : ref.getName().startsWith(cfgNameOrPrefix);
-        }
-      }),
+      ConfigSearcher.Presence.getReporter(clazz,
+        ref -> exact ? ref.getName().equals(cfgNameOrPrefix)
+          : ref.getName().startsWith(cfgNameOrPrefix)),
       getSearcherDomains());
   }
 
@@ -700,9 +698,9 @@ public class ConfigEditor extends BaseConfigEditor
 
           // remove the mappings for cut/copy/paste since we handle those ourself
           InputMap imap = _tree.getInputMap();
-          imap.put(KeyStroke.getKeyStroke(KeyEvent.VK_X, KeyEvent.CTRL_MASK), "noop");
-          imap.put(KeyStroke.getKeyStroke(KeyEvent.VK_C, KeyEvent.CTRL_MASK), "noop");
-          imap.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, KeyEvent.CTRL_MASK), "noop");
+          imap.put(KeyStroke.getKeyStroke(KeyEvent.VK_X, KeyEvent.CTRL_DOWN_MASK), "noop");
+          imap.put(KeyStroke.getKeyStroke(KeyEvent.VK_C, KeyEvent.CTRL_DOWN_MASK), "noop");
+          imap.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, KeyEvent.CTRL_DOWN_MASK), "noop");
         }
         _pane.setViewportView(_tree);
         _filterPanel.setTree(_tree);
@@ -717,7 +715,7 @@ public class ConfigEditor extends BaseConfigEditor
       {
         Class<?> clazz = group.getRawConfigClasses().get(0);
         try {
-          ManagedConfig cfg = (ManagedConfig)PreparedEditable.PREPARER.apply(
+          ManagedConfig cfg = (ManagedConfig)PreparedEditable.prepare(
             clazz.getConstructor().newInstance());
           if (cfg instanceof DerivedConfig) {
             ((DerivedConfig)cfg).cclass = group.getConfigClass();
@@ -960,7 +958,7 @@ public class ConfigEditor extends BaseConfigEditor
     public ConfigManager cfgmgr;
 
     /** Determines the selected group. */
-    public JComboBox gbox;
+    public JComboBox<GroupItem> gbox;
 
     public ManagerPanel (ConfigManager cfgmgr)
     {
@@ -987,7 +985,7 @@ public class ConfigEditor extends BaseConfigEditor
           return String.CASE_INSENSITIVE_ORDER.compare(g1.toString(), g2.toString());
         }
       });
-      gpanel.add(gbox = new JComboBox(items));
+      gpanel.add(gbox = new JComboBox<>(items));
       gbox.addItemListener(this);
 
       // add the filtering panel
@@ -1041,7 +1039,7 @@ public class ConfigEditor extends BaseConfigEditor
     public boolean select (Class<?> clazz, String name)
     {
       for (int ii = 0, nn = gbox.getItemCount(); ii < nn; ii++) {
-        GroupItem item = (GroupItem)gbox.getItemAt(ii);
+        GroupItem item = gbox.getItemAt(ii);
         if (item.group.getConfigClass() == clazz) {
           return item.select(name);
         }
@@ -1079,7 +1077,7 @@ public class ConfigEditor extends BaseConfigEditor
     public void dispose ()
     {
       for (int ii = 0, nn = gbox.getItemCount(); ii < nn; ii++) {
-        ((GroupItem)gbox.getItemAt(ii)).dispose();
+        gbox.getItemAt(ii).dispose();
       }
     }
 
@@ -1113,6 +1111,12 @@ public class ConfigEditor extends BaseConfigEditor
     public ColorPository getColorPository ()
     {
       return _colorpos;
+    }
+
+    // from EditorContext
+    public RunQueue getRunQueue ()
+    {
+      return _runQueue;
     }
 
     // from EditorContext
@@ -1165,7 +1169,7 @@ public class ConfigEditor extends BaseConfigEditor
     // restore/bind the selected group
     String cat = _prefs.get(p + "group", null);
     for (int tab = _tabs.getComponentCount() - 1; tab >= 0; tab--) {
-      final JComboBox gbox = ((ManagerPanel)_tabs.getComponentAt(tab)).gbox;
+      final JComboBox<ManagerPanel.GroupItem> gbox = ((ManagerPanel)_tabs.getComponentAt(tab)).gbox;
       if (cat != null) {
         for (int ii = 0, nn = gbox.getItemCount(); ii < nn; ii++) {
           if (cat.equals(String.valueOf(gbox.getItemAt(ii)))) {
@@ -1174,11 +1178,7 @@ public class ConfigEditor extends BaseConfigEditor
           }
         }
       }
-      gbox.addActionListener(new ActionListener() {
-        public void actionPerformed (ActionEvent event) {
-          _prefs.put(p + "group", String.valueOf(gbox.getSelectedItem()));
-        }
-      });
+      gbox.addActionListener(e -> _prefs.put(p + "group", String.valueOf(gbox.getSelectedItem())));
     }
 
     // restore color
@@ -1284,11 +1284,9 @@ public class ConfigEditor extends BaseConfigEditor
       Boolean oldVal = _dirty.put(group, dirty);
       boolean oldDirty = Boolean.TRUE.equals(oldVal);
       if (dirty != oldDirty) {
-        _editors.apply(new ObserverList.ObserverOp<ConfigEditor>() {
-          public boolean apply (ConfigEditor editor) {
-            editor.recheckDirty();
-            return true;
-          }
+        _editors.apply(editor -> {
+          editor.recheckDirty();
+          return true;
         });
       }
     }
