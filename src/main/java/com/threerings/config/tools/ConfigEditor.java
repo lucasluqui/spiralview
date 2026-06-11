@@ -82,13 +82,11 @@ import com.samskivert.util.QuickSort;
 
 import com.samskivert.util.RunQueue;
 import com.threerings.config.util.ConfigId;
+import com.threerings.config.util.IdConfigAssigner;
 import com.threerings.media.image.ColorPository;
 import com.threerings.resource.ResourceManager;
 import com.threerings.swing.PrintStreamDialog;
-import com.threerings.util.MessageManager;
-import com.threerings.util.ResourceUtil;
-import com.threerings.util.ToolUtil;
-import com.threerings.util.DeepUtil;
+import com.threerings.util.*;
 
 import com.threerings.editor.Editable;
 import com.threerings.editor.Introspector;
@@ -373,6 +371,7 @@ public class ConfigEditor extends BaseConfigEditor
     } else if (action.equals("folder")) {
       item.newFolder();
     } else if (action.equals("save_group")) {
+      assignIds(item.group); // TODO Delete this once Clyde is updated.
       item.group.save();
       DirtyGroupManager.setDirty(item.group, false);
     } else if (action.equals("revert_group")) {
@@ -425,6 +424,7 @@ public class ConfigEditor extends BaseConfigEditor
         ((ManagerPanel)_tabs.getComponentAt(ii)).setTreeModeEnabled(enabled);
       }
     } else if (action.equals("save_all")) {
+      assignIds(panel.cfgmgr.getGroups()); // TODO Delete this once Clyde is updated.
       panel.cfgmgr.saveAll();
       DirtyGroupManager.setDirty(panel.cfgmgr, false);
     } else if (action.equals("revert_all")) {
@@ -1236,6 +1236,54 @@ public class ConfigEditor extends BaseConfigEditor
         _readOnly ? Color4f.RED : Color4f.GRAY);
     }
   }
+
+  // START: TODO Delete this once Clyde is updated.
+  protected boolean assignIds (ConfigGroup<?> agroup)
+  {
+    return assignIds(ImmutableList.of(agroup));
+  }
+
+  /**
+   * Assign ids to configs in the specified groups.
+   *
+   * @return true on success
+   */
+  protected boolean assignIds (Iterable<ConfigGroup<?>> groups)
+  {
+    MessageBundle msgs = _msgmgr.getBundle(Introspector.getMessageBundle(getClass()));
+    PrintStreamDialog dialog = getDialog("t.assign_ids", "b.ok");
+    IdConfigAssigner assigner = createIdConfigAssigner();
+
+    boolean success = true;
+    for (ConfigGroup<?> group : groups) {
+      success &= assigner.assignIds(group, dialog.getPrintStream());
+    }
+    dialog.maybeShow();
+    return success;
+  }
+
+  /**
+   * Create and return a PrintStreamDialog with the specified title, button, and initial msgs.
+   */
+  protected PrintStreamDialog getDialog (String titleMsg, String okMsg, String... initialMsgs)
+  {
+    MessageBundle msgs = _msgmgr.getBundle(Introspector.getMessageBundle(getClass()));
+    PrintStreamDialog dialog = new PrintStreamDialog(this, msgs.xlate(titleMsg), msgs.xlate(okMsg));
+    for (String msg : initialMsgs) {
+      dialog.getPrintStream().println(msgs.xlate(msg));
+    }
+    return dialog;
+  }
+
+  /**
+   * Create the tool that will add ids to configs.
+   */
+  protected IdConfigAssigner createIdConfigAssigner ()
+  {
+    return new IdConfigAssigner();
+  }
+  // END: TODO Delete this once Clyde is updated.
+
 
   /**
    * Tracks which config groups have unsaved changes within them.
