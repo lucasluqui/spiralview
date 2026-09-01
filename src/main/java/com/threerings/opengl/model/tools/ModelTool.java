@@ -123,6 +123,16 @@ public abstract class ModelTool extends GlCanvasTool
   @Override
   protected void compositeView ()
   {
+    if (_snapshotModelOnly) {
+      // Preserve the normal application enqueue step, which updates scoped camera/view state
+      // used by renderables, without compositing tool helpers such as the grid and stats.
+      _compositor.addEnqueueable(this);
+      if (_scene != null) {
+        _scene.composite();
+      }
+      return;
+    }
+
     super.compositeView();
     _scene.composite();
   }
@@ -201,4 +211,7 @@ public abstract class ModelTool extends GlCanvasTool
 
   /** The model being viewed. */
   protected Model _model;
+
+  /** Whether we are rendering an offscreen model-only snapshot. */
+  protected boolean _snapshotModelOnly;
 }

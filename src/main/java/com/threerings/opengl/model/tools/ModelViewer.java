@@ -64,12 +64,16 @@ import com.threerings.config.ConfigUpdateListener;
 import com.threerings.editor.swing.DraggableSpinner;
 import com.threerings.editor.swing.EditorPanel;
 import com.threerings.editor.swing.editors.ConfigReferenceEditor;
+import com.threerings.opengl.renderer.Color4f;
+import com.threerings.opengl.renderer.Texture2D;
+import com.threerings.opengl.renderer.TextureRenderer;
 import com.threerings.util.ChangeBlock;
 
 import com.threerings.opengl.model.Animation;
 import com.threerings.opengl.model.ModelObserver;
 import com.threerings.opengl.model.Model;
 import com.threerings.opengl.model.config.ModelConfig;
+import org.lwjgl.opengl.GL11;
 
 import static com.threerings.opengl.Log.log;
 
@@ -259,7 +263,7 @@ public class ModelViewer extends ModelTool
       File file = new File(FileSystemView.getFileSystemView().getDefaultDirectory(),
         "viewer_" + fmt.format(new Date()) + ".png");
       try {
-        ImageIO.write(createSnapshot(true), "png", file);
+        ImageIO.write(createModelSnapshot(true), "png", file);
       } catch (IOException e) {
         log.warning("Failed to write snapshot.", "file", file, e);
       }
@@ -339,6 +343,37 @@ public class ModelViewer extends ModelTool
     super.updateView(elapsed);
     if (_autoReset.isSelected() && _model.hasCompleted()) {
       _model.reset();
+    }
+  }
+
+  /**
+   * Creates a model-only snapshot by rendering the primary model into an offscreen framebuffer.
+   * Tool helpers, environment models, grid, bounds, compass, stats, and the visible canvas
+   * framebuffer are not included.
+   */
+  protected BufferedImage createModelSnapshot (boolean alpha)
+  {
+    int width = _renderer.getWidth(), height = _renderer.getHeight();
+
+    Texture2D color = new Texture2D(_renderer, true);
+    color.setImage(alpha ? GL11.GL_RGBA8 : GL11.GL_RGB8, width, height, false, false);
+
+    TextureRenderer trenderer = new TextureRenderer(this, color, null, width, height);
+    Color4f obackground = _compositor.getBackgroundColor();
+    _compositor.setBackgroundColor(
+      alpha ? Color4f.TRANSPARENT_BLACK : Color4f.BLACK);
+
+    trenderer.startRender();
+    _snapshotModelOnly = true;
+    try {
+      renderView();
+      return createSnapshot(alpha);
+    } finally {
+      _snapshotModelOnly = false;
+      trenderer.commitRender();
+      trenderer.dispose();
+      color.delete();
+      _compositor.setBackgroundColor(obackground);
     }
   }
 
