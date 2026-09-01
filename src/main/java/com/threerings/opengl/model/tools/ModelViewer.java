@@ -263,7 +263,7 @@ public class ModelViewer extends ModelTool
       File file = new File(FileSystemView.getFileSystemView().getDefaultDirectory(),
         "viewer_" + fmt.format(new Date()) + ".png");
       try {
-        ImageIO.write(createModelSnapshot(true), "png", file);
+        ImageIO.write(createSceneSnapshot(true), "png", file);
       } catch (IOException e) {
         log.warning("Failed to write snapshot.", "file", file, e);
       }
@@ -347,11 +347,11 @@ public class ModelViewer extends ModelTool
   }
 
   /**
-   * Creates a model-only snapshot by rendering the primary model into an offscreen framebuffer.
+   * Creates a scene-only snapshot by rendering the scene into an offscreen framebuffer.
    * Tool helpers, environment models, grid, bounds, compass, stats, and the visible canvas
    * framebuffer are not included.
    */
-  protected BufferedImage createModelSnapshot (boolean alpha)
+  protected BufferedImage createSceneSnapshot (boolean alpha)
   {
     int width = _renderer.getWidth(), height = _renderer.getHeight();
 
@@ -364,12 +364,12 @@ public class ModelViewer extends ModelTool
       alpha ? Color4f.TRANSPARENT_BLACK : Color4f.BLACK);
 
     trenderer.startRender();
-    _snapshotModelOnly = true;
+    _snapshotSceneOnly = true;
     try {
       renderView();
       return createSnapshot(alpha);
     } finally {
-      _snapshotModelOnly = false;
+      _snapshotSceneOnly = false;
       trenderer.commitRender();
       trenderer.dispose();
       color.delete();
