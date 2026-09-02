@@ -35,24 +35,20 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
-public abstract class Exporter implements Closeable {
-  protected Object _object;
-  protected ObjectMarshaller _marshaller;
-  protected Replacer _replacer;
-  protected Object[] _a1 = new Object[1];
-  protected Object[] _a2 = new Object[1];
+public abstract class Exporter implements Closeable
+{
+  public Exporter () { }
 
-  public Exporter() {
-  }
-
-  public Exporter setReplacer(Replacer replacer) {
+  public Exporter setReplacer (Replacer replacer)
+  {
     this._replacer = replacer;
     return this;
   }
 
-  public abstract void writeObject(Object var1) throws IOException;
+  public abstract void writeObject (Object var1) throws IOException;
 
-  public void defaultWriteFields() throws IOException {
+  public void defaultWriteFields () throws IOException
+  {
     if (this._marshaller == null) {
       throw new IllegalStateException("Not invoking a custom writeFields method.");
     } else {
@@ -60,722 +56,720 @@ public abstract class Exporter implements Closeable {
     }
   }
 
-  // START: List of obfuscated methods (I assume used throughout time), helps patch odd Scene Editor errors
-  // when saving certain scene files.
-  public final void obfuscatedToDefaultWriteFields() throws IOException {
-    defaultWriteFields();
-  }
-
-  public final void ka() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kA() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kb() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kB() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kc() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kC() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kd() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kD() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void ke() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kE() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kf() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kF() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kg() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kG() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kh() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kH() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void ki() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kI() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kj() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kJ() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kk() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kK() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kl() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kL() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void km() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kM() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kn() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kN() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void ko() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kO() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kp() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kP() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kq() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kQ() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kr() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kR() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void ks() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kS() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kt() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kT() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void ku() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kU() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kv() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kV() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kw() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kW() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kx() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kX() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void ky() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kY() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kz() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-
-  public final void kZ() throws IOException {
-    obfuscatedToDefaultWriteFields();
-  }
-  // END
-
-  public void write(String name, boolean value, boolean defvalue) throws IOException {
+  public void write (String name, boolean value, boolean defvalue)
+    throws IOException
+  {
     if (value != defvalue) {
       this.write(name, value);
     }
-
   }
 
-  public void a(String name, boolean value, boolean defValue) throws IOException {
+  public void a (String name, boolean value, boolean defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public abstract void write(String var1, boolean var2) throws IOException;
-  public abstract void a(String var1, boolean var2) throws IOException;
+  public abstract void write (String var1, boolean var2) throws IOException;
+  public abstract void a (String var1, boolean var2) throws IOException;
 
-  public void write(String name, byte value, byte defvalue) throws IOException {
+  public void write (String name, byte value, byte defvalue)
+    throws IOException
+  {
     if (value != defvalue) {
       this.write(name, value);
     }
-
   }
 
-  public void a(String name, byte value, byte defValue) throws IOException {
+  public void a (String name, byte value, byte defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public abstract void write(String var1, byte var2) throws IOException;
-  public abstract void a(String var1, byte var2) throws IOException;
+  public abstract void write (String var1, byte var2) throws IOException;
+  public abstract void a (String var1, byte var2) throws IOException;
 
-  public void write(String name, char value, char defvalue) throws IOException {
+  public void write (String name, char value, char defvalue)
+    throws IOException
+  {
     if (value != defvalue) {
       this.write(name, value);
     }
-
   }
 
-  public void a(String name, char value, char defValue) throws IOException {
+  public void a (String name, char value, char defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public abstract void write(String var1, char var2) throws IOException;
-  public abstract void a(String var1, char var2) throws IOException;
+  public abstract void write (String var1, char var2) throws IOException;
+  public abstract void a (String var1, char var2) throws IOException;
 
-  public void write(String name, double value, double defvalue) throws IOException {
+  public void write (String name, double value, double defvalue)
+    throws IOException
+  {
     if (value != defvalue) {
       this.write(name, value);
     }
-
   }
 
-  public void a(String name, double value, double defValue) throws IOException {
+  public void a (String name, double value, double defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public abstract void write(String var1, double var2) throws IOException;
-  public abstract void a(String var1, double var2) throws IOException;
+  public abstract void write (String var1, double var2) throws IOException;
+  public abstract void a (String var1, double var2) throws IOException;
 
-  public void write(String name, float value, float defvalue) throws IOException {
+  public void write (String name, float value, float defvalue)
+    throws IOException
+  {
     if (value != defvalue) {
       this.write(name, value);
     }
-
   }
 
-  public void a(String name, float value, float defValue) throws IOException {
+  public void a (String name, float value, float defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public abstract void write(String var1, float var2) throws IOException;
-  public abstract void a(String var1, float var2) throws IOException;
+  public abstract void write (String var1, float var2) throws IOException;
+  public abstract void a (String var1, float var2) throws IOException;
 
-  public void write(String name, int value, int defvalue) throws IOException {
+  public void write (String name, int value, int defvalue)
+    throws IOException
+  {
     if (value != defvalue) {
       this.write(name, value);
     }
-
   }
 
-  public void a(String name, int value, int defValue) throws IOException {
+  public void a (String name, int value, int defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public abstract void write(String var1, int var2) throws IOException;
-  public abstract void a(String var1, int var2) throws IOException;
+  public abstract void write (String var1, int var2) throws IOException;
+  public abstract void a (String var1, int var2) throws IOException;
 
-  public void write(String name, long value, long defvalue) throws IOException {
+  public void write (String name, long value, long defvalue)
+    throws IOException
+  {
     if (value != defvalue) {
       this.write(name, value);
     }
-
   }
 
-  public void a(String name, long value, long defValue) throws IOException {
+  public void a (String name, long value, long defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public abstract void write(String var1, long var2) throws IOException;
-  public abstract void a(String var1, long var2) throws IOException;
+  public abstract void write (String var1, long var2) throws IOException;
+  public abstract void a (String var1, long var2) throws IOException;
 
-  public void write(String name, short value, short defvalue) throws IOException {
+  public void write (String name, short value, short defvalue)
+    throws IOException
+  {
     if (value != defvalue) {
       this.write(name, value);
     }
-
   }
 
-  public void a(String name, short value, short defValue) throws IOException {
+  public void a (String name, short value, short defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public abstract void write(String var1, short var2) throws IOException;
-  public abstract void a(String var1, short var2) throws IOException;
+  public abstract void write (String var1, short var2) throws IOException;
+  public abstract void a (String var1, short var2) throws IOException;
 
-  public void write(String name, boolean[] value, boolean[] defvalue) throws IOException {
+  public void write (String name, boolean[] value, boolean[] defvalue)
+    throws IOException
+  {
     this.write(name, value, defvalue, boolean[].class);
   }
 
-  public void a(String name, boolean[] value, boolean[] defValue) throws IOException {
+  public void a (String name, boolean[] value, boolean[] defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public void write(String name, boolean[] value) throws IOException {
+  public void write (String name, boolean[] value)
+    throws IOException
+  {
     this.write(name, (Object)value, (Class)boolean[].class);
   }
 
-  public void a(String name, boolean[] value) throws IOException {
+  public void a (String name, boolean[] value)
+    throws IOException
+  {
     write(name, value);
   }
 
-  public void write(String name, byte[] value, byte[] defvalue) throws IOException {
+  public void write (String name, byte[] value, byte[] defvalue)
+    throws IOException
+  {
     this.write(name, value, defvalue, byte[].class);
   }
 
-  public void a(String name, byte[] value, byte[] defValue) throws IOException {
+  public void a (String name, byte[] value, byte[] defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public void write(String name, byte[] value) throws IOException {
+  public void write (String name, byte[] value)
+    throws IOException
+  {
     this.write(name, (Object)value, (Class)byte[].class);
   }
 
-  public void a(String name, byte[] value) throws IOException {
+  public void a (String name, byte[] value)
+    throws IOException
+  {
     write(name, value);
   }
 
-  public void write(String name, char[] value, char[] defvalue) throws IOException {
+  public void write (String name, char[] value, char[] defvalue)
+    throws IOException
+  {
     this.write(name, value, defvalue, char[].class);
   }
 
-  public void a(String name, char[] value, char[] defValue) throws IOException {
+  public void a (String name, char[] value, char[] defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public void write(String name, char[] value) throws IOException {
+  public void write (String name, char[] value)
+    throws IOException
+  {
     this.write(name, (Object)value, (Class)char[].class);
   }
 
-  public void a(String name, char[] value) throws IOException {
+  public void a (String name, char[] value)
+    throws IOException
+  {
     write(name, value);
   }
 
-  public void write(String name, double[] value, double[] defvalue) throws IOException {
+  public void write (String name, double[] value, double[] defvalue)
+    throws IOException
+  {
     this.write(name, value, defvalue, double[].class);
   }
 
-  public void a(String name, double[] value, double[] defValue) throws IOException {
+  public void a (String name, double[] value, double[] defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public void write(String name, double[] value) throws IOException {
+  public void write (String name, double[] value)
+    throws IOException
+  {
     this.write(name, (Object)value, (Class)double[].class);
   }
 
-  public void a(String name, double[] value) throws IOException {
+  public void a (String name, double[] value)
+    throws IOException
+  {
     write(name, value);
   }
 
-  public void write(String name, float[] value, float[] defvalue) throws IOException {
+  public void write (String name, float[] value, float[] defvalue)
+    throws IOException
+  {
     this.write(name, value, defvalue, float[].class);
   }
 
-  public void a(String name, float[] value, float[] defValue) throws IOException {
+  public void a (String name, float[] value, float[] defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public void write(String name, float[] value) throws IOException {
+  public void write (String name, float[] value)
+    throws IOException
+  {
     this.write(name, (Object)value, (Class)float[].class);
   }
 
-  public void a(String name, float[] value) throws IOException {
+  public void a (String name, float[] value)
+    throws IOException
+  {
     write(name, value);
   }
 
-  public void write(String name, int[] value, int[] defvalue) throws IOException {
+  public void write (String name, int[] value, int[] defvalue)
+    throws IOException
+  {
     this.write(name, value, defvalue, int[].class);
   }
 
-  public void a(String name, int[] value, int[] defValue) throws IOException {
+  public void a (String name, int[] value, int[] defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public void write(String name, int[] value) throws IOException {
+  public void write (String name, int[] value)
+    throws IOException
+  {
     this.write(name, (Object)value, (Class)int[].class);
   }
 
-  public void a(String name, int[] value) throws IOException {
+  public void a (String name, int[] value)
+    throws IOException
+  {
     write(name, value);
   }
 
-  public void write(String name, long[] value, long[] defvalue) throws IOException {
+  public void write (String name, long[] value, long[] defvalue)
+    throws IOException
+  {
     this.write(name, value, defvalue, long[].class);
   }
 
-  public void a(String name, long[] value, long[] defValue) throws IOException {
+  public void a (String name, long[] value, long[] defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public void write(String name, long[] value) throws IOException {
+  public void write (String name, long[] value)
+    throws IOException
+  {
     this.write(name, (Object)value, (Class)long[].class);
   }
 
-  public void a(String name, long[] value) throws IOException {
+  public void a (String name, long[] value)
+    throws IOException
+  {
     write(name, value);
   }
 
-  public void write(String name, short[] value, short[] defvalue) throws IOException {
+  public void write (String name, short[] value, short[] defvalue)
+    throws IOException
+  {
     this.write(name, value, defvalue, short[].class);
   }
 
-  public void a(String name, short[] value, short[] defValue) throws IOException {
+  public void a (String name, short[] value, short[] defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public void write(String name, short[] value) throws IOException {
+  public void write (String name, short[] value)
+    throws IOException
+  {
     this.write(name, (Object)value, (Class)short[].class);
   }
 
-  public void a(String name, short[] value) throws IOException {
+  public void a (String name, short[] value)
+    throws IOException
+  {
     write(name, value);
   }
 
-  public void write(String name, String value, String defvalue) throws IOException {
+  public void write (String name, String value, String defvalue)
+    throws IOException
+  {
     this.write(name, value, defvalue, String.class);
   }
 
-  public void a(String name, String value, String defValue) throws IOException {
+  public void a (String name, String value, String defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public void write(String name, String value) throws IOException {
+  public void write (String name, String value)
+    throws IOException
+  {
     this.write(name, (Object)value, (Class)String.class);
   }
 
-  public void a(String name, String value) throws IOException {
+  public void a (String name, String value)
+    throws IOException
+  {
     write(name, value);
   }
 
-  public void write(String name, ByteBuffer value, ByteBuffer defvalue) throws IOException {
+  public void write (String name, ByteBuffer value, ByteBuffer defvalue)
+    throws IOException
+  {
     this.write(name, value, defvalue, ByteBuffer.class);
   }
 
-  public void a(String name, ByteBuffer value, ByteBuffer defValue) throws IOException {
+  public void a (String name, ByteBuffer value, ByteBuffer defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public void write(String name, ByteBuffer value) throws IOException {
+  public void write (String name, ByteBuffer value)
+    throws IOException
+  {
     this.write(name, (Object)value, (Class)ByteBuffer.class);
   }
 
-  public void a(String name, ByteBuffer value) throws IOException {
+  public void a (String name, ByteBuffer value)
+    throws IOException
+  {
     write(name, value);
   }
 
-  public void write(String name, CharBuffer value, CharBuffer defvalue) throws IOException {
+  public void write (String name, CharBuffer value, CharBuffer defvalue)
+    throws IOException
+  {
     this.write(name, value, defvalue, CharBuffer.class);
   }
 
-  public void a(String name, CharBuffer value, CharBuffer defValue) throws IOException {
+  public void a (String name, CharBuffer value, CharBuffer defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public void write(String name, CharBuffer value) throws IOException {
+  public void write (String name, CharBuffer value)
+    throws IOException
+  {
     this.write(name, (Object)value, (Class)CharBuffer.class);
   }
 
-  public void a(String name, CharBuffer value) throws IOException {
+  public void a (String name, CharBuffer value)
+    throws IOException
+  {
     write(name, value);
   }
 
-  public void write(String name, DoubleBuffer value, DoubleBuffer defvalue) throws IOException {
+  public void write (String name, DoubleBuffer value, DoubleBuffer defvalue)
+    throws IOException
+  {
     this.write(name, value, defvalue, DoubleBuffer.class);
   }
 
-  public void a(String name, DoubleBuffer value, DoubleBuffer defValue) throws IOException {
+  public void a (String name, DoubleBuffer value, DoubleBuffer defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public void write(String name, DoubleBuffer value) throws IOException {
+  public void write (String name, DoubleBuffer value)
+    throws IOException
+  {
     this.write(name, (Object)value, (Class)DoubleBuffer.class);
   }
 
-  public void a(String name, DoubleBuffer value) throws IOException {
+  public void a (String name, DoubleBuffer value)
+    throws IOException
+  {
     write(name, value);
   }
 
-  public void write(String name, FloatBuffer value, FloatBuffer defvalue) throws IOException {
+  public void write (String name, FloatBuffer value, FloatBuffer defvalue)
+    throws IOException
+  {
     this.write(name, value, defvalue, FloatBuffer.class);
   }
 
-  public void a(String name, FloatBuffer value, FloatBuffer defValue) throws IOException {
+  public void a (String name, FloatBuffer value, FloatBuffer defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public void write(String name, FloatBuffer value) throws IOException {
+  public void write (String name, FloatBuffer value)
+    throws IOException
+  {
     this.write(name, (Object)value, (Class)FloatBuffer.class);
   }
 
-  public void a(String name, FloatBuffer value) throws IOException {
+  public void a (String name, FloatBuffer value)
+    throws IOException
+  {
     write(name, value);
   }
 
-  public void write(String name, IntBuffer value, IntBuffer defvalue) throws IOException {
+  public void write (String name, IntBuffer value, IntBuffer defvalue)
+    throws IOException
+  {
     this.write(name, value, defvalue, IntBuffer.class);
   }
 
-  public void a(String name, IntBuffer value, IntBuffer defValue) throws IOException {
+  public void a (String name, IntBuffer value, IntBuffer defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public void write(String name, IntBuffer value) throws IOException {
+  public void write (String name, IntBuffer value)
+    throws IOException
+  {
     this.write(name, (Object)value, (Class)IntBuffer.class);
   }
 
-  public void a(String name, IntBuffer value) throws IOException {
+  public void a (String name, IntBuffer value)
+    throws IOException
+  {
     write(name, value);
   }
 
-  public void write(String name, LongBuffer value, LongBuffer defvalue) throws IOException {
+  public void write (String name, LongBuffer value, LongBuffer defvalue)
+    throws IOException
+  {
     this.write(name, value, defvalue, LongBuffer.class);
   }
 
-  public void a(String name, LongBuffer value, LongBuffer defValue) throws IOException {
+  public void a (String name, LongBuffer value, LongBuffer defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public void write(String name, LongBuffer value) throws IOException {
+  public void write (String name, LongBuffer value)
+    throws IOException
+  {
     this.write(name, (Object)value, (Class)LongBuffer.class);
   }
 
-  public void a(String name, LongBuffer value) throws IOException {
+  public void a (String name, LongBuffer value)
+    throws IOException
+  {
     write(name, value);
   }
 
-  public void write(String name, ShortBuffer value, ShortBuffer defvalue) throws IOException {
+  public void write (String name, ShortBuffer value, ShortBuffer defvalue)
+    throws IOException
+  {
     this.write(name, value, defvalue, ShortBuffer.class);
   }
 
-  public void a(String name, ShortBuffer value, ShortBuffer defValue) throws IOException {
+  public void a (String name, ShortBuffer value, ShortBuffer defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public void write(String name, ShortBuffer value) throws IOException {
+  public void write (String name, ShortBuffer value)
+    throws IOException
+  {
     this.write(name, (Object)value, (Class)ShortBuffer.class);
   }
 
-  public void a(String name, ShortBuffer value) throws IOException {
+  public void a (String name, ShortBuffer value)
+    throws IOException
+  {
     write(name, value);
   }
 
-  public void write(String name, Color4f value, Color4f defvalue) throws IOException {
+  public void write (String name, Color4f value, Color4f defvalue)
+    throws IOException
+  {
     this.write(name, value, defvalue, Color4f.class);
   }
 
-  public void a(String name, Color4f value, Color4f defValue) throws IOException {
+  public void a (String name, Color4f value, Color4f defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public void write(String name, Color4f value) throws IOException {
+  public void write (String name, Color4f value)
+    throws IOException
+  {
     this.write(name, (Object)value, (Class)Color4f.class);
   }
 
-  public void a(String name, Color4f value) throws IOException {
+  public void a (String name, Color4f value)
+    throws IOException
+  {
     write(name, value);
   }
 
-  public void write(String name, Matrix3f value, Matrix3f defvalue) throws IOException {
+  public void write (String name, Matrix3f value, Matrix3f defvalue)
+    throws IOException
+  {
     this.write(name, value, defvalue, Matrix3f.class);
   }
 
-  public void a(String name, Matrix3f value, Matrix3f defValue) throws IOException {
+  public void a (String name, Matrix3f value, Matrix3f defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public void write(String name, Matrix3f value) throws IOException {
+  public void write (String name, Matrix3f value)
+    throws IOException
+  {
     this.write(name, (Object)value, (Class)Matrix3f.class);
   }
 
-  public void a(String name, Matrix3f value) throws IOException {
+  public void a (String name, Matrix3f value)
+    throws IOException
+  {
     write(name, value);
   }
 
-  public void write(String name, Matrix4f value, Matrix4f defvalue) throws IOException {
+  public void write (String name, Matrix4f value, Matrix4f defvalue)
+    throws IOException
+  {
     this.write(name, value, defvalue, Matrix4f.class);
   }
 
-  public void a(String name, Matrix4f value, Matrix4f defValue) throws IOException {
+  public void a (String name, Matrix4f value, Matrix4f defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public void write(String name, Matrix4f value) throws IOException {
+  public void write (String name, Matrix4f value)
+    throws IOException
+  {
     this.write(name, (Object)value, (Class)Matrix4f.class);
   }
 
-  public void a(String name, Matrix4f value) throws IOException {
+  public void a (String name, Matrix4f value)
+    throws IOException
+  {
     write(name, value);
   }
 
-  public void write(String name, Quaternion value, Quaternion defvalue) throws IOException {
+  public void write (String name, Quaternion value, Quaternion defvalue)
+    throws IOException
+  {
     this.write(name, value, defvalue, Quaternion.class);
   }
 
-  public void a(String name, Quaternion value, Quaternion defValue) throws IOException {
+  public void a (String name, Quaternion value, Quaternion defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public void write(String name, Quaternion value) throws IOException {
+  public void write (String name, Quaternion value)
+    throws IOException
+  {
     this.write(name, (Object)value, (Class)Quaternion.class);
   }
 
-  public void a(String name, Quaternion value) throws IOException {
+  public void a (String name, Quaternion value)
+    throws IOException
+  {
     write(name, value);
   }
 
-  public void write(String name, Vector2f value, Vector2f defvalue) throws IOException {
+  public void write (String name, Vector2f value, Vector2f defvalue)
+    throws IOException
+  {
     this.write(name, value, defvalue, Vector2f.class);
   }
 
-  public void a(String name, Vector2f value, Vector2f defValue) throws IOException {
+  public void a (String name, Vector2f value, Vector2f defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public void write(String name, Vector2f value) throws IOException {
+  public void write (String name, Vector2f value)
+    throws IOException
+  {
     this.write(name, (Object)value, (Class)Vector2f.class);
   }
 
-  public void a(String name, Vector2f value) throws IOException {
+  public void a (String name, Vector2f value)
+    throws IOException
+  {
     write(name, value);
   }
 
-  public void write(String name, Vector3f value, Vector3f defvalue) throws IOException {
+  public void write (String name, Vector3f value, Vector3f defvalue)
+    throws IOException
+  {
     this.write(name, value, defvalue, Vector3f.class);
   }
 
-  public void a(String name, Vector3f value, Vector3f defValue) throws IOException {
+  public void a (String name, Vector3f value, Vector3f defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public void write(String name, Vector3f value) throws IOException {
+  public void write (String name, Vector3f value)
+    throws IOException
+  {
     this.write(name, (Object)value, (Class)Vector3f.class);
   }
 
-  public void a(String name, Vector3f value) throws IOException {
+  public void a (String name, Vector3f value)
+    throws IOException
+  {
     write(name, value);
   }
 
-  public void write(String name, Exportable value, Exportable defvalue) throws IOException {
+  public void write (String name, Exportable value, Exportable defvalue)
+    throws IOException
+  {
     this.write(name, value, defvalue, Exportable.class);
   }
 
-  public void a(String name, Exportable value, Exportable defValue) throws IOException {
+  public void a (String name, Exportable value, Exportable defValue)
+    throws IOException
+  {
     write(name, value, defValue);
   }
 
-  public void write(String name, Exportable value) throws IOException {
+  public void write (String name, Exportable value)
+    throws IOException
+  {
     this.write(name, (Object)value, (Class)Exportable.class);
   }
 
-  public void a(String name, Exportable value) throws IOException {
+  public void a (String name, Exportable value)
+    throws IOException
+  {
     write(name, value);
   }
 
-  public <T> void write(String name, T value, T defvalue, Class<T> clazz) throws IOException {
+  public <T> void write (String name, T value, T defvalue, Class<T> clazz)
+    throws IOException
+  {
     this._a1[0] = value;
     this._a2[0] = defvalue;
     if (!Arrays.deepEquals(this._a1, this._a2)) {
       this.write(name, value, clazz);
     }
-
   }
 
-  public <T> void a(String name, T value, T defvalue, Class<T> clazz) throws IOException {
+  public <T> void a (String name, T value, T defvalue, Class<T> clazz)
+    throws IOException
+  {
     write(name, value, defvalue, clazz);
   }
 
-  public abstract <T> void write(String var1, T var2, Class<T> var3) throws IOException;
-  public abstract <T> void a(String var1, T var2, Class<T> var3) throws IOException;
+  public abstract <T> void write (String var1, T var2, Class<T> var3) throws IOException;
+  public abstract <T> void a (String var1, T var2, Class<T> var3) throws IOException;
 
-  public abstract void close() throws IOException;
+  public abstract void close () throws IOException;
 
-  public abstract void finish() throws IOException;
+  public abstract void finish () throws IOException;
 
-  protected void writeFields(Exportable object) throws IOException {
+  protected void writeFields (Exportable object)
+    throws IOException
+  {
     Object oobject = this._object;
     ObjectMarshaller omarshaller = this._marshaller;
 
@@ -787,10 +781,10 @@ public abstract class Exporter implements Closeable {
       this._object = oobject;
       this._marshaller = omarshaller;
     }
-
   }
 
-  protected static Class<?> getClass(Object value) {
+  protected static Class<?> getClass (Object value)
+  {
     if (value instanceof Enum) {
       return ((Enum)value).getDeclaringClass();
     } else if (value instanceof Exportable) {
@@ -844,22 +838,312 @@ public abstract class Exporter implements Closeable {
     }
   }
 
-  protected static enum DummyEnum {
-    DummyEnum() {
-    }
+  /**
+   * --START--
+   * List of obfuscated methods used throughout time, helps patch odd Scene Editor errors
+   * when saving certain scene files.
+   */
+  public final void obfuscatedToDefaultWriteFields ()
+    throws IOException
+  {
+    defaultWriteFields();
   }
 
-  public static class Replacement {
-    public final Object value;
-    public final Class<?> clazz;
+  public final void ka () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
 
-    public Replacement(Object value, Class<?> clazz) {
+  public final void kA () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kb () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kB () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kc () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kC () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kd () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kD () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void ke () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kE () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kf () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kF () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kg () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kG () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kh () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kH () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void ki () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kI () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kj () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kJ () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kk () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kK () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kl () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kL () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void km () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kM () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kn () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kN () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void ko () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kO () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kp () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kP () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kq () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kQ () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kr () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kR () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void ks () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kS () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kt () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kT () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void ku () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kU () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kv () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kV () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kw () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kW () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kx () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kX () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void ky () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kY () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kz () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void kZ () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
+  public final void qq () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+  /**
+   * --END--
+   * List of obfuscated methods used throughout time, helps patch odd Scene Editor errors
+   * when saving certain scene files.
+   */
+
+  protected static enum DummyEnum
+  {
+    DummyEnum() { }
+  }
+
+  public static class Replacement
+  {
+    public Replacement (Object value, Class<?> clazz)
+    {
       this.value = value;
       this.clazz = clazz;
     }
+
+    public final Object value;
+    public final Class<?> clazz;
   }
 
-  public interface Replacer {
+  public interface Replacer
+  {
     Replacement getReplacement(Object var1, Class<?> var2);
   }
+
+  protected Object _object;
+  protected ObjectMarshaller _marshaller;
+  protected Replacer _replacer;
+  protected Object[] _a1 = new Object[1];
+  protected Object[] _a2 = new Object[1];
 }
