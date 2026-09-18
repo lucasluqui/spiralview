@@ -1109,6 +1109,11 @@ public abstract class Exporter implements Closeable
     obfuscatedToDefaultWriteFields();
   }
 
+  public final void qs () throws IOException
+  {
+    obfuscatedToDefaultWriteFields();
+  }
+
   public final void qq () throws IOException
   {
     obfuscatedToDefaultWriteFields();

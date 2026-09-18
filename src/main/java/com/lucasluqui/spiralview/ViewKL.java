@@ -46,6 +46,9 @@ public class ViewKL
       case "particle":
         _targetClass = "com.lucasluqui.spiralview.ParticleEditorHook";
         break;
+      case "silverweave":
+        _targetClass = "com.lucasluqui.silverweave.SilverweaveTool";
+        break;
     }
   }
 }
