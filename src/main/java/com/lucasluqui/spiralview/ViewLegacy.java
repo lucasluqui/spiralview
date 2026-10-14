@@ -49,7 +49,7 @@ public class ViewLegacy
 
   private static int chooseEditorDialog ()
   {
-    Object[] editors = {"Model Viewer", "Level Editor", "Interface Tester", "Particle Editor"};
+    Object[] editors = {"Model Viewer", "Level Editor", "Interface Tester", "Particle Editor", "Silverweave"};
 
     int n = JOptionPane.showOptionDialog(null,
       "Choose an editor to start",
@@ -77,6 +77,9 @@ public class ViewLegacy
         break;
       case 3:
         _targetClass = "com.lucasluqui.spiralview.ParticleEditorHook";
+        break;
+      case 4:
+        _targetClass = "com.lucasluqui.silverweave.SilverweaveTool";
         break;
     }
   }

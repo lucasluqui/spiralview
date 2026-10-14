@@ -1,5 +1,7 @@
 package com.lucasluqui.spiralview;
 
+import java.awt.EventQueue;
+
 import javax.swing.*;
 
 import com.lucasluqui.util.ImageUtil;
@@ -22,6 +24,7 @@ public class ModelViewerHook extends ModelViewer
     environment.add(new JMenuItem(new ClearPrefsAction()));
     file.add(environment, 0);
     this._frame.setIconImage(ImageUtil.loadImageWithinJar("/img/icon.png"));
+    ViewKL.maximize(this._frame);
   }
 
   protected void didInit ()
@@ -30,12 +33,17 @@ public class ModelViewerHook extends ModelViewer
 
     this._grid.getColor().set(0.21F, 0.21F, 0.21F, 0.0F);
     this._compositor.getDefaultBackgroundColor().set(0.41F, 0.41F, 0.41F, 0.0F);
+    EditorLoading.dismiss(this._frame);
   }
 
   public static void main (String[] args)
   {
     _prefs.remove("environment_models");
     ViewKL.setupLAF();
-    new ModelViewerHook(args.length > 0 ? args[0] : null).startup();
+    EditorLoading.show("Model Viewer");
+    ModelViewerHook viewer = new ModelViewerHook(args.length > 0 ? args[0] : null);
+    // shown from the event thread: showing the window starts the render loop there, which
+    // deadlocks with a window being shown from any other thread
+    EventQueue.invokeLater(viewer::startup);
   }
 }

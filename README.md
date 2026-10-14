@@ -22,7 +22,7 @@ To build spiralview follow these steps:
      - **Linux (APT)**: `apt install git`.
 2. Clone the repository.
    - `git clone https://github.com/lucasluqui/spiralview.git`
-3. Copy `projectx-pcode.jar` from your Spiral Knights `code` directory into the project's `lib` directory.
+3. Copy `projectx-code.jar` from your Spiral Knights `code` directory into the project's `lib` directory.
 4. Validate all Maven dependencies.
    - `mvn validate`
 5. Build the package using Maven.

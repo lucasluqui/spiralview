@@ -1,0 +1,8 @@
+# One island per line: the name of its folder in this directory, in the order they are listed.
+clockwork-tunnels
+clockwork-tunnels-fir
+clockwork-tunnels-fre
+clockwork-tunnels-poi
+clockwork-tunnels-sho
+jelly-court
+torpor-titan

@@ -2,6 +2,8 @@ package com.lucasluqui.spiralview;
 
 import com.formdev.flatlaf.FlatDarkLaf;
 
+import java.awt.GraphicsEnvironment;
+
 import javax.swing.*;
 
 public class ViewKL
@@ -17,7 +19,7 @@ public class ViewKL
     System.exit(1);
   }
 
-  protected static void setupLAF ()
+  public static void setupLAF ()
   {
     System.setProperty("awt.useSystemAAFontSettings", "on");
     System.setProperty("swing.aatext", "true");
@@ -29,6 +31,16 @@ public class ViewKL
     }
 
     Stylesheet.load();
+  }
+
+  /**
+   * Maximizes an editor's window. Fills the screen, minus the task bar, first: those bounds also
+   * keep the window on screen when it is restored from maximized.
+   */
+  public static void maximize (JFrame frame)
+  {
+    frame.setBounds(GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds());
+    frame.setExtendedState(frame.getExtendedState() | JFrame.MAXIMIZED_BOTH);
   }
 
   private static void resolveEditor (String editor)
