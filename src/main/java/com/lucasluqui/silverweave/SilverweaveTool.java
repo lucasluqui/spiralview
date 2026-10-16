@@ -1244,7 +1244,8 @@ public class SilverweaveTool extends ModelTool
 
   /** System properties forwarded to the knight tester. */
   protected static final String[] FORWARDED_PROPERTIES = {
-    "appdir", "resource_dir", "java.library.path", "file.encoding", "sun.java2d.uiScale" };
+    "appdir", "resource_dir", "java.library.path", "file.encoding", "sun.java2d.uiScale",
+    "org.lwjgl.opengl.contextAPI" };
 
   /** Running test session, if any. */
   protected Process _testProcess;

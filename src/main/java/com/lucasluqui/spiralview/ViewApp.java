@@ -89,6 +89,8 @@ public class ViewApp implements Runnable
       "-Dappdir=" + Globals.USER_DIR + File.separator + "./",
       "-Dresource_dir=" + Globals.USER_DIR + File.separator + "./rsrc",
       "-Djava.library.path=" + Globals.USER_DIR + File.separator + "./native",
+      // LWJGL picks EGL on Wayland sessions, but AWT still runs on XWayland and AWTGLCanvas needs GLX
+      "-Dorg.lwjgl.opengl.contextAPI=native",
       targetClass,
       chosen == 0 ? "rsrc\\character\\pc\\model.dat" : ""
     };
