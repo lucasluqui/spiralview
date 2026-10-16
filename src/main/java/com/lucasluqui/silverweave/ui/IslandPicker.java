@@ -82,10 +82,7 @@ public class IslandPicker extends JPanel
     _cards = new JPanel();
     _cards.setOpaque(false);
     _cards.setLayout(new BoxLayout(_cards, BoxLayout.Y_AXIS));
-    JPanel holder = new JPanel(new BorderLayout());
-    holder.setOpaque(false);
-    holder.add(_cards, BorderLayout.NORTH);
-    add(holder, BorderLayout.CENTER);
+    add(SidebarPanel.scroll(_cards), BorderLayout.CENTER);
   }
 
   public void setIslands (List<Island> islands)
