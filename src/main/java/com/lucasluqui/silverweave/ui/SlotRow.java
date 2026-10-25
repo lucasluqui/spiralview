@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 import javax.swing.AbstractAction;
@@ -40,7 +41,7 @@ import com.lucasluqui.silverweave.item.Slot;
 public class SlotRow extends JPanel
 {
   /** How far accessory rows are set in from the gear rows. */
-  public static final int ACCESSORY_INDENT = 22;
+  public static final int ACCESSORY_INDENT = 10;
 
   public SlotRow (Slot slot, boolean compact, IconCache icons,
     Consumer<Slot> onOpen, Consumer<Slot> onClear)
@@ -93,13 +94,22 @@ public class SlotRow extends JPanel
     _color.addActionListener(e -> showColors());
     east.add(_color);
 
+    // keeps the slot as it is when the knight is randomized
+    _lock = new LockButton(() -> {
+      if (_onLock != null) {
+        _onLock.accept(_slot);
+      }
+    });
+    east.add(_lock);
     _clear = new JButton("✕");
     _clear.putClientProperty("JButton.buttonType", "borderless");
     _clear.setFont(Theme.symbolFont(10f));
     _clear.setForeground(Theme.SIDE_DESCRIPTION);
-    _clear.setToolTipText("Remove");
     _clear.setFocusable(false);
     _clear.addActionListener(e -> onClear.accept(_slot));
+    // (keeps its room while there's nothing to remove, so that the lock stays put)
+    _clear.setPreferredSize(_clear.getPreferredSize());
+    _clear.setMaximumSize(_clear.getPreferredSize());
     east.add(_clear);
     _chevron = new JLabel("›");
     _chevron.setFont(Theme.sideFont(14f, Font.PLAIN));
@@ -133,6 +143,19 @@ public class SlotRow extends JPanel
   public Slot getSlot ()
   {
     return _slot;
+  }
+
+  /**
+   * Lets the slot be locked from the row, keeping it as it is when the knight is randomized.
+   *
+   * @param locked tells whether a slot is locked.
+   * @param onLock notified with the slot when the lock is clicked.
+   */
+  public void setLocking (Predicate<Slot> locked, Consumer<Slot> onLock)
+  {
+    _locked = locked;
+    _onLock = onLock;
+    updateLock();
   }
 
   /**
@@ -191,7 +214,11 @@ public class SlotRow extends JPanel
     }
     setToolTipText(item == null ? null : item.displayName);
     updateColor();
-    _clear.setVisible(item != null && _enabled);
+    updateLock();
+    boolean removable = item != null && _enabled;
+    _clear.setEnabled(removable);
+    _clear.setText(removable ? "✕" : "");
+    _clear.setToolTipText(removable ? "Remove" : null);
     // unusable slots don't open, but keep the arrow's room so that they're as tall as the rest
     _chevron.setForeground(_enabled ? Theme.SIDE_DESCRIPTION : TRANSPARENT);
     setCursor(Cursor.getPredefinedCursor(_enabled ? Cursor.HAND_CURSOR : Cursor.DEFAULT_CURSOR));
@@ -241,6 +268,15 @@ public class SlotRow extends JPanel
     return "ui/icon/inventory/categories/icon_accessory-" +
       (slot.section == Slot.Section.HELMET ? "h" : "a") + slot.label.toLowerCase(Locale.ROOT) +
       ".png";
+  }
+
+  /**
+   * Shows whether the slot is locked.
+   */
+  protected void updateLock ()
+  {
+    _lock.setVisible(_locked != null);
+    _lock.setLocked(_locked != null && _locked.test(_slot));
   }
 
   /**
@@ -340,6 +376,12 @@ public class SlotRow extends JPanel
   protected final JLabel _label, _name, _chevron, _bypassed;
   protected final Font _nameFont, _noteFont;
   protected final JButton _clear, _color;
+  protected final LockButton _lock;
+
+  /** Tells whether the slot is locked, and who locks it. */
+  protected Predicate<Slot> _locked;
+  protected Consumer<Slot> _onLock;
+
   protected KnightItem _item;
 
   /** The colors for custom items, and who changes them. */

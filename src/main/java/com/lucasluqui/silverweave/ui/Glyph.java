@@ -8,6 +8,7 @@ import java.awt.Graphics2D;
 import java.awt.geom.Arc2D;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Path2D;
+import java.awt.geom.RoundRectangle2D;
 
 import javax.swing.Icon;
 
@@ -19,7 +20,8 @@ public enum Glyph
 {
   ROTATE_LEFT, ROTATE_RIGHT, ZOOM_IN, ZOOM_OUT, RESET,
   IMPORT, SHARE, SAVE, RANDOMIZE, CLEAR,
-  PLAY, STOP, COPY, CHECK, STAR, STAR_FILLED, RENAME, SEARCH, BLOCKED, WARNING, SOUND, MUTED,
+  PLAY, STOP, COPY, CHECK, STAR, STAR_FILLED, RENAME, SEARCH, BLOCKED, WARNING, LOCKED, UNLOCKED,
+  SOUND, MUTED,
   CHEVRON_DOWN, CHEVRON_UP;
 
   /**
@@ -104,6 +106,16 @@ public enum Glyph
         // a circle struck through, like a no-entry sign
         g.drawOval(-6, -6, 12, 12);
         g.draw(path(-4.2, 4.2, 4.2, -4.2));
+        break;
+      case LOCKED:
+      case UNLOCKED:
+        g.draw(new RoundRectangle2D.Double(-5, -1, 10, 7, 2.5, 2.5));
+        double lift = this == LOCKED ? 0 : -2;
+        g.draw(new Arc2D.Double(-3.2, -6.5 + lift, 6.4, 6.4, 0, 180, Arc2D.OPEN));
+        g.draw(path(-3.2, -3.3 + lift, -3.2, -1));
+        if (this == LOCKED) {
+          g.draw(path(3.2, -3.3, 3.2, -1));
+        }
         break;
       case WARNING:
         Path2D caution = path(0, -6, 6.5, 5.5, -6.5, 5.5);

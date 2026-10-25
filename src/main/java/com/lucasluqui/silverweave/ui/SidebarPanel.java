@@ -304,6 +304,7 @@ public class SidebarPanel extends JPanel
         SlotRow row = new SlotRow(slot, slot.accessory, _icons, this::openPicker,
           s -> _loadout.set(s, null));
         row.setRecoloring(this::getRecolors, this::recolor);
+        row.setLocking(_loadout::isLocked, _loadout::toggleLocked);
         _rows.put(slot, row);
         gear.add(row);
         gear.add(Box.createVerticalStrut(slot.accessory ? 4 : 6));

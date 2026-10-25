@@ -5,9 +5,11 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.EnumMap;
+import java.util.EnumSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.Set;
 import java.util.prefs.Preferences;
 
 import javax.swing.event.ChangeEvent;
@@ -94,6 +96,27 @@ public class Loadout
     fireChanged();
   }
 
+  /**
+   * Checks whether a slot is locked, keeping it as-is when the knight
+   * is randomized.
+   */
+  public boolean isLocked (Slot slot)
+  {
+    return _locked.contains(slot);
+  }
+
+  /**
+   * Locks a slot, or unlocks it if it's locked. Like bypassing blocks, this is a viewing option
+   * rather than part of the knight, so it isn't cleared, shared or undone with it.
+   */
+  public void toggleLocked (Slot slot)
+  {
+    if (!_locked.remove(slot)) {
+      _locked.add(slot);
+    }
+    fireChanged();
+  }
+
   public void clear ()
   {
     _items.clear();
@@ -106,15 +129,28 @@ public class Loadout
    */
   public void randomize (ItemCatalog catalog, Random random)
   {
+    // the locked slots keep what they have
+    Map<Slot, KnightItem> kept = new EnumMap<>(Slot.class);
+    for (Slot slot : _locked) {
+      KnightItem item = _items.get(slot);
+      if (item != null) {
+        kept.put(slot, item);
+      }
+    }
     _items.clear();
-    _shieldAway = false;
+    _items.putAll(kept);
+    if (!_locked.contains(Slot.SHIELD)) {
+      _shieldAway = false;
+    }
     for (Slot slot : new Slot[] {
         Slot.WEAPON, Slot.HELMET, Slot.ARMOR, Slot.SHIELD, Slot.COLOR, Slot.EYES }) {
-      putRandom(slot, catalog, random);
+      if (!_locked.contains(slot)) {
+        putRandom(slot, catalog, random);
+      }
     }
     // then accessories, in whichever slots the rolled helmet and armor leave open
     for (Slot slot : Slot.values()) {
-      if (slot.accessory && random.nextFloat() < ACCESSORY_CHANCE &&
+      if (slot.accessory && !_locked.contains(slot) && random.nextFloat() < ACCESSORY_CHANCE &&
           getBlocker(slot) == null && getOccupant(slot) == null) {
         putRandom(slot, catalog, random);
       }
@@ -242,6 +278,11 @@ public class Loadout
   {
     prefs.put(PREF_KEY, toShareCode());
     prefs.putBoolean(BYPASS_PREF_KEY, _bypassBlocks);
+    StringBuilder locked = new StringBuilder();
+    for (Slot slot : _locked) {
+      locked.append(locked.isEmpty() ? "" : ",").append(slot.name());
+    }
+    prefs.put(LOCKED_PREF_KEY, locked.toString());
   }
 
   /**
@@ -254,6 +295,16 @@ public class Loadout
     _undo.clear();
     _redo.clear();
     _bypassBlocks = prefs.getBoolean(BYPASS_PREF_KEY, false);
+    _locked.clear();
+    for (String name : prefs.get(LOCKED_PREF_KEY, "").split(",")) {
+      try {
+        if (!name.isEmpty()) {
+          _locked.add(Slot.valueOf(name));
+        }
+      } catch (IllegalArgumentException e) {
+        // a slot that's no more
+      }
+    }
     String code = prefs.get(PREF_KEY, null);
     try {
       if (code != null) {
@@ -285,10 +336,11 @@ public class Loadout
    */
   protected void putRandom (Slot slot, ItemCatalog catalog, Random random)
   {
-    // only the game's own items; custom ones are for the user to pick
+    // only the game's own items (custom ones are for the user to pick), and none that would
+    // block, take over or fill a locked slot
     List<KnightItem> items = new ArrayList<>();
     for (KnightItem item : catalog.getItems(slot)) {
-      if (!item.isCustom()) {
+      if (!item.isCustom() && !disturbsLocked(item)) {
         items.add(item);
       }
     }
@@ -299,6 +351,21 @@ public class Loadout
         _items.remove(extra);
       }
     }
+  }
+
+  /**
+   * Checks whether an item would change a locked slot: by spreading into it, or by blocking what's
+   * locked in it.
+   */
+  protected boolean disturbsLocked (KnightItem item)
+  {
+    for (Slot slot : _locked) {
+      if (item.getExtraSlots().contains(slot) ||
+          (!_bypassBlocks && _items.containsKey(slot) && item.getBlockedSlots().contains(slot))) {
+        return true;
+      }
+    }
+    return false;
   }
 
   public boolean canUndo ()
@@ -367,11 +434,17 @@ public class Loadout
   /** The preference holding whether accessory blocks are bypassed. */
   protected static final String BYPASS_PREF_KEY = "bypassBlocks";
 
+  /** The preference holding the locked slots, by name. */
+  protected static final String LOCKED_PREF_KEY = "locked";
+
   protected final Map<Slot, KnightItem> _items = new EnumMap<>(Slot.class);
   protected final List<ChangeListener> _listeners = new ArrayList<>();
   protected boolean _shieldAway;
 
   protected boolean _bypassBlocks;
+
+  /** The slots randomizing leaves alone. */
+  protected final Set<Slot> _locked = EnumSet.noneOf(Slot.class);
 
   /** The knight at some point in its history. */
   protected record State (Map<Slot, KnightItem> items, boolean shieldAway) { }
