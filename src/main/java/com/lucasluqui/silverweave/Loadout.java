@@ -285,7 +285,13 @@ public class Loadout
    */
   protected void putRandom (Slot slot, ItemCatalog catalog, Random random)
   {
-    List<KnightItem> items = catalog.getItems(slot);
+    // only the game's own items; custom ones are for the user to pick
+    List<KnightItem> items = new ArrayList<>();
+    for (KnightItem item : catalog.getItems(slot)) {
+      if (!item.isCustom()) {
+        items.add(item);
+      }
+    }
     if (!items.isEmpty()) {
       KnightItem item = items.get(random.nextInt(items.size()));
       _items.put(slot, item);
