@@ -7,12 +7,17 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.KeyEventDispatcher;
+import java.awt.KeyboardFocusManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.event.KeyEvent;
+import java.util.List;
 import java.util.Locale;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 import javax.swing.AbstractAction;
 import javax.swing.BorderFactory;
@@ -21,7 +26,10 @@ import javax.swing.Icon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
 import javax.swing.KeyStroke;
+import javax.swing.event.PopupMenuEvent;
+import javax.swing.event.PopupMenuListener;
 
 import com.lucasluqui.silverweave.item.KnightItem;
 import com.lucasluqui.silverweave.item.Slot;
@@ -77,6 +85,14 @@ public class SlotRow extends JPanel
     _bypassed.setBorder(BorderFactory.createEmptyBorder(0, 4, 0, 4));
     _bypassed.setVisible(false);
     east.add(_bypassed);
+    // the color of a custom item, which opens the colors to choose from
+    _color = new JButton();
+    _color.putClientProperty("JButton.buttonType", "borderless");
+    _color.setFocusable(false);
+    _color.setVisible(false);
+    _color.addActionListener(e -> showColors());
+    east.add(_color);
+
     _clear = new JButton("✕");
     _clear.putClientProperty("JButton.buttonType", "borderless");
     _clear.setFont(Theme.symbolFont(10f));
@@ -117,6 +133,19 @@ public class SlotRow extends JPanel
   public Slot getSlot ()
   {
     return _slot;
+  }
+
+  /**
+   * Lets the color of the custom items in this slot be changed from the row.
+   *
+   * @param choices the colors to choose from.
+   * @param onRecolor notified with the slot and the id of the color chosen.
+   */
+  public void setRecoloring (Supplier<List<RecolorChooser.Choice>> choices,
+    BiConsumer<Slot, Integer> onRecolor)
+  {
+    _colorChoices = choices;
+    _onRecolor = onRecolor;
   }
 
   /**
@@ -161,6 +190,7 @@ public class SlotRow extends JPanel
       _name.setFont(_nameFont);
     }
     setToolTipText(item == null ? null : item.displayName);
+    updateColor();
     _clear.setVisible(item != null && _enabled);
     // unusable slots don't open, but keep the arrow's room so that they're as tall as the rest
     _chevron.setForeground(_enabled ? Theme.SIDE_DESCRIPTION : TRANSPARENT);
@@ -213,6 +243,89 @@ public class SlotRow extends JPanel
       ".png";
   }
 
+  /**
+   * Shows the color of the item, if it's a custom one.
+   */
+  protected void updateColor ()
+  {
+    boolean custom = _enabled && _item != null && _item.isCustom() && _colorChoices != null;
+    RecolorChooser.Choice choice = null;
+    if (custom) {
+      for (RecolorChooser.Choice each : _colorChoices.get()) {
+        if (each.id == _item.getRecolor()) {
+          choice = each;
+          break;
+        }
+      }
+    }
+    _color.setVisible(custom);
+    _color.setIcon(RecolorChooser.swatchIcon(choice, COLOR_SWATCH));
+    _color.setToolTipText(choice == null ? "Change color" :
+      "Color: " + choice.describe() + " - click to change");
+    if (_chooser != null) {
+      _chooser.setSelected(custom ? _item.getRecolor() : 0);
+      _chooserLabel.setText("Color - " + (choice == null ? "Custom" : choice.describe()));
+      if (!custom) {
+        _colors.setVisible(false);
+      }
+    }
+  }
+
+  /**
+   * Pops up the colors under the row's color.
+   */
+  protected void showColors ()
+  {
+    if (_item == null || !_item.isCustom() || _colorChoices == null) {
+      return;
+    }
+    if (_colors == null) {
+      _chooser = new RecolorChooser(color -> {
+        if (_onRecolor != null) {
+          _onRecolor.accept(_slot, color);
+        }
+      });
+      _chooserLabel = new JLabel();
+      _chooserLabel.setFont(Theme.sideFont(10.5f, Font.BOLD));
+      _chooserLabel.setForeground(Theme.SIDE_DESCRIPTION);
+      _chooserLabel.setBorder(BorderFactory.createEmptyBorder(0, 4, 6, 0));
+      JPanel content = new JPanel(new BorderLayout());
+      content.setBackground(Theme.SIDE_CARD);
+      content.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+      content.add(_chooserLabel, BorderLayout.NORTH);
+      content.add(_chooser, BorderLayout.CENTER);
+      _colors = new JPopupMenu();
+      _colors.setBackground(Theme.SIDE_CARD);
+      _colors.add(content);
+      // the arrow keys move through the colors while they're up (popups don't take the focus,
+      // and would otherwise use the keys for menu items)
+      KeyEventDispatcher keys = e -> {
+        if (e.getID() != KeyEvent.KEY_PRESSED || !_colors.isVisible()) {
+          return false;
+        }
+        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+          _colors.setVisible(false);
+          return true;
+        }
+        return _chooser.handleKey(e);
+      };
+      _colors.addPopupMenuListener(new PopupMenuListener() {
+        @Override public void popupMenuWillBecomeVisible (PopupMenuEvent e) {
+          KeyboardFocusManager.getCurrentKeyboardFocusManager().addKeyEventDispatcher(keys);
+        }
+        @Override public void popupMenuWillBecomeInvisible (PopupMenuEvent e) {
+          KeyboardFocusManager.getCurrentKeyboardFocusManager().removeKeyEventDispatcher(keys);
+        }
+        @Override public void popupMenuCanceled (PopupMenuEvent e) {
+        }
+      });
+    }
+    _chooser.setChoices(_colorChoices.get());
+    updateColor();
+    _colors.pack();
+    _colors.show(_color, _color.getWidth() - _colors.getPreferredSize().width, _color.getHeight());
+  }
+
   protected void open ()
   {
     if (_enabled) {
@@ -226,12 +339,24 @@ public class SlotRow extends JPanel
   protected final int _iconSize, _indent;
   protected final JLabel _label, _name, _chevron, _bypassed;
   protected final Font _nameFont, _noteFont;
-  protected final JButton _clear;
+  protected final JButton _clear, _color;
   protected KnightItem _item;
+
+  /** The colors for custom items, and who changes them. */
+  protected Supplier<List<RecolorChooser.Choice>> _colorChoices;
+  protected BiConsumer<Slot, Integer> _onRecolor;
+
+  /** The popup with the colors, once shown. */
+  protected JPopupMenu _colors;
+  protected RecolorChooser _chooser;
+  protected JLabel _chooserLabel;
   protected boolean _hover, _enabled = true, _blocked;
 
   /** The color of the arrow on rows that don't open. */
   protected static final Color TRANSPARENT = new Color(0, 0, 0, 0);
+
+  /** The size of the swatch showing a custom item's color. */
+  protected static final int COLOR_SWATCH = 14;
 
   /** The size of the accessory slot icons, and their space from the slot names. */
   protected static final int SLOT_ICON_SIZE = 18, SLOT_ICON_GAP = 6;

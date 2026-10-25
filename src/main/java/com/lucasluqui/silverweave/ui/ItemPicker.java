@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
@@ -117,10 +118,12 @@ public class ItemPicker extends JPanel
     _list.addListSelectionListener(e -> {
       if (!e.getValueIsAdjusting() && !_updating && _onPick != null) {
         Object value = _list.getSelectedValue();
-        if (value != null) {
+        // (a custom item stays in the color it was given when picked again)
+        if (value != null && (_current == null || _current.getBase() != value)) {
           _current = (value == NONE) ? null : (KnightItem)value;
           _onPick.accept(_current);
         }
+        updateRecolor();
       }
     });
     _list.addMouseListener(new MouseAdapter() {
@@ -143,6 +146,31 @@ public class ItemPicker extends JPanel
     scroll.getViewport().setOpaque(false);
     Theme.sideScroll(scroll, Theme.SIDE_CARD);
     add(new RoundedPanel(scroll, Theme.SIDE_CARD, Theme.SIDE_ARC, 6), BorderLayout.CENTER);
+
+    // the colors to recolor custom items in
+    _recolor = new JPanel(new BorderLayout(0, 6));
+    _recolor.setOpaque(false);
+    _colorLabel = new JLabel();
+    _colorLabel.setFont(Theme.sideFont(10.5f, Font.BOLD));
+    _colorLabel.setForeground(Theme.SIDE_DESCRIPTION);
+    _colorLabel.setBorder(BorderFactory.createEmptyBorder(0, 4, 0, 0));
+    _colorChooser = new RecolorChooser(this::recolor);
+    _colorChooser.addKeyListener(new KeyAdapter() {
+      @Override public void keyPressed (KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_ENTER || e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+          onBack.run();
+        }
+      }
+    });
+    _recolor.add(_colorLabel, BorderLayout.NORTH);
+    _recolor.add(_colorChooser, BorderLayout.CENTER);
+    JPanel south = new JPanel(new BorderLayout());
+    south.setOpaque(false);
+    south.setBorder(BorderFactory.createEmptyBorder(8, 0, 0, 0));
+    south.add(new RoundedPanel(_recolor, Theme.SIDE_CARD, Theme.SIDE_ARC, 10), BorderLayout.CENTER);
+    _recolorCard = south;
+    _recolorCard.setVisible(false);
+    add(_recolorCard, BorderLayout.SOUTH);
 
     // newly marked favorites move up right away, without scrolling the list about
     favorites.addChangeListener(() -> {
@@ -208,6 +236,7 @@ public class ItemPicker extends JPanel
     _search.setText("");
     refilter();
     _onPick = onPick;
+    updateRecolor();
     SwingUtilities.invokeLater(() -> _search.requestFocusInWindow());
   }
 
@@ -241,11 +270,20 @@ public class ItemPicker extends JPanel
       }
       List<Object> visible = new ArrayList<>();
       visible.add(NONE);
+      // custom items come after all of the game's own, whatever their rank
+      List<KnightItem> customs = new ArrayList<>();
       for (List<KnightItem> tier : tiers) {
-        visible.addAll(_favorites.arrange(tier));
+        for (KnightItem item : _favorites.arrange(tier)) {
+          if (item.isCustom()) {
+            customs.add(item);
+          } else {
+            visible.add(item);
+          }
+        }
       }
+      visible.addAll(customs);
       _list.setEntries(visible);
-      int idx = _current == null ? 0 : visible.indexOf(_current);
+      int idx = _current == null ? 0 : visible.indexOf(_current.getBase());
       if (idx >= 0) {
         _list.setSelectedIndex(idx);
         if (reveal) {
@@ -256,6 +294,54 @@ public class ItemPicker extends JPanel
       }
     } finally {
       _updating = false;
+    }
+  }
+
+  /**
+   * Sets where the colors offered for custom items come from.
+   */
+  public void setColorChoices (Supplier<List<RecolorChooser.Choice>> choices)
+  {
+    _colorChoices = choices;
+    _colorChooser.setChoices(new ArrayList<>());
+  }
+
+  /**
+   * Shows the colors if the current item is a custom one, with its color chosen.
+   */
+  protected void updateRecolor ()
+  {
+    boolean custom = _current != null && _current.isCustom();
+    if (custom && _colorChooser.getChoices().isEmpty() && _colorChoices != null) {
+      _colorChooser.setChoices(_colorChoices.get());
+    }
+    if (custom) {
+      RecolorChooser.Choice choice = _colorChooser.getChoice(_current.getRecolor());
+      _colorLabel.setText("Color - " + (choice == null ? "Custom" : choice.describe()));
+      _colorChooser.setSelected(_current.getRecolor());
+    }
+    if (custom != _recolorCard.isVisible()) {
+      _recolorCard.setVisible(custom);
+      revalidate();
+      // the list's height changes, which may hide the selected item
+      SwingUtilities.invokeLater(() -> {
+        int idx = _list.getSelectedIndex();
+        if (idx >= 0) {
+          _list.ensureIndexIsVisible(idx);
+        }
+      });
+    }
+  }
+
+  /**
+   * Puts the current custom item on in another color.
+   */
+  protected void recolor (int color)
+  {
+    if (_current != null && _current.isCustom() && _onPick != null) {
+      _current = _current.withRecolor(color);
+      _onPick.accept(_current);
+      updateRecolor();
     }
   }
 
@@ -275,7 +361,10 @@ public class ItemPicker extends JPanel
   protected static final Object NONE = new ItemList.Placeholder("None");
 
   protected final Favorites _favorites;
-  protected final JLabel _title;
+  protected final JLabel _title, _colorLabel;
+  protected final JPanel _recolor, _recolorCard;
+  protected final RecolorChooser _colorChooser;
+  protected Supplier<List<RecolorChooser.Choice>> _colorChoices;
   protected final JTextField _search;
   protected final JPanel _chips;
   protected final ItemList _list;

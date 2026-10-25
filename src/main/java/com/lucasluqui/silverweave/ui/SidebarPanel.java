@@ -133,6 +133,8 @@ public class SidebarPanel extends JPanel
   public void setCatalog (ItemCatalog catalog)
   {
     _catalog = catalog;
+    _recolors = null;
+    _picker.setColorChoices(this::getRecolors);
     _style.setCatalog(catalog);
     _savedPanel.setCatalog(catalog);
     for (Map.Entry<Slot, SlotRow> entry : _rows.entrySet()) {
@@ -287,6 +289,7 @@ public class SidebarPanel extends JPanel
         }
         SlotRow row = new SlotRow(slot, slot.accessory, _icons, this::openPicker,
           s -> _loadout.set(s, null));
+        row.setRecoloring(this::getRecolors, this::recolor);
         _rows.put(slot, row);
         gear.add(row);
         gear.add(Box.createVerticalStrut(slot.accessory ? 4 : 6));
@@ -446,6 +449,30 @@ public class SidebarPanel extends JPanel
     _footer.setVisible(true);
   }
 
+  /**
+   * Returns the colors custom items can be recolored in.
+   */
+  protected List<RecolorChooser.Choice> getRecolors ()
+  {
+    if (_recolors == null || _recolors.isEmpty()) {
+      ItemCatalog catalog = _catalog;
+      _recolors = RecolorChooser.createChoices(_icons.getColors(),
+        catalog == null ? null : catalog::getColorName);
+    }
+    return _recolors;
+  }
+
+  /**
+   * Puts the custom item in a slot on in another color.
+   */
+  protected void recolor (Slot slot, int color)
+  {
+    KnightItem item = _loadout.get(slot);
+    if (item != null && item.isCustom()) {
+      _loadout.set(slot, item.withRecolor(color));
+    }
+  }
+
   protected void openPicker (Slot slot)
   {
     if (_catalog == null) {
@@ -542,6 +569,9 @@ public class SidebarPanel extends JPanel
 
   protected ItemCatalog _catalog;
   protected Slot _openSlot;
+
+  /** The colors custom items can be recolored in, once listed. */
+  protected List<RecolorChooser.Choice> _recolors;
   protected JTabbedPane _tabs;
   protected StylePanel _style;
   protected EnvironmentPanel _environment;

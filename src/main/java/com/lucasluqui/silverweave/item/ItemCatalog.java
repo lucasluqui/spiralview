@@ -65,6 +65,15 @@ public final class ItemCatalog
   }
 
   /**
+   * Returns the name the game's items give a color custom items can be recolored in,
+   * or null if none of the recolored families come in it.
+   */
+  public String getColorName (int color)
+  {
+    return _colorNames.get(color);
+  }
+
+  /**
    * Checks whether accessory configs were available.
    */
   public boolean hasAccessories ()
@@ -215,11 +224,20 @@ public final class ItemCatalog
       }
     }
 
+    // then the custom items for the families of recolored ones
+    CustomItems customs = new CustomItems(DEFAULT_COLORIZATION);
+    List<KnightItem> created = customs.create(_items, new HashSet<>(_byId.keySet()),
+      new HashSet<>(_byName.keySet()));
+    for (KnightItem custom : created) {
+      add(custom);
+    }
+    _colorNames = customs.getColorNames();
+
     for (List<KnightItem> list : _items.values()) {
       Collections.sort(list);
     }
-    log.info("Loaded item catalog.", "items", _byName.size(), "failed", failed,
-      "accessories", _hasAccessories);
+    log.info("Loaded item catalog.", "items", _byName.size(), "custom", created.size(),
+      "failed", failed, "accessories", _hasAccessories);
   }
 
   /**
@@ -551,4 +569,7 @@ public final class ItemCatalog
   protected final Map<String, KnightItem> _byName = new HashMap<>();
   protected final Map<Integer, KnightItem> _byId = new HashMap<>();
   protected boolean _hasAccessories;
+
+  /** The names of the colors custom items can be recolored in, by color id. */
+  protected Map<Integer, String> _colorNames;
 }

@@ -82,6 +82,14 @@ public class IconCache
   }
 
   /**
+   * Returns the colors the icons are colorized with, or null while they're still loading.
+   */
+  public ColorPository getColors ()
+  {
+    return _colors.get();
+  }
+
+  /**
    * Returns an image that is a colorization mask, painted with the given colors, at the given
    * size. If it isn't loaded yet, a blank placeholder is returned and {@code repaint} is repainted
    * once it is available.
