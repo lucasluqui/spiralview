@@ -18,6 +18,7 @@ import java.awt.event.MouseEvent;
 import java.awt.geom.Arc2D;
 import java.awt.geom.Ellipse2D;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.IntConsumer;
 import java.util.function.IntFunction;
@@ -84,7 +85,7 @@ public class RecolorChooser extends JComponent
       return choices;
     }
     List<ColorPository.ColorRecord> records = new ArrayList<>(primary.colors.values());
-    records.sort((a, b) -> Integer.compare(a.colorId, b.colorId));
+    records.sort(Comparator.comparingInt(a -> a.colorId));
     for (ColorPository.ColorRecord record : records) {
       Color main = record.getColorization().getColorizedRoot();
       Colorization second = colors.getColorization(CustomItems.ARMOR_SECONDARY, record.colorId);
