@@ -211,6 +211,7 @@ public class SidebarPanel extends JPanel
       }
       entry.getValue().update(_loadout.get(slot), unavailable, blocked, bypassed);
     }
+    updateCustomWarning();
     _shieldAway.setSelected(_loadout.isShieldAway());
     _bypassBlocks.setSelected(_loadout.isBypassingBlocks());
     _style.refresh();
@@ -266,6 +267,19 @@ public class SidebarPanel extends JPanel
     gear.setOpaque(false);
     gear.setLayout(new BoxLayout(gear, BoxLayout.Y_AXIS));
     gear.setBorder(BorderFactory.createEmptyBorder(0, 16, 16, 12));
+
+    // a caution atop while items the game doesn't have are selected
+    _customWarning = new JLabel("<html><div style='width:240px'>This loadout contains one or " +
+      "more items that do not currently exist in the game.</div></html>",
+      Glyph.WARNING.icon(14, Theme.SIDE_WARNING), SwingConstants.LEFT);
+    _customWarning.setFont(Theme.sideFont(10f, Font.ITALIC));
+    _customWarning.setForeground(Theme.SIDE_WARNING);
+    _customWarning.setIconTextGap(8);
+    _customWarning.setAlignmentX(LEFT_ALIGNMENT);
+    _customWarning.setBorder(BorderFactory.createEmptyBorder(8, 4, 4, 4));
+    _customWarning.setVisible(false);
+    gear.add(_customWarning);
+
     for (Slot.Section section : Slot.Section.values()) {
       if (section == Slot.Section.STYLE) {
         continue;
@@ -421,6 +435,26 @@ public class SidebarPanel extends JPanel
     _test.addActionListener(e -> showIslands());
     footer.add(_test);
     return footer;
+  }
+
+  /**
+   * Shows the caution about custom items if the knight wears any, naming them when hovered.
+   */
+  protected void updateCustomWarning ()
+  {
+    List<String> customs = new ArrayList<>();
+    for (Slot slot : Slot.values()) {
+      KnightItem item = _loadout.get(slot);
+      if (item != null && item.isCustom()) {
+        customs.add(item.displayName);
+      }
+    }
+    _customWarning.setToolTipText(customs.isEmpty() ? null :
+      "<html>Not in the game:<br>" + String.join("<br>", customs) + "</html>");
+    if (_customWarning.isVisible() == customs.isEmpty()) {
+      _customWarning.setVisible(!customs.isEmpty());
+      revalidate();
+    }
   }
 
   public void setIslands (List<Island> islands)
@@ -581,6 +615,9 @@ public class SidebarPanel extends JPanel
   protected JScrollPane _savedTab;
   protected JCheckBox _shieldAway, _bypassBlocks;
   protected JLabel _loadingLabel;
+
+  /** The caution shown while the knight wears custom items. */
+  protected JLabel _customWarning;
   protected JProgressBar _progress;
   protected JButton _test;
   protected boolean _testRunning;

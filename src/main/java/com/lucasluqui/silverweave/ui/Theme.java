@@ -67,6 +67,9 @@ public final class Theme
   /** The side panel's color for warnings and things that can't be undone. */
   public static final Color SIDE_DANGER = new Color(251, 91, 91);
 
+  /** The side panel's color for small cautions about the knight. */
+  public static final Color SIDE_WARNING = new Color(240, 196, 84);
+
   /** The side panel's text: titles, descriptions and the faintest footnotes. */
   public static final Color SIDE_TEXT = Color.WHITE;
   public static final Color SIDE_DESCRIPTION = new Color(169, 173, 188);

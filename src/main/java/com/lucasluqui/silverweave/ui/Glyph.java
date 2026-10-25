@@ -19,7 +19,7 @@ public enum Glyph
 {
   ROTATE_LEFT, ROTATE_RIGHT, ZOOM_IN, ZOOM_OUT, RESET,
   IMPORT, SHARE, SAVE, RANDOMIZE, CLEAR,
-  PLAY, STOP, COPY, CHECK, STAR, STAR_FILLED, RENAME, SEARCH, BLOCKED, SOUND, MUTED,
+  PLAY, STOP, COPY, CHECK, STAR, STAR_FILLED, RENAME, SEARCH, BLOCKED, WARNING, SOUND, MUTED,
   CHEVRON_DOWN, CHEVRON_UP;
 
   /**
@@ -104,6 +104,13 @@ public enum Glyph
         // a circle struck through, like a no-entry sign
         g.drawOval(-6, -6, 12, 12);
         g.draw(path(-4.2, 4.2, 4.2, -4.2));
+        break;
+      case WARNING:
+        Path2D caution = path(0, -6, 6.5, 5.5, -6.5, 5.5);
+        caution.closePath();
+        g.draw(caution);
+        g.draw(path(0, -2, 0, 1.5));
+        g.fill(new Ellipse2D.Double(-0.9, 2.8, 1.8, 1.8));
         break;
       case SOUND:
       case MUTED:
