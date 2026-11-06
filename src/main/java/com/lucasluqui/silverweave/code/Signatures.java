@@ -51,12 +51,16 @@ public final class Signatures
   }
 
   /**
-   * Finds a public constructor with exactly the given parameter types.
+   * Finds a constructor with exactly the given parameter types.
    */
   public static <T> Constructor<T> constructor (Class<T> owner, Class<?>... params)
   {
     try {
-      return owner.getConstructor(params);
+      Constructor<T> ctor = owner.getDeclaredConstructor(params);
+      if (!Modifier.isPublic(ctor.getModifiers()) || !Modifier.isPublic(owner.getModifiers())) {
+        ctor.setAccessible(true);
+      }
+      return ctor;
     } catch (NoSuchMethodException e) {
       throw new IllegalStateException("No constructor " + describe(owner, null, params), e);
     }
